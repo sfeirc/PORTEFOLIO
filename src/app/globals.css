@@ -1,26 +1,185 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 8, 8, 12;
+  --background-end-rgb: 16, 16, 24;
+  --accent-glow: 0 0 20px rgba(139, 92, 246, 0.3);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+@layer base {
+  body {
+    @apply text-white/90 min-h-screen antialiased;
+    background: linear-gradient(
+      135deg,
+      rgb(var(--background-start-rgb)),
+      rgb(var(--background-end-rgb))
+    );
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  ::selection {
+    @apply bg-purple-500/30 text-white;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  .glass {
+    @apply bg-white/[0.03] backdrop-blur-md border border-white/[0.05] rounded-2xl;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+  }
+
+  .glass-hover {
+    @apply transition-all duration-500 hover:bg-white/[0.07] hover:border-white/[0.1] hover:shadow-lg;
+    transform-origin: center;
+  }
+
+  .btn-primary {
+    @apply px-8 py-3 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full text-white/90 font-medium 
+    hover:opacity-90 transition-all duration-300 hover:shadow-lg hover:scale-[1.02] active:scale-[0.98];
+    box-shadow: var(--accent-glow);
+  }
+
+  .btn-secondary {
+    @apply px-8 py-3 border border-white/10 rounded-full text-white/80 font-medium 
+    hover:bg-white/5 hover:border-white/20 hover:text-white transition-all duration-300 
+    hover:shadow-lg hover:scale-[1.02] active:scale-[0.98];
+  }
+
+  .floating {
+    animation: floating 3s ease-in-out infinite;
+  }
+
+  .scale-hover {
+    @apply transition-transform duration-300 hover:scale-[1.02];
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-white/10 rounded-full hover:bg-white/20 transition-colors duration-300;
+}
+
+/* Animations */
+@keyframes floating {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-gradient {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-purple-500 via-pink-500 to-purple-500;
+  background-size: 200% 200%;
+  animation: gradient 8s ease infinite;
+}
+
+/* Text reveal animation */
+.reveal-text {
+  animation: reveal 0.8s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+}
+
+@keyframes reveal {
+  0% {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Smooth fade in animation */
+.fade-in {
+  animation: fadeIn 0.8s ease forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Form styles */
+input, textarea {
+  @apply bg-white/[0.03] border border-white/10 rounded-xl px-6 py-4 text-white/90 w-full
+  focus:outline-none focus:border-purple-500/50 focus:ring-2 focus:ring-purple-500/20
+  transition-all duration-300 placeholder:text-white/30;
+}
+
+.form-group {
+  @apply space-y-2;
+}
+
+/* Card hover effect */
+.card-hover {
+  @apply transition-all duration-500;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.card-hover:hover {
+  transform: translateY(-5px) rotateX(2deg) rotateY(2deg);
+  box-shadow: var(--accent-glow);
+}
+
+/* Gradient border animation */
+.gradient-border {
+  position: relative;
+  background: linear-gradient(rgb(var(--background-start-rgb)), rgb(var(--background-end-rgb)));
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.gradient-border::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #8B5CF6, #EC4899, #8B5CF6);
+  z-index: -1;
+  animation: gradientBorder 6s linear infinite;
+  background-size: 200% 200%;
+  border-radius: 16px;
+}
+
+@keyframes gradientBorder {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
