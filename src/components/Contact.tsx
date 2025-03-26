@@ -34,10 +34,10 @@ const Contact = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-pink-500">
-            Get in Touch
+            Contactez-moi
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto">
-            Have a question or want to work together? Feel free to reach out!
+            Une question ou envie de collaborer ? N'hésitez pas à me contacter !
           </p>
         </motion.div>
 
@@ -50,7 +50,7 @@ const Contact = () => {
             className="space-y-8"
           >
             <div className="glass p-6 rounded-lg">
-              <h3 className="text-xl font-semibold mb-4">Contact Information</h3>
+              <h3 className="text-xl font-semibold mb-4">Informations de contact</h3>
               <div className="space-y-4">
                 <div className="flex items-center space-x-4">
                   <div className="w-12 h-12 rounded-full bg-purple-500 bg-opacity-20 flex items-center justify-center">
@@ -60,7 +60,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="text-gray-400">Email</p>
-                    <p className="font-medium">your.email@example.com</p>
+                    <p className="font-medium">votre.email@example.com</p>
                   </div>
                 </div>
                 <div className="flex items-center space-x-4">
@@ -71,15 +71,15 @@ const Contact = () => {
                     </svg>
                   </div>
                   <div>
-                    <p className="text-gray-400">Location</p>
-                    <p className="font-medium">Your City, Country</p>
+                    <p className="text-gray-400">Localisation</p>
+                    <p className="font-medium">Votre Ville, Pays</p>
                   </div>
                 </div>
               </div>
             </div>
 
             <div className="glass p-6 rounded-lg">
-              <h3 className="text-xl font-semibold mb-4">Social Links</h3>
+              <h3 className="text-xl font-semibold mb-4">Réseaux sociaux</h3>
               <div className="flex space-x-4">
                 {['GitHub', 'LinkedIn', 'Twitter'].map((social) => (
                   <motion.a
@@ -106,7 +106,7 @@ const Contact = () => {
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
-                  Name
+                  Nom
                 </label>
                 <input
                   type="text"
@@ -152,7 +152,7 @@ const Contact = () => {
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
-                Send Message
+                Envoyer le message
               </motion.button>
             </form>
           </motion.div>

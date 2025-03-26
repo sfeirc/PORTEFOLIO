@@ -153,7 +153,8 @@ const Hero = () => {
               transition={{ duration: 0.8, delay: 0.8 }}
               className="flex flex-col sm:flex-row gap-6 justify-center"
             >
-              <motion.button 
+              <motion.a 
+                href="#projets-pro"
                 className="px-8 py-3 bg-gradient-to-r from-primary to-secondary rounded-full text-white/90 font-medium transition-all duration-300"
                 whileHover={{ 
                   scale: 1.05,
@@ -162,8 +163,9 @@ const Hero = () => {
                 whileTap={{ scale: 0.95 }}
               >
                 Voir mes projets
-              </motion.button>
-              <motion.button 
+              </motion.a>
+              <motion.a 
+                href="#contact"
                 className="px-8 py-3 border border-white/10 rounded-full text-white/80 font-medium transition-all duration-300"
                 whileHover={{ 
                   scale: 1.05,
@@ -173,7 +175,7 @@ const Hero = () => {
                 whileTap={{ scale: 0.95 }}
               >
                 Me contacter
-              </motion.button>
+              </motion.a>
             </motion.div>
           </div>
         </div>

@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   ComputerDesktopIcon, 
@@ -222,6 +222,20 @@ const ProjectSkillsMatrix: React.FC = () => {
   const [selectedProjectSkill, setSelectedProjectSkill] = useState<string | null>(null);
 
   const selectedSkillData = selectedProjectSkill ? skills.find((s: Skill) => s.id === selectedProjectSkill) : null;
+
+  // Add effect to handle body scroll for both modals
+  useEffect(() => {
+    if (selectedSkill || (selectedProject && selectedProjectSkill)) {
+      document.body.classList.add('no-scroll');
+    } else {
+      document.body.classList.remove('no-scroll');
+    }
+
+    // Cleanup function
+    return () => {
+      document.body.classList.remove('no-scroll');
+    };
+  }, [selectedSkill, selectedProject, selectedProjectSkill]);
 
   return (
     <div className="relative">
