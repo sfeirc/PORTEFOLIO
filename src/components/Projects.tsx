@@ -53,6 +53,7 @@ interface Project {
   category: string;
   relatedTags: string[];
   projectImage?: string;
+  isInternship: boolean;
 }
 
 interface ProjectsByCategory {
@@ -126,7 +127,55 @@ const education = [
 ];
 
 const projects: Project[] = [
-  // Développement logiciel et Applications Web
+  // Projets Pro
+  {
+    title: 'Automatisation Blender 3D',
+    period: '2024',
+    description: 'Scripts Python pour automatiser les tâches répétitives dans Blender 3D, optimisant significativement le workflow.',
+    technologies: [
+      { name: 'Python', icon: CommandLineIcon },
+      { name: 'Blender API', icon: CodeBracketIcon },
+      { name: 'Git', icon: CodeBracketIcon }
+    ],
+    features: [
+      'Automatisation des tâches répétitives',
+      'Interface utilisateur intégrée',
+      'Documentation technique',
+      'Optimisation du workflow'
+    ],
+    image: 'https://cdn-icons-png.flaticon.com/512/4712/4712027.png',
+    size: 'col-span-1',
+    gradient: 'from-blue-500/20 to-purple-500/20',
+    icon: CubeIcon,
+    category: 'Projets Pro',
+    relatedTags: ['gérer le patrimoine informatique', 'organiser son développement professionnel'],
+    projectImage: 'https://cdn-icons-png.flaticon.com/512/4712/4712027.png',
+    isInternship: true
+  },
+  {
+    title: 'Optimisation Plans Interactifs',
+    period: '2024',
+    description: 'Optimisation des performances d\'une application web utilisant Babylon.js pour l\'affichage de plans interactifs en 3D.',
+    technologies: [
+      { name: 'Babylon.js', icon: CubeIcon },
+      { name: 'JavaScript', icon: CodeBracketIcon },
+      { name: 'HTML/CSS', icon: SwatchIcon }
+    ],
+    features: [
+      'Optimisation des performances',
+      'Refactorisation du code',
+      'Plans 3D interactifs',
+      'Documentation technique'
+    ],
+    image: 'https://cdn-icons-png.flaticon.com/512/4712/4712027.png',
+    size: 'col-span-1',
+    gradient: 'from-purple-500/20 to-pink-500/20',
+    icon: CubeIcon,
+    category: 'Projets Pro',
+    relatedTags: ['gérer le patrimoine informatique', 'organiser son développement professionnel', 'mettre à disposition un service informatique'],
+    projectImage: 'https://cdn-icons-png.flaticon.com/512/4712/4712027.png',
+    isInternship: true
+  },
   {
     title: 'Chatbot intelligent avec OpenAI et Google Cloud API',
     period: '2024',
@@ -143,13 +192,66 @@ const projects: Project[] = [
       'Interface responsive pour le suivi des performances'
     ],
     image: 'https://cdn-icons-png.flaticon.com/512/4712/4712027.png',
-    size: 'col-span-2',
+    size: 'col-span-1',
     gradient: 'from-blue-500/20 to-purple-500/20',
     icon: SparklesIcon,
-    category: 'Développement logiciel et Applications Web',
-    relatedTags: ['répondre aux incidents et demandes d\'assistance et d\'évolution', 'développer la présence en ligne de l\'organisation'],
-    projectImage: 'https://cdn-icons-png.flaticon.com/512/4712/4712027.png'
+    category: 'Projets Pro',
+    relatedTags: ['gérer le patrimoine informatique', 'répondre aux incidents et demandes', 'développer la présence en ligne', 'travailler en mode projet'],
+    projectImage: 'https://cdn-icons-png.flaticon.com/512/4712/4712027.png',
+    isInternship: true
   },
+  {
+    title: 'Chatbot intelligent avec Fine Tuning OpenAI',
+    period: '2024',
+    description: 'Chatbot bilingue avec fine-tuning et gestion avancée des documents via Google Cloud.',
+    technologies: [
+      { name: 'Python/Flask', icon: CommandLineIcon },
+      { name: 'JavaScript', icon: CodeBracketIcon },
+      { name: 'OpenAI API', icon: CpuChipIcon },
+      { name: 'Google Cloud', icon: CloudIcon }
+    ],
+    features: [
+      'Interface de chat bilingue (FR/EN)',
+      'Panneau d\'administration pour la gestion des documents',
+      'Fine-tuning GPT-4 et o1-mini',
+      'Interface responsive avec précision optimisée'
+    ],
+    image: 'https://cdn-icons-png.flaticon.com/512/4712/4712027.png',
+    size: 'col-span-1',
+    gradient: 'from-purple-500/20 to-pink-500/20',
+    icon: SparklesIcon,
+    category: 'Projets Pro',
+    relatedTags: ['gérer le patrimoine informatique', 'répondre aux incidents et demandes', 'développer la présence en ligne'],
+    projectImage: 'https://cdn-icons-png.flaticon.com/512/4712/4712027.png',
+    isInternship: true
+  },
+  {
+    title: 'Simulation d\'entretien en temps réel',
+    period: '2024',
+    description: 'Outil de simulation d\'entretiens alimenté par IA avec retours personnalisés et tonalité vocale réaliste.',
+    technologies: [
+      { name: 'React', icon: CodeBracketIcon },
+      { name: 'Next.js', icon: CommandLineIcon },
+      { name: 'Tailwind CSS', icon: WrenchScrewdriverIcon },
+      { name: 'OpenAI API', icon: CpuChipIcon }
+    ],
+    features: [
+      'Simulations d\'entretiens configurables',
+      'Retours personnalisés par IA',
+      'Tonalité vocale hautement réaliste',
+      'Interface moderne et responsive'
+    ],
+    image: 'https://cdn-icons-png.flaticon.com/512/1995/1995574.png',
+    size: 'col-span-1',
+    gradient: 'from-blue-500/20 to-indigo-500/20',
+    icon: MicrophoneIcon,
+    category: 'Projets Pro',
+    relatedTags: ['gérer le patrimoine informatique', 'développer la présence en ligne', 'mettre à disposition un service informatique', 'organiser son développement professionnel'],
+    projectImage: 'https://cdn-icons-png.flaticon.com/512/1995/1995574.png',
+    isInternship: true
+  },
+
+  // Développement logiciel et Applications Web
   {
     title: 'Application Web Météo',
     period: 'Décembre 2024',
@@ -170,8 +272,9 @@ const projects: Project[] = [
     gradient: 'from-green-500/20 to-blue-500/20',
     icon: SunIcon,
     category: 'Développement logiciel et Applications Web',
-    relatedTags: ['travailler en mode projet', 'mettre à disposition des utilisateurs un service informatique'],
-    projectImage: 'https://cdn-icons-png.flaticon.com/512/414/414927.png'
+    relatedTags: ['gérer le patrimoine informatique', 'développer la présence en ligne', 'travailler en mode projet'],
+    projectImage: 'https://cdn-icons-png.flaticon.com/512/414/414927.png',
+    isInternship: false
   },
   {
     title: 'Logiciel de gestion des stages',
@@ -192,8 +295,9 @@ const projects: Project[] = [
     gradient: 'from-purple-500/20 to-pink-500/20',
     icon: DocumentDuplicateIcon,
     category: 'Développement logiciel et Applications Web',
-    relatedTags: ['gérer le patrimoine informatique', 'mettre à disposition des utilisateurs un service informatique'],
-    projectImage: 'https://cdn-icons-png.flaticon.com/512/2436/2436874.png'
+    relatedTags: ['gérer le patrimoine informatique', 'répondre aux incidents et demandes', 'mettre à disposition un service informatique'],
+    projectImage: 'https://cdn-icons-png.flaticon.com/512/2436/2436874.png',
+    isInternship: false
   },
   {
     title: 'Interface de gestion des films récents',
@@ -213,8 +317,9 @@ const projects: Project[] = [
     gradient: 'from-red-500/20 to-orange-500/20',
     icon: GlobeAltIcon,
     category: 'Développement logiciel et Applications Web',
-    relatedTags: ['gérer le patrimoine informatique', 'travailler en mode projet'],
-    projectImage: 'https://cdn-icons-png.flaticon.com/512/2809/2809372.png'
+    relatedTags: ['gérer le patrimoine informatique', 'mettre à disposition un service informatique'],
+    projectImage: 'https://cdn-icons-png.flaticon.com/512/2809/2809372.png',
+    isInternship: false
   },
   {
     title: 'Application Web de location de voitures',
@@ -237,8 +342,9 @@ const projects: Project[] = [
     gradient: 'from-blue-500/20 to-indigo-500/20',
     icon: DevicePhoneMobileIcon,
     category: 'Développement logiciel et Applications Web',
-    relatedTags: ['mettre à disposition des utilisateurs un service informatique', 'travailler en mode projet'],
-    projectImage: 'https://cdn-icons-png.flaticon.com/512/3774/3774299.png'
+    relatedTags: ['gérer le patrimoine informatique', 'développer la présence en ligne', 'travailler en mode projet', 'mettre à disposition un service informatique'],
+    projectImage: 'https://cdn-icons-png.flaticon.com/512/3774/3774299.png',
+    isInternship: false
   },
 
   // Applications IA & orientées données
@@ -263,32 +369,9 @@ const projects: Project[] = [
     gradient: 'from-orange-500/20 to-red-500/20',
     icon: BeakerIcon,
     category: 'Applications IA & orientées données',
-    relatedTags: ['développer la présence en ligne de l\'organisation', 'travailler en mode projet'],
-    projectImage: 'https://cdn-icons-png.flaticon.com/512/4208/4208470.png'
-  },
-  {
-    title: 'Chatbot intelligent avec Fine Tuning OpenAI',
-    period: '2024',
-    description: 'Chatbot bilingue avec fine-tuning et gestion avancée des documents via Google Cloud.',
-    technologies: [
-      { name: 'Python/Flask', icon: CommandLineIcon },
-      { name: 'JavaScript', icon: CodeBracketIcon },
-      { name: 'OpenAI API', icon: CpuChipIcon },
-      { name: 'Google Cloud', icon: CloudIcon }
-    ],
-    features: [
-      'Interface de chat bilingue (FR/EN)',
-      'Panneau d\'administration pour la gestion des documents',
-      'Fine-tuning GPT-4 et o1-mini',
-      'Interface responsive avec précision optimisée'
-    ],
-    image: 'https://cdn-icons-png.flaticon.com/512/4712/4712027.png',
-    size: 'col-span-1',
-    gradient: 'from-purple-500/20 to-pink-500/20',
-    icon: SparklesIcon,
-    category: 'Applications IA & orientées données',
-    relatedTags: ['répondre aux incidents et demandes d\'assistance et d\'évolution', 'développer la présence en ligne de l\'organisation'],
-    projectImage: 'https://cdn-icons-png.flaticon.com/512/4712/4712027.png'
+    relatedTags: ['gérer le patrimoine informatique', 'développer la présence en ligne', 'mettre à disposition un service informatique', 'organiser son développement professionnel'],
+    projectImage: 'https://cdn-icons-png.flaticon.com/512/4208/4208470.png',
+    isInternship: false
   },
   {
     title: 'API Pokémon (Pokédex)',
@@ -310,32 +393,9 @@ const projects: Project[] = [
     gradient: 'from-yellow-500/20 to-orange-500/20',
     icon: PuzzlePieceIcon,
     category: 'Applications IA & orientées données',
-    relatedTags: ['mettre à disposition des utilisateurs un service informatique', 'travailler en mode projet'],
-    projectImage: 'https://cdn-icons-png.flaticon.com/512/188/188987.png'
-  },
-  {
-    title: 'Simulation d\'entretien en temps réel',
-    period: '2024',
-    description: 'Outil de simulation d\'entretiens alimenté par IA avec retours personnalisés et tonalité vocale réaliste.',
-    technologies: [
-      { name: 'React', icon: CodeBracketIcon },
-      { name: 'Next.js', icon: CommandLineIcon },
-      { name: 'Tailwind CSS', icon: WrenchScrewdriverIcon },
-      { name: 'OpenAI API', icon: CpuChipIcon }
-    ],
-    features: [
-      'Simulations d\'entretiens configurables',
-      'Retours personnalisés par IA',
-      'Tonalité vocale hautement réaliste',
-      'Interface moderne et responsive'
-    ],
-    image: 'https://cdn-icons-png.flaticon.com/512/1995/1995574.png',
-    size: 'col-span-1',
-    gradient: 'from-blue-500/20 to-indigo-500/20',
-    icon: MicrophoneIcon,
-    category: 'Applications IA & orientées données',
-    relatedTags: ['organiser son développement professionnel', 'travailler en mode projet'],
-    projectImage: 'https://cdn-icons-png.flaticon.com/512/1995/1995574.png'
+    relatedTags: ['gérer le patrimoine informatique', 'développer la présence en ligne', 'travailler en mode projet', 'mettre à disposition un service informatique'],
+    projectImage: 'https://cdn-icons-png.flaticon.com/512/188/188987.png',
+    isInternship: false
   },
 
   // Développement de Jeux & Applications Interactives
@@ -357,8 +417,9 @@ const projects: Project[] = [
     gradient: 'from-red-500/20 to-pink-500/20',
     icon: GameIcon,
     category: 'Développement de Jeux & Applications Interactives',
-    relatedTags: ['travailler en mode projet', 'organiser son développement professionnel'],
-    projectImage: 'https://cdn-icons-png.flaticon.com/512/1998/1998610.png'
+    relatedTags: ['gérer le patrimoine informatique', 'travailler en mode projet', 'mettre à disposition un service informatique'],
+    projectImage: 'https://cdn-icons-png.flaticon.com/512/1998/1998610.png',
+    isInternship: false
   },
   {
     title: 'Jeu Web du cercle parfait',
@@ -379,8 +440,9 @@ const projects: Project[] = [
     gradient: 'from-green-500/20 to-blue-500/20',
     icon: CircleStackIcon,
     category: 'Développement de Jeux & Applications Interactives',
-    relatedTags: ['travailler en mode projet', 'organiser son développement professionnel'],
-    projectImage: 'https://cdn-icons-png.flaticon.com/512/1995/1995574.png'
+    relatedTags: ['gérer le patrimoine informatique', 'développer la présence en ligne'],
+    projectImage: 'https://cdn-icons-png.flaticon.com/512/1995/1995574.png',
+    isInternship: false
   },
   {
     title: 'Bataille navale en C++',
@@ -400,8 +462,9 @@ const projects: Project[] = [
     gradient: 'from-blue-500/20 to-indigo-500/20',
     icon: ServerIcon,
     category: 'Développement de Jeux & Applications Interactives',
-    relatedTags: ['travailler en mode projet', 'organiser son développement professionnel'],
-    projectImage: 'https://cdn-icons-png.flaticon.com/512/1995/1995574.png'
+    relatedTags: ['gérer le patrimoine informatique', 'travailler en mode projet', 'mettre à disposition un service informatique'],
+    projectImage: 'https://cdn-icons-png.flaticon.com/512/1995/1995574.png',
+    isInternship: false
   },
   {
     title: 'Démineur Python',
@@ -422,8 +485,9 @@ const projects: Project[] = [
     gradient: 'from-yellow-500/20 to-orange-500/20',
     icon: CubeIcon,
     category: 'Développement de Jeux & Applications Interactives',
-    relatedTags: ['travailler en mode projet', 'organiser son développement professionnel'],
-    projectImage: 'https://cdn-icons-png.flaticon.com/512/1995/1995574.png'
+    relatedTags: ['gérer le patrimoine informatique', 'mettre à disposition un service informatique'],
+    projectImage: 'https://cdn-icons-png.flaticon.com/512/1995/1995574.png',
+    isInternship: false
   },
 
   // Systèmes embarqués & IoT
@@ -447,8 +511,9 @@ const projects: Project[] = [
     gradient: 'from-green-500/20 to-blue-500/20',
     icon: BoltIcon,
     category: 'Systèmes embarqués & IoT',
-    relatedTags: ['gérer le patrimoine informatique', 'organiser son développement professionnel'],
-    projectImage: 'https://cdn-icons-png.flaticon.com/512/1995/1995574.png'
+    relatedTags: ['gérer le patrimoine informatique', 'travailler en mode projet'],
+    projectImage: 'https://cdn-icons-png.flaticon.com/512/1995/1995574.png',
+    isInternship: false
   },
   {
     title: 'Bras robotique à axes',
@@ -470,8 +535,9 @@ const projects: Project[] = [
     gradient: 'from-purple-500/20 to-pink-500/20',
     icon: WrenchScrewdriverIcon,
     category: 'Systèmes embarqués & IoT',
-    relatedTags: ['gérer le patrimoine informatique', 'organiser son développement professionnel'],
-    projectImage: 'https://cdn-icons-png.flaticon.com/512/1995/1995574.png'
+    relatedTags: ['gérer le patrimoine informatique', 'travailler en mode projet', 'mettre à disposition un service informatique'],
+    projectImage: 'https://cdn-icons-png.flaticon.com/512/1995/1995574.png',
+    isInternship: false
   },
   {
     title: 'Véhicule de transport suivant une ligne',
@@ -493,8 +559,9 @@ const projects: Project[] = [
     gradient: 'from-blue-500/20 to-indigo-500/20',
     icon: RocketLaunchIcon,
     category: 'Systèmes embarqués & IoT',
-    relatedTags: ['gérer le patrimoine informatique', 'organiser son développement professionnel'],
-    projectImage: 'https://cdn-icons-png.flaticon.com/512/1995/1995574.png'
+    relatedTags: ['gérer le patrimoine informatique', 'travailler en mode projet'],
+    projectImage: 'https://cdn-icons-png.flaticon.com/512/1995/1995574.png',
+    isInternship: false
   }
 ];
 
@@ -615,242 +682,244 @@ const Projects = () => {
         </div>
 
         {/* Professional Projects Section */}
-        <div id="projets-pro" className="mb-20">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-8"
-          >
-            <h2 className="text-4xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-white via-secondary to-white">
-              Stages
-            </h2>
-          </motion.div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-20">
-            {/* Stage Excelia 1 */}
+        <div id="stages" className="mb-20">
+          <div id="projets-pro">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
-              className="relative group cursor-pointer"
-              onClick={() => setSelectedProfessionalProject({
-                title: "Stage Excelia",
-                period: "Janvier 2025 — Mars 2025",
-                description: "Stage au sein d'Excelia, axé sur le développement d'applications innovantes pour améliorer l'expérience étudiante.",
-                technologies: [
-                  { name: "Next.js", icon: CodeBracketIcon },
-                  { name: "React.js", icon: CodeBracketIcon },
-                  { name: "Elevenlabs API", icon: CpuChipIcon }
-                ],
-                documents: [
-                  {
-                    title: "Convention de stage",
-                    path: "/internships/excelia-internship-agreement-1.pdf",
-                    type: "agreement"
-                  },
-                  {
-                    title: "Fiche de mission",
-                    path: "/internships/excelia-internship-mission-1.pdf",
-                    type: "mission"
-                  }
-                ],
-                projects: [
-                  {
-                    title: "Simulateur d'entretien d'embauche",
-                    description: "Développement d'un simulateur d'entretien utilisant l'IA pour aider les étudiants à préparer leurs entretiens professionnels.",
-                    technologies: [
-                      { name: "Next.js", icon: CodeBracketIcon },
-                      { name: "React.js", icon: CodeBracketIcon },
-                      { name: "Elevenlabs API", icon: CpuChipIcon }
-                    ],
-                    features: [
-                      "Interface conversationnelle en temps réel",
-                      "Analyse du langage et des réponses",
-                      "Feedback personnalisé",
-                      "Voix synthétisée réaliste"
-                    ]
-                  }
-                ]
-              })}
+              className="text-center mb-8"
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-lg blur-xl opacity-50 group-hover:opacity-75 transition-opacity duration-300" />
-              <div className="relative glass p-8 rounded-lg border border-white/10 hover:border-white/20 transition-colors duration-300">
-                <div className="flex items-center gap-4 mb-6">
-                  <div className="relative w-16 h-16 bg-white/5 rounded-full p-2">
-                    <Image
-                      src="https://play-lh.googleusercontent.com/eLFM1GELLZrKL849EB3b9o-91dJ7wWLJ535-3tz3QE-lzv3XZu26aYAiyxMVxOVG19w"
-                      alt="Excelia Logo"
-                      fill
-                      className="object-contain"
-                      sizes="(max-width: 64px) 100vw, 64px"
-                    />
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="text-xl font-semibold bg-clip-text text-transparent bg-gradient-to-r from-white to-white/80">
-                      Stage Excelia
-                    </h3>
-                    <p className="text-gray-400 text-sm">Janvier 2025 — Mars 2025</p>
-                  </div>
-                </div>
-                
-                <p className="text-gray-300 mb-6">
-                  Stage au sein d'Excelia, axé sur le développement d'applications innovantes pour améliorer l'expérience étudiante.
-                </p>
-                
-                <div className="mb-6">
-                  <h4 className="text-sm font-medium text-gray-400 mb-3">Technologies principales :</h4>
-                  <div className="flex flex-wrap gap-2">
-                    <span className="px-3 py-1 bg-white/5 rounded-full text-sm hover:bg-white/10 transition-colors flex items-center gap-2">
-                      <CodeBracketIcon className="w-4 h-4 text-secondary" />
-                      Next.js
-                    </span>
-                    <span className="px-3 py-1 bg-white/5 rounded-full text-sm hover:bg-white/10 transition-colors flex items-center gap-2">
-                      <CpuChipIcon className="w-4 h-4 text-secondary" />
-                      Elevenlabs API
-                    </span>
-                  </div>
-                </div>
-              </div>
+              <h2 className="text-4xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-white via-secondary to-white">
+                Stages
+              </h2>
             </motion.div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-20">
+              {/* Stage Excelia 1 */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+                viewport={{ once: true }}
+                className="relative group cursor-pointer"
+                onClick={() => setSelectedProfessionalProject({
+                  title: "Stage Excelia",
+                  period: "Janvier 2025 — Mars 2025",
+                  description: "Stage au sein d'Excelia, axé sur le développement d'applications innovantes pour améliorer l'expérience étudiante.",
+                  technologies: [
+                    { name: "Next.js", icon: CodeBracketIcon },
+                    { name: "React.js", icon: CodeBracketIcon },
+                    { name: "Elevenlabs API", icon: CpuChipIcon }
+                  ],
+                  documents: [
+                    {
+                      title: "Convention de stage",
+                      path: "/internships/excelia-internship-agreement-1.pdf",
+                      type: "agreement"
+                    },
+                    {
+                      title: "Fiche de mission",
+                      path: "/internships/excelia-internship-mission-1.pdf",
+                      type: "mission"
+                    }
+                  ],
+                  projects: [
+                    {
+                      title: "Simulateur d'entretien d'embauche",
+                      description: "Développement d'un simulateur d'entretien utilisant l'IA pour aider les étudiants à préparer leurs entretiens professionnels.",
+                      technologies: [
+                        { name: "Next.js", icon: CodeBracketIcon },
+                        { name: "React.js", icon: CodeBracketIcon },
+                        { name: "Elevenlabs API", icon: CpuChipIcon }
+                      ],
+                      features: [
+                        "Interface conversationnelle en temps réel",
+                        "Analyse du langage et des réponses",
+                        "Feedback personnalisé",
+                        "Voix synthétisée réaliste"
+                      ]
+                    }
+                  ]
+                })}
+              >
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-lg blur-xl opacity-50 group-hover:opacity-75 transition-opacity duration-300" />
+                <div className="relative glass p-8 rounded-lg border border-white/10 hover:border-white/20 transition-colors duration-300">
+                  <div className="flex items-center gap-4 mb-6">
+                    <div className="relative w-16 h-16 bg-white/5 rounded-full p-2">
+                      <Image
+                        src="https://play-lh.googleusercontent.com/eLFM1GELLZrKL849EB3b9o-91dJ7wWLJ535-3tz3QE-lzv3XZu26aYAiyxMVxOVG19w"
+                        alt="Excelia Logo"
+                        fill
+                        className="object-contain"
+                        sizes="(max-width: 64px) 100vw, 64px"
+                      />
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="text-xl font-semibold bg-clip-text text-transparent bg-gradient-to-r from-white to-white/80">
+                        Stage Excelia
+                      </h3>
+                      <p className="text-gray-400 text-sm">Janvier 2025 — Mars 2025</p>
+                    </div>
+                  </div>
+                  
+                  <p className="text-gray-300 mb-6">
+                    Stage au sein d'Excelia, axé sur le développement d'applications innovantes pour améliorer l'expérience étudiante.
+                  </p>
+                  
+                  <div className="mb-6">
+                    <h4 className="text-sm font-medium text-gray-400 mb-3">Technologies principales :</h4>
+                    <div className="flex flex-wrap gap-2">
+                      <span className="px-3 py-1 bg-white/5 rounded-full text-sm hover:bg-white/10 transition-colors flex items-center gap-2">
+                        <CodeBracketIcon className="w-4 h-4 text-secondary" />
+                        Next.js
+                      </span>
+                      <span className="px-3 py-1 bg-white/5 rounded-full text-sm hover:bg-white/10 transition-colors flex items-center gap-2">
+                        <CpuChipIcon className="w-4 h-4 text-secondary" />
+                        Elevenlabs API
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
 
-            {/* Stage Excelia 2 */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              viewport={{ once: true }}
-              className="relative group cursor-pointer"
-              onClick={() => setSelectedProfessionalProject({
-                title: "Stage Excelia",
-                period: "Mai 2024 — Juillet 2024",
-                description: "Stage de fin d'année chez Excelia, focalisé sur l'automatisation des processus, l'optimisation web et le développement d'outils d'assistance intelligents.",
-                technologies: [
-                  { name: "Python", icon: CommandLineIcon },
-                  { name: "Flask", icon: CodeBracketIcon },
-                  { name: "OpenAI GPT-4", icon: CpuChipIcon },
-                  { name: "Babylon.js", icon: CubeIcon },
-                  { name: "Blender API", icon: CodeBracketIcon },
-                  { name: "Base de données vectorielle", icon: CircleStackIcon },
-                  { name: "Architecture RAG", icon: ServerIcon }
-                ],
-                documents: [
-                  {
-                    title: "Convention de stage",
-                    path: "/internships/excelia-internship-agreement-2.pdf",
-                    type: "agreement"
-                  },
-                  {
-                    title: "Fiche de mission",
-                    path: "/internships/excelia-internship-mission-2.pdf",
-                    type: "mission"
-                  }
-                ],
-                projects: [
-                  {
-                    title: "Automatisation Blender 3D",
-                    description: "Développement de scripts Python pour automatiser des tâches répétitives dans Blender 3D, améliorant significativement le workflow de création 3D.",
-                    technologies: [
-                      { name: "Python", icon: CommandLineIcon },
-                      { name: "Blender API", icon: CodeBracketIcon }
-                    ],
-                    features: [
-                      "Automatisation des tâches répétitives",
-                      "Optimisation du workflow de modélisation",
-                      "Scripts personnalisables selon les besoins",
-                      "Interface utilisateur intégrée à Blender"
-                    ],
-                    image: "/projects/blender-automation.png"
-                  },
-                  {
-                    title: "Optimisation Plans Interactifs",
-                    description: "Optimisation des performances et refactorisation du code d'une application web utilisant Babylon.js pour l'affichage de plans interactifs en 3D.",
-                    technologies: [
-                      { name: "Babylon.js", icon: CubeIcon },
-                      { name: "JavaScript", icon: CodeBracketIcon },
-                      { name: "HTML5", icon: CodeBracketIcon },
-                      { name: "CSS3", icon: SwatchIcon }
-                    ],
-                    features: [
-                      "Amélioration des performances de rendu 3D",
-                      "Optimisation du chargement des ressources",
-                      "Interface interactive fluide",
-                      "Navigation intuitive dans les plans"
-                    ],
-                    image: "/projects/interactive-plans.png"
-                  },
-                  {
-                    title: "Chatbot Support Étudiant",
-                    description: "Développement d'un chatbot intelligent pour le support étudiant, utilisant l'IA pour fournir des réponses précises et personnalisées, réduisant le temps de recherche de 40%.",
-                    technologies: [
-                      { name: "Python/Flask", icon: CommandLineIcon },
-                      { name: "OpenAI GPT-4", icon: CpuChipIcon },
-                      { name: "Base de données vectorielle", icon: CircleStackIcon },
-                      { name: "Architecture RAG", icon: ServerIcon }
-                    ],
-                    features: [
-                      "Réponses en temps réel aux questions des étudiants",
-                      "Base de connaissances vectorielle pour recherche rapide",
-                      "Architecture RAG pour une meilleure précision",
-                      "Réduction de 40% du temps de recherche",
-                      "Interface web responsive"
-                    ]
-                  }
-                ]
-              })}
-            >
-              <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-lg blur-xl opacity-50 group-hover:opacity-75 transition-opacity duration-300" />
-              <div className="relative glass p-8 rounded-lg border border-white/10 hover:border-white/20 transition-colors duration-300">
-                <div className="flex items-center gap-4 mb-6">
-                  <div className="relative w-16 h-16 bg-white/5 rounded-full p-2">
-                    <Image
-                      src="https://play-lh.googleusercontent.com/eLFM1GELLZrKL849EB3b9o-91dJ7wWLJ535-3tz3QE-lzv3XZu26aYAiyxMVxOVG19w"
-                      alt="Excelia Logo"
-                      fill
-                      className="object-contain"
-                      sizes="(max-width: 64px) 100vw, 64px"
-                    />
+              {/* Stage Excelia 2 */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                viewport={{ once: true }}
+                className="relative group cursor-pointer"
+                onClick={() => setSelectedProfessionalProject({
+                  title: "Stage Excelia",
+                  period: "Mai 2024 — Juillet 2024",
+                  description: "Stage de fin d'année chez Excelia, focalisé sur l'automatisation des processus, l'optimisation web et le développement d'outils d'assistance intelligents.",
+                  technologies: [
+                    { name: "Python", icon: CommandLineIcon },
+                    { name: "Flask", icon: CodeBracketIcon },
+                    { name: "OpenAI GPT-4", icon: CpuChipIcon },
+                    { name: "Babylon.js", icon: CubeIcon },
+                    { name: "Blender API", icon: CodeBracketIcon },
+                    { name: "Base de données vectorielle", icon: CircleStackIcon },
+                    { name: "Architecture RAG", icon: ServerIcon }
+                  ],
+                  documents: [
+                    {
+                      title: "Convention de stage",
+                      path: "/internships/excelia-internship-agreement-2.pdf",
+                      type: "agreement"
+                    },
+                    {
+                      title: "Fiche de mission",
+                      path: "/internships/excelia-internship-mission-2.pdf",
+                      type: "mission"
+                    }
+                  ],
+                  projects: [
+                    {
+                      title: "Automatisation Blender 3D",
+                      description: "Développement de scripts Python pour automatiser des tâches répétitives dans Blender 3D, améliorant significativement le workflow de création 3D.",
+                      technologies: [
+                        { name: "Python", icon: CommandLineIcon },
+                        { name: "Blender API", icon: CodeBracketIcon }
+                      ],
+                      features: [
+                        "Automatisation des tâches répétitives",
+                        "Optimisation du workflow de modélisation",
+                        "Scripts personnalisables selon les besoins",
+                        "Interface utilisateur intégrée à Blender"
+                      ],
+                      image: "/projects/blender-automation.png"
+                    },
+                    {
+                      title: "Optimisation Plans Interactifs",
+                      description: "Optimisation des performances et refactorisation du code d'une application web utilisant Babylon.js pour l'affichage de plans interactifs en 3D.",
+                      technologies: [
+                        { name: "Babylon.js", icon: CubeIcon },
+                        { name: "JavaScript", icon: CodeBracketIcon },
+                        { name: "HTML5", icon: CodeBracketIcon },
+                        { name: "CSS3", icon: SwatchIcon }
+                      ],
+                      features: [
+                        "Amélioration des performances de rendu 3D",
+                        "Optimisation du chargement des ressources",
+                        "Interface interactive fluide",
+                        "Navigation intuitive dans les plans"
+                      ],
+                      image: "/projects/interactive-plans.png"
+                    },
+                    {
+                      title: "Chatbot Support Étudiant",
+                      description: "Développement d'un chatbot intelligent pour le support étudiant, utilisant l'IA pour fournir des réponses précises et personnalisées, réduisant le temps de recherche de 40%.",
+                      technologies: [
+                        { name: "Python/Flask", icon: CommandLineIcon },
+                        { name: "OpenAI GPT-4", icon: CpuChipIcon },
+                        { name: "Base de données vectorielle", icon: CircleStackIcon },
+                        { name: "Architecture RAG", icon: ServerIcon }
+                      ],
+                      features: [
+                        "Réponses en temps réel aux questions des étudiants",
+                        "Base de connaissances vectorielle pour recherche rapide",
+                        "Architecture RAG pour une meilleure précision",
+                        "Réduction de 40% du temps de recherche",
+                        "Interface web responsive"
+                      ]
+                    }
+                  ]
+                })}
+              >
+                <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-lg blur-xl opacity-50 group-hover:opacity-75 transition-opacity duration-300" />
+                <div className="relative glass p-8 rounded-lg border border-white/10 hover:border-white/20 transition-colors duration-300">
+                  <div className="flex items-center gap-4 mb-6">
+                    <div className="relative w-16 h-16 bg-white/5 rounded-full p-2">
+                      <Image
+                        src="https://play-lh.googleusercontent.com/eLFM1GELLZrKL849EB3b9o-91dJ7wWLJ535-3tz3QE-lzv3XZu26aYAiyxMVxOVG19w"
+                        alt="Excelia Logo"
+                        fill
+                        className="object-contain"
+                        sizes="(max-width: 64px) 100vw, 64px"
+                      />
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="text-xl font-semibold bg-clip-text text-transparent bg-gradient-to-r from-white to-white/80">
+                        Stage Excelia
+                      </h3>
+                      <p className="text-gray-400 text-sm">Mai 2024 — Juillet 2024</p>
+                    </div>
                   </div>
-                  <div className="flex-1">
-                    <h3 className="text-xl font-semibold bg-clip-text text-transparent bg-gradient-to-r from-white to-white/80">
-                      Stage Excelia
-                    </h3>
-                    <p className="text-gray-400 text-sm">Mai 2024 — Juillet 2024</p>
+                  
+                  <p className="text-gray-300 mb-6">
+                    Stage de fin d'année chez Excelia, focalisé sur l'automatisation des processus, l'optimisation web et le développement d'outils d'assistance intelligents.
+                  </p>
+                  
+                  <div className="mb-6">
+                    <h4 className="text-sm font-medium text-gray-400 mb-3">Technologies principales :</h4>
+                    <div className="flex flex-wrap gap-2">
+                      <span className="px-3 py-1 bg-white/5 rounded-full text-sm hover:bg-white/10 transition-colors flex items-center gap-2">
+                        <CommandLineIcon className="w-4 h-4 text-secondary" />
+                        Python
+                      </span>
+                      <span className="px-3 py-1 bg-white/5 rounded-full text-sm hover:bg-white/10 transition-colors flex items-center gap-2">
+                        <CodeBracketIcon className="w-4 h-4 text-secondary" />
+                        Flask
+                      </span>
+                      <span className="px-3 py-1 bg-white/5 rounded-full text-sm hover:bg-white/10 transition-colors flex items-center gap-2">
+                        <CpuChipIcon className="w-4 h-4 text-secondary" />
+                        OpenAI GPT-4
+                      </span>
+                      <span className="px-3 py-1 bg-white/5 rounded-full text-sm hover:bg-white/10 transition-colors flex items-center gap-2">
+                        <CubeIcon className="w-4 h-4 text-secondary" />
+                        Babylon.js
+                      </span>
+                      <span className="px-3 py-1 bg-white/5 rounded-full text-sm hover:bg-white/10 transition-colors flex items-center gap-2">
+                        <CodeBracketIcon className="w-4 h-4 text-secondary" />
+                        Blender API
+                      </span>
+                    </div>
                   </div>
                 </div>
-                
-                <p className="text-gray-300 mb-6">
-                  Stage de fin d'année chez Excelia, focalisé sur l'automatisation des processus, l'optimisation web et le développement d'outils d'assistance intelligents.
-                </p>
-                
-                <div className="mb-6">
-                  <h4 className="text-sm font-medium text-gray-400 mb-3">Technologies principales :</h4>
-                  <div className="flex flex-wrap gap-2">
-                    <span className="px-3 py-1 bg-white/5 rounded-full text-sm hover:bg-white/10 transition-colors flex items-center gap-2">
-                      <CommandLineIcon className="w-4 h-4 text-secondary" />
-                      Python
-                    </span>
-                    <span className="px-3 py-1 bg-white/5 rounded-full text-sm hover:bg-white/10 transition-colors flex items-center gap-2">
-                      <CodeBracketIcon className="w-4 h-4 text-secondary" />
-                      Flask
-                    </span>
-                    <span className="px-3 py-1 bg-white/5 rounded-full text-sm hover:bg-white/10 transition-colors flex items-center gap-2">
-                      <CpuChipIcon className="w-4 h-4 text-secondary" />
-                      OpenAI GPT-4
-                    </span>
-                    <span className="px-3 py-1 bg-white/5 rounded-full text-sm hover:bg-white/10 transition-colors flex items-center gap-2">
-                      <CubeIcon className="w-4 h-4 text-secondary" />
-                      Babylon.js
-                    </span>
-                    <span className="px-3 py-1 bg-white/5 rounded-full text-sm hover:bg-white/10 transition-colors flex items-center gap-2">
-                      <CodeBracketIcon className="w-4 h-4 text-secondary" />
-                      Blender API
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
+              </motion.div>
+            </div>
           </div>
         </div>
         <h2 className="text-4xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-white via-secondary to-white text-center">

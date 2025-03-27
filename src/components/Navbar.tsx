@@ -7,11 +7,11 @@ const navItems = [
   { name: 'Accueil', href: '#' },
   { name: 'À propos', href: '#about' },
   { name: 'Formation', href: '#formation' },
+  { name: 'Stages', href: '#stages' },
   { name: 'Projets Pro', href: '#projets-pro' },
   { name: 'Projets', href: '#projets' },
   { name: 'Certifications', href: '#certifications' },
   { name: 'Compétences', href: '#competences' },
-  { name: 'Contact', href: '#contact' }
 ];
 
 const Navbar = () => {

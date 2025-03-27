@@ -164,18 +164,7 @@ const Hero = () => {
               >
                 Voir mes projets
               </motion.a>
-              <motion.a 
-                href="#contact"
-                className="px-8 py-3 border border-white/10 rounded-full text-white/80 font-medium transition-all duration-300"
-                whileHover={{ 
-                  scale: 1.05,
-                  backgroundColor: "rgba(255, 255, 255, 0.05)",
-                  borderColor: "rgba(255, 255, 255, 0.2)",
-                }}
-                whileTap={{ scale: 0.95 }}
-              >
-                Me contacter
-              </motion.a>
+              
             </motion.div>
           </div>
         </div>
