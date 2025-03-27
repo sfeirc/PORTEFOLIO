@@ -10,7 +10,14 @@ import {
   ServerIcon, 
   AcademicCapIcon,
   XMarkIcon,
-  ArrowPathIcon
+  ArrowPathIcon,
+  CodeBracketIcon, 
+  CommandLineIcon, 
+  CpuChipIcon, 
+  CloudIcon, 
+  CubeIcon,
+  CircleStackIcon,
+  SwatchIcon
 } from '@heroicons/react/24/outline';
 
 interface Skill {
@@ -24,10 +31,11 @@ interface Skill {
 interface Project {
   id: string;
   title: string;
-  skills: string[];
-  skillDetails: {
-    [key: string]: string;
-  };
+  description: string;
+  technologies: { name: string; icon: React.ComponentType<React.SVGProps<SVGSVGElement>> }[];
+  features: string[];
+  skills: { name: string; description: string }[];
+  isInternship?: boolean;
 }
 
 const skills: Skill[] = [
@@ -76,143 +84,482 @@ const skills: Skill[] = [
 ];
 
 const projects: Project[] = [
+  // Internship Projects
   {
-    id: 'chatbot',
-    title: 'Chatbot Support Étudiant',
-    skills: ['incidents', 'presence', 'service'],
-    skillDetails: {
-      incidents: 'Développement d\'un système de support automatisé pour répondre aux demandes des étudiants 24/7',
-      presence: 'Création d\'une interface de chat moderne et professionnelle pour l\'organisation',
-      service: 'Mise en place d\'un service de support étudiant accessible et efficace'
-    }
+    id: 'automatisation-blender-3d',
+    title: 'Automatisation Blender 3D',
+    description: 'Développement de scripts Python pour automatiser des tâches répétitives dans Blender 3D, améliorant significativement le workflow de création 3D.',
+    technologies: [
+      { name: 'Python', icon: CommandLineIcon },
+      { name: 'Blender API', icon: CodeBracketIcon }
+    ],
+    features: [
+      'Automatisation des tâches répétitives',
+      'Optimisation du workflow de modélisation',
+      'Scripts personnalisables selon les besoins',
+      'Interface utilisateur intégrée à Blender'
+    ],
+    skills: [
+      {
+        name: 'Travailler en mode projet',
+        description: 'Développement de solutions d\'automatisation pour améliorer la productivité'
+      },
+      {
+        name: 'Gérer le patrimoine informatique',
+        description: 'Optimisation des processus de création 3D et gestion des ressources'
+      }
+    ],
+    isInternship: true
   },
+  {
+    id: 'optimisation-plans-interactifs',
+    title: 'Optimisation Plans Interactifs',
+    description: 'Optimisation des performances et refactorisation du code d\'une application web utilisant Babylon.js pour l\'affichage de plans interactifs en 3D.',
+    technologies: [
+      { name: 'Babylon.js', icon: CubeIcon },
+      { name: 'JavaScript', icon: CodeBracketIcon },
+      { name: 'HTML5', icon: CodeBracketIcon },
+      { name: 'CSS3', icon: SwatchIcon }
+    ],
+    features: [
+      'Amélioration des performances de rendu 3D',
+      'Optimisation du chargement des ressources',
+      'Interface interactive fluide',
+      'Navigation intuitive dans les plans'
+    ],
+    skills: [
+      {
+        name: 'Travailler en mode projet',
+        description: 'Optimisation et refactorisation de code existant'
+      },
+      {
+        name: 'Mettre à disposition un service informatique',
+        description: 'Amélioration des performances et de l\'expérience utilisateur'
+      }
+    ],
+    isInternship: true
+  },
+  {
+    id: 'chatbot-support-etudiant',
+    title: 'Chatbot Support Étudiant',
+    description: 'Développement d\'un chatbot intelligent pour le support étudiant, utilisant l\'IA pour fournir des réponses précises et personnalisées, réduisant le temps de recherche de 40%.',
+    technologies: [
+      { name: 'Python/Flask', icon: CommandLineIcon },
+      { name: 'OpenAI GPT-4', icon: CpuChipIcon },
+      { name: 'Base de données vectorielle', icon: CircleStackIcon },
+      { name: 'Architecture RAG', icon: ServerIcon }
+    ],
+    features: [
+      'Réponses en temps réel aux questions des étudiants',
+      'Base de connaissances vectorielle pour recherche rapide',
+      'Architecture RAG pour une meilleure précision',
+      'Réduction de 40% du temps de recherche',
+      'Interface web responsive'
+    ],
+    skills: [
+      {
+        name: 'Travailler en mode projet',
+        description: 'Développement d\'une solution d\'IA pour le support étudiant'
+      },
+      {
+        name: 'Répondre aux incidents',
+        description: 'Automatisation des réponses aux questions fréquentes'
+      },
+      {
+        name: 'Développer la présence en ligne',
+        description: 'Amélioration de l\'expérience utilisateur via IA'
+      }
+    ],
+    isInternship: true
+  },
+  {
+    id: 'chatbot-intelligent-with-openai',
+    title: 'Chatbot intelligent avec OpenAI',
+    description: 'Développement d\'un chatbot bilingue avec fonctionnalités administratives avancées pour gérer des documents et affiner les modèles IA.',
+    technologies: [
+      { name: 'Python/Flask', icon: CommandLineIcon },
+      { name: 'JavaScript', icon: CodeBracketIcon },
+      { name: 'OpenAI API', icon: CpuChipIcon },
+      { name: 'Google Cloud Storage', icon: CloudIcon }
+    ],
+    features: [
+      'Interface de chat bilingue (FR/EN)',
+      'Panneau d\'administration pour la gestion des documents',
+      'Fine-tuning GPT-4 et o1-mini',
+      'Interface responsive avec précision optimisée'
+    ],
+    skills: [
+      {
+        name: 'Travailler en mode projet',
+        description: 'Projet collaboratif impliquant plusieurs technologies'
+      },
+      {
+        name: 'Développer la présence en ligne',
+        description: 'Améliore l\'interaction et l\'expérience utilisateur'
+      },
+      {
+        name: 'Répondre aux incidents',
+        description: 'Automatisation du support client via chatbot'
+      }
+    ],
+    isInternship: true
+  },
+  {
+    id: 'simulation-entretien',
+    title: 'Simulation entretien en temps réel',
+    description: 'Application de simulation d\'entretiens avec feedback personnalisé pour améliorer les compétences professionnelles.',
+    technologies: [
+      { name: 'React', icon: CodeBracketIcon },
+      { name: 'Node.js', icon: ServerIcon },
+      { name: 'OpenAI API', icon: CpuChipIcon }
+    ],
+    features: [
+      'Simulation vocale réaliste',
+      'Feedback personnalisé',
+      'Interface moderne',
+      'Design responsive'
+    ],
+    skills: [
+      {
+        name: 'Organiser son développement professionnel',
+        description: 'Amélioration des compétences professionnelles'
+      },
+      {
+        name: 'Mettre à disposition un service informatique',
+        description: 'Simulations personnalisées accessibles'
+      }
+    ],
+    isInternship: true
+  },
+  // Regular Projects
   {
     id: 'meteo',
     title: 'Application Web Météo',
-    skills: ['presence', 'projet', 'service'],
-    skillDetails: {
-      presence: 'Développement d\'une application web responsive avec une interface utilisateur moderne',
-      projet: 'Participation à un projet de compétition avec méthodologie agile',
-      service: 'Création d\'un service météo accessible et fiable pour les utilisateurs'
-    }
+    description: 'Développement d\'une application web responsive avec une interface utilisateur moderne pour afficher les informations météorologiques.',
+    technologies: [
+      { name: 'React', icon: CodeBracketIcon },
+      { name: 'API Météo', icon: CloudIcon }
+    ],
+    features: [
+      'Interface utilisateur moderne et responsive',
+      'Affichage en temps réel des données météo',
+      'Prévisions météorologiques',
+      'Design adaptatif'
+    ],
+    skills: [
+      {
+        name: 'Travailler en mode projet',
+        description: 'Réalisation rapide en équipe pour un concours'
+      },
+      {
+        name: 'Développer la présence en ligne',
+        description: 'Visibilité augmentée par une interface innovante'
+      }
+    ]
   },
   {
     id: 'stages',
     title: 'Logiciel de gestion des stages',
-    skills: ['patrimoine', 'service', 'projet'],
-    skillDetails: {
-      patrimoine: 'Gestion et maintenance d\'une base de données des stages et étudiants',
-      service: 'Développement d\'une application complète pour la gestion des stages',
-      projet: 'Conception et réalisation d\'un projet de grande envergure'
-    }
+    description: 'Développement d\'une application complète pour la gestion des stages, incluant la sécurisation et la gestion centralisée des données.',
+    technologies: [
+      { name: 'React', icon: CodeBracketIcon },
+      { name: 'Node.js', icon: ServerIcon },
+      { name: 'MongoDB', icon: CircleStackIcon }
+    ],
+    features: [
+      'Gestion centralisée des stages',
+      'Interface utilisateur intuitive',
+      'Système de notifications',
+      'Tableau de bord administrateur'
+    ],
+    skills: [
+      {
+        name: 'Gérer le patrimoine informatique',
+        description: 'Sécurisation et gestion centralisée des données'
+      },
+      {
+        name: 'Mettre à disposition un service informatique',
+        description: 'Outil pratique pour utilisateurs'
+      },
+      {
+        name: 'Répondre aux incidents',
+        description: 'Assistance intégrée aux utilisateurs'
+      }
+    ]
   },
   {
     id: 'films',
-    title: 'Interface de gestion des films',
-    skills: ['patrimoine', 'projet'],
-    skillDetails: {
-      patrimoine: 'Gestion d\'une base de données de films et d\'acteurs',
-      projet: 'Développement d\'une application de gestion de contenu'
-    }
+    title: 'Interface gestion films récents',
+    description: 'Application de gestion de contenu cinématographique avec accès facilité aux données et gestion efficace des informations structurées.',
+    technologies: [
+      { name: 'React', icon: CodeBracketIcon },
+      { name: 'Node.js', icon: ServerIcon },
+      { name: 'PostgreSQL', icon: CircleStackIcon }
+    ],
+    features: [
+      'Base de données de films',
+      'Interface de recherche avancée',
+      'Gestion des favoris',
+      'Système de notation'
+    ],
+    skills: [
+      {
+        name: 'Mettre à disposition un service informatique',
+        description: 'Accès facilité à des données cinématographiques'
+      },
+      {
+        name: 'Gérer le patrimoine informatique',
+        description: 'Gestion efficace des données structurées'
+      }
+    ]
   },
   {
     id: 'location',
-    title: 'Application de location',
-    skills: ['service', 'projet'],
-    skillDetails: {
-      service: 'Création d\'une plateforme de réservation de véhicules',
-      projet: 'Développement d\'une application web complète'
-    }
+    title: 'Application Web de location voitures',
+    description: 'Plateforme de réservation de véhicules avec une interface simple et intuitive, optimisée pour la gestion des réservations.',
+    technologies: [
+      { name: 'React', icon: CodeBracketIcon },
+      { name: 'Node.js', icon: ServerIcon },
+      { name: 'MongoDB', icon: CircleStackIcon }
+    ],
+    features: [
+      'Système de réservation en ligne',
+      'Gestion des disponibilités',
+      'Paiement sécurisé',
+      'Interface utilisateur intuitive'
+    ],
+    skills: [
+      {
+        name: 'Travailler en mode projet',
+        description: 'Division du développement (front/back-end)'
+      },
+      {
+        name: 'Mettre à disposition un service informatique',
+        description: 'Plateforme simple et intuitive'
+      },
+      {
+        name: 'Gérer le patrimoine informatique',
+        description: 'Gestion optimale des réservations'
+      }
+    ]
   },
   {
     id: 'readme',
-    title: 'Générateur de README',
-    skills: ['presence', 'projet'],
-    skillDetails: {
-      presence: 'Création d\'un outil pour améliorer la documentation en ligne',
-      projet: 'Développement d\'un outil collaboratif'
-    }
+    title: 'Générateur avancé de README',
+    description: 'Outil pour simplifier la création de documentation technique avec une interface utilisateur intuitive.',
+    technologies: [
+      { name: 'React', icon: CodeBracketIcon },
+      { name: 'Node.js', icon: ServerIcon }
+    ],
+    features: [
+      'Génération automatique de README',
+      'Templates personnalisables',
+      'Prévisualisation en temps réel',
+      'Export en Markdown'
+    ],
+    skills: [
+      {
+        name: 'Organiser son développement professionnel',
+        description: 'Simplification de documentation technique'
+      },
+      {
+        name: 'Mettre à disposition un service informatique',
+        description: 'Facilité d\'utilisation'
+      }
+    ]
   },
   {
     id: 'pokemon',
-    title: 'API Pokémon',
-    skills: ['service', 'projet'],
-    skillDetails: {
-      service: 'Développement d\'une API publique pour les données Pokémon',
-      projet: 'Création d\'un service de données interactif'
-    }
-  },
-  {
-    id: 'entretien',
-    title: 'Simulation d\'entretien',
-    skills: ['developpement', 'projet'],
-    skillDetails: {
-      developpement: 'Développement d\'un outil de préparation aux entretiens',
-      projet: 'Création d\'une application d\'apprentissage'
-    }
+    title: 'API Pokémon (Pokédex)',
+    description: 'API publique pour les données Pokémon avec visualisation interactive des informations.',
+    technologies: [
+      { name: 'Node.js', icon: ServerIcon },
+      { name: 'Express', icon: CodeBracketIcon },
+      { name: 'MongoDB', icon: CircleStackIcon }
+    ],
+    features: [
+      'API RESTful',
+      'Documentation Swagger',
+      'Visualisation des données',
+      'Recherche avancée'
+    ],
+    skills: [
+      {
+        name: 'Travailler en mode projet',
+        description: 'Approche agile et collaborative'
+      },
+      {
+        name: 'Mettre à disposition un service informatique',
+        description: 'Visualisation interactive des données'
+      }
+    ]
   },
   {
     id: 'combat',
-    title: 'Jeu de combat',
-    skills: ['projet', 'developpement'],
-    skillDetails: {
-      projet: 'Développement d\'un jeu multiplateforme',
-      developpement: 'Création d\'un projet de jeu complet'
-    }
+    title: 'Jeu de combat interactif',
+    description: 'Jeu de combat multiplateforme avec des fonctionnalités ludiques développées en équipe.',
+    technologies: [
+      { name: 'Unity', icon: CubeIcon },
+      { name: 'C#', icon: CodeBracketIcon }
+    ],
+    features: [
+      'Mode multijoueur',
+      'Système de combat',
+      'Animations fluides',
+      'Interface utilisateur intuitive'
+    ],
+    skills: [
+      {
+        name: 'Travailler en mode projet',
+        description: 'Développement en équipe de fonctionnalités ludiques'
+      },
+      {
+        name: 'Mettre à disposition un service informatique',
+        description: 'Jeu interactif multiplateforme'
+      }
+    ]
   },
   {
     id: 'cercle',
-    title: 'Jeu du cercle parfait',
-    skills: ['projet', 'developpement'],
-    skillDetails: {
-      projet: 'Développement d\'un jeu web interactif',
-      developpement: 'Création d\'un projet de jeu web'
-    }
+    title: 'Jeu Web du cercle parfait',
+    description: 'Jeu web interactif innovant attirant des utilisateurs avec un concept unique.',
+    technologies: [
+      { name: 'JavaScript', icon: CodeBracketIcon },
+      { name: 'HTML5 Canvas', icon: CodeBracketIcon }
+    ],
+    features: [
+      'Interface intuitive',
+      'Système de score',
+      'Animations fluides',
+      'Design responsive'
+    ],
+    skills: [
+      {
+        name: 'Développer la présence en ligne',
+        description: 'Contenu interactif innovant attirant des utilisateurs'
+      }
+    ]
   },
   {
     id: 'bataille',
-    title: 'Bataille navale',
-    skills: ['projet', 'developpement'],
-    skillDetails: {
-      projet: 'Développement d\'un jeu classique',
-      developpement: 'Création d\'un projet de jeu en C++'
-    }
+    title: 'Bataille navale C++ (IA)',
+    description: 'Jeu de bataille navale avec intégration d\'IA avancée pour une expérience de jeu enrichie.',
+    technologies: [
+      { name: 'C++', icon: CodeBracketIcon },
+      { name: 'OpenGL', icon: CubeIcon }
+    ],
+    features: [
+      'IA avancée',
+      'Interface graphique',
+      'Mode multijoueur',
+      'Système de difficulté'
+    ],
+    skills: [
+      {
+        name: 'Travailler en mode projet',
+        description: 'Intégration de stratégies et IA avancée'
+      },
+      {
+        name: 'Mettre à disposition un service informatique',
+        description: 'Jeu local accessible aux utilisateurs'
+      }
+    ]
   },
   {
     id: 'demineur',
-    title: 'Démineur Python',
-    skills: ['projet', 'developpement'],
-    skillDetails: {
-      projet: 'Développement d\'un jeu de logique',
-      developpement: 'Création d\'un projet de jeu en Python'
-    }
+    title: 'Démineur Python (Tkinter)',
+    description: 'Jeu de démineur avec interface graphique développée avec Tkinter.',
+    technologies: [
+      { name: 'Python', icon: CommandLineIcon },
+      { name: 'Tkinter', icon: CodeBracketIcon }
+    ],
+    features: [
+      'Interface graphique',
+      'Différents niveaux de difficulté',
+      'Système de score',
+      'Design classique'
+    ],
+    skills: [
+      {
+        name: 'Mettre à disposition un service informatique',
+        description: 'Jeu interactif facile à utiliser et configurable'
+      }
+    ]
   },
   {
     id: 'vtt',
-    title: 'Station de recharge VTT',
-    skills: ['patrimoine', 'developpement'],
-    skillDetails: {
-      patrimoine: 'Développement d\'un système de gestion d\'énergie',
-      developpement: 'Création d\'un projet IoT'
-    }
+    title: 'Station recharge VTT solaire',
+    description: 'Système de gestion d\'énergie autonome pour station de recharge VTT.',
+    technologies: [
+      { name: 'Arduino', icon: CpuChipIcon },
+      { name: 'C++', icon: CodeBracketIcon }
+    ],
+    features: [
+      'Gestion énergétique',
+      'Monitoring en temps réel',
+      'Interface utilisateur',
+      'Système de sécurité'
+    ],
+    skills: [
+      {
+        name: 'Gérer le patrimoine informatique',
+        description: 'Gestion énergétique autonome et optimisée'
+      },
+      {
+        name: 'Travailler en mode projet',
+        description: 'Intégration matérielle et logicielle pour efficacité énergétique'
+      }
+    ]
   },
   {
     id: 'robot',
-    title: 'Bras robotique',
-    skills: ['patrimoine', 'developpement'],
-    skillDetails: {
-      patrimoine: 'Développement d\'un système de contrôle robotique',
-      developpement: 'Création d\'un projet de robotique'
-    }
+    title: 'Bras robotique commandé à distance',
+    description: 'Système de contrôle robotique avec commande à distance précise.',
+    technologies: [
+      { name: 'Arduino', icon: CpuChipIcon },
+      { name: 'C++', icon: CodeBracketIcon }
+    ],
+    features: [
+      'Contrôle à distance',
+      'Interface utilisateur',
+      'Calibration',
+      'Système de sécurité'
+    ],
+    skills: [
+      {
+        name: 'Mettre à disposition un service informatique',
+        description: 'Contrôle distant précis'
+      },
+      {
+        name: 'Travailler en mode projet',
+        description: 'Développement combiné de mécanique et électronique'
+      }
+    ]
   },
   {
     id: 'transport',
-    title: 'Véhicule de transport',
-    skills: ['patrimoine', 'developpement'],
-    skillDetails: {
-      patrimoine: 'Développement d\'un système de navigation autonome',
-      developpement: 'Création d\'un projet d\'automatisation'
-    }
+    title: 'Véhicule transport ligne Arduino',
+    description: 'Système de navigation autonome pour véhicule de transport sur ligne.',
+    technologies: [
+      { name: 'Arduino', icon: CpuChipIcon },
+      { name: 'C++', icon: CodeBracketIcon }
+    ],
+    features: [
+      'Navigation autonome',
+      'Détection d\'obstacles',
+      'Interface de contrôle',
+      'Système de sécurité'
+    ],
+    skills: [
+      {
+        name: 'Gérer le patrimoine informatique',
+        description: 'Optimisation logicielle et matérielle du véhicule'
+      },
+      {
+        name: 'Travailler en mode projet',
+        description: 'Utilisation de multiples technologies pour atteindre les objectifs du projet'
+      }
+    ]
   }
 ];
 
@@ -272,13 +619,24 @@ const ProjectSkillsMatrix: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
               viewport={{ once: true }}
-              className="grid grid-cols-[200px_repeat(6,1fr)] gap-4 mb-4"
+              className={`grid grid-cols-[200px_repeat(6,1fr)] gap-4 mb-4 ${
+                project.isInternship ? 'bg-secondary/5 rounded-lg p-2' : ''
+              }`}
             >
-              <div className="glass p-3 rounded-lg border border-white/10">
-                <span className="text-sm font-medium">{project.title}</span>
+              <div className={`glass p-3 rounded-lg border ${
+                project.isInternship ? 'border-secondary/50' : 'border-white/10'
+              }`}>
+                <div className="flex items-center gap-2">
+                  <span className="text-sm font-medium">{project.title}</span>
+                  {project.isInternship && (
+                    <span className="px-2 py-0.5 bg-secondary/20 text-secondary text-xs rounded-full">
+                      Stage
+                    </span>
+                  )}
+                </div>
               </div>
               {skills.map((skill) => {
-                const hasSkill = project.skills.includes(skill.id);
+                const hasSkill = project.skills.some((s) => s.name === skill.title);
                 return (
                   <motion.div
                     key={skill.id}
@@ -356,7 +714,7 @@ const ProjectSkillsMatrix: React.FC = () => {
                 <h4 className="text-sm font-medium text-gray-400 mb-3">Projets liés :</h4>
                 <div className="flex flex-wrap gap-2">
                   {projects
-                    .filter(project => project.skills.includes(selectedSkill.id))
+                    .filter(project => project.skills.some((s) => s.name === selectedSkill.title))
                     .map(project => (
                       <span
                         key={project.id}
@@ -427,7 +785,7 @@ const ProjectSkillsMatrix: React.FC = () => {
                 <div>
                   <h4 className="text-sm font-medium text-gray-400 mb-2">Application dans le projet :</h4>
                   <p className="text-gray-300">
-                    {selectedProject.skillDetails[selectedProjectSkill]}
+                    {selectedProject.skills.find(s => s.name === selectedSkillData.title)?.description}
                   </p>
                 </div>
 
