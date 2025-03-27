@@ -5,8 +5,8 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Clovis SFEIR | Portfolio Créatif",
-  description: "Bienvenue sur mon portfolio créatif présentant mes projets et compétences",
+  title: "Clovis SFEIR | Portfolio",
+  description: "Bienvenue sur mon portfolio présentant mes projets et compétences",
 };
 
 export default function RootLayout({
