@@ -10,13 +10,10 @@ import {
   ServerIcon, 
   AcademicCapIcon,
   CodeBracketIcon,
-  CommandLineIcon,
   CpuChipIcon,
   CloudIcon,
-  DocumentTextIcon,
   CircleStackIcon,
   BeakerIcon,
-  CommandLineIcon as TerminalIcon,
   CloudArrowUpIcon,
   SwatchIcon,
   ServerIcon as DatabaseIcon,
@@ -24,7 +21,6 @@ import {
   CommandLineIcon as GitIcon,
   CommandLineIcon as DockerIcon,
   CommandLineIcon as ApiIcon,
-  AcademicCapIcon as CertificationIcon,
   ShieldCheckIcon,
   CpuChipIcon as AiIcon,
   CodeBracketIcon as ProgrammingIcon
@@ -327,6 +323,50 @@ const About = () => {
               Je combine mes compétences techniques avec une approche créative pour développer des solutions innovantes. Mon expertise couvre le développement front-end et back-end, avec une attention particulière portée à l'expérience utilisateur et aux performances.
             </p>
                       </motion.div>
+        </div>
+
+        {/* Competencies Section */}
+        <div className="mt-20">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h3 className="text-2xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-white via-secondary to-white">
+              Compétences BTS SIO
+            </h3>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {competencies.map((competency) => (
+              <motion.div
+                key={competency.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+                viewport={{ once: true }}
+                className="glass p-6 rounded-lg border border-white/10 hover:border-white/20 transition-colors duration-300"
+              >
+                <div className="flex items-center gap-2 mb-4">
+                  <competency.icon className="w-6 h-6 text-secondary" />
+                  <h4 className="text-lg font-semibold">{competency.title}</h4>
+                </div>
+                <p className="text-gray-300 mb-4">{competency.description}</p>
+                <div className="flex flex-wrap gap-2">
+                  {competency.projects.map((project) => (
+                    <span
+                      key={project}
+                      className="px-3 py-1 bg-white/5 rounded-full text-sm hover:bg-white/10 transition-colors"
+                    >
+                      {project}
+                    </span>
+                  ))}
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
 
         {/* Certifications Section */}
