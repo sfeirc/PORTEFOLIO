@@ -1,6 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: 'export',
+  basePath: process.env.NODE_ENV === 'production' ? '/PORTEFOLIO-1' : '',
   images: {
+    unoptimized: true,
     remotePatterns: [
       {
         protocol: 'https',
