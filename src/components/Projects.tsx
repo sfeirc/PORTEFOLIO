@@ -11,7 +11,6 @@ import {
   CloudIcon,
   CpuChipIcon,
   WrenchScrewdriverIcon,
-  CommandLineIcon as TerminalIcon,
   CloudArrowUpIcon,
   SunIcon,
   BeakerIcon,
@@ -24,13 +23,14 @@ import {
   DocumentDuplicateIcon,
   GlobeAltIcon,
   SparklesIcon,
-  CommandLineIcon as CodeIcon,
   SwatchIcon,
   ServerIcon,
   ChartBarIcon,
   CubeIcon,
   CommandLineIcon as GameIcon,
-  LightBulbIcon
+  LightBulbIcon,
+  ArrowTopRightOnSquareIcon,
+  WindowIcon,
 } from '@heroicons/react/24/outline';
 import ProjectSkillsMatrix from './ProjectSkillsMatrix';
 import { useState, useEffect } from 'react';

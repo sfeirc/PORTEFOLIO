@@ -162,7 +162,6 @@ const certifications: Certification[] = [
 ];
 
 const About = () => {
-  const containerRef = useRef(null);
   const [selectedCertification, setSelectedCertification] = useState<Certification | null>(null);
 
   return (
