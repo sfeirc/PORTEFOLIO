@@ -1,0 +1,344 @@
+{
+  "skills": [
+    {
+      "id": "patrimoine",
+      "title": "Gérer le patrimoine informatique",
+      "icon": "ComputerDesktopIcon",
+      "description": "Gestion et maintenance des systèmes informatiques, optimisation des performances, et administration des bases de données.",
+      "color": "from-blue-500 to-indigo-500"
+    },
+    {
+      "id": "incidents",
+      "title": "Répondre aux incidents et demandes",
+      "icon": "WrenchScrewdriverIcon",
+      "description": "Support utilisateur, résolution de problèmes, et évolution des systèmes selon les besoins.",
+      "color": "from-green-500 to-emerald-500"
+    },
+    {
+      "id": "presence",
+      "title": "Développer la présence en ligne",
+      "icon": "GlobeAltIcon",
+      "description": "Création et maintenance de sites web, optimisation SEO, et gestion de la présence numérique.",
+      "color": "from-purple-500 to-pink-500"
+    },
+    {
+      "id": "projet",
+      "title": "Travailler en mode projet",
+      "icon": "UserGroupIcon",
+      "description": "Gestion de projet agile, collaboration d'équipe, et livraison dans les délais.",
+      "color": "from-orange-500 to-red-500"
+    },
+    {
+      "id": "service",
+      "title": "Mettre à disposition un service informatique",
+      "icon": "ServerIcon",
+      "description": "Développement de services informatiques, maintenance et support utilisateur.",
+      "color": "from-yellow-500 to-amber-500"
+    },
+    {
+      "id": "developpement",
+      "title": "Organiser son développement professionnel",
+      "icon": "AcademicCapIcon",
+      "description": "Formation continue, veille technologique, et développement professionnel.",
+      "color": "from-cyan-500 to-blue-500"
+    }
+  ],
+  
+  "competencies": [
+    {
+      "title": "Gérer le patrimoine informatique",
+      "icon": "ComputerDesktopIcon",
+      "description": "Mes projets démontrent ma capacité à gérer et maintenir des systèmes informatiques complexes. Par exemple, le Logiciel de gestion des stages et l'Interface de gestion des films récents montrent ma maîtrise de la gestion de bases de données, de la maintenance des systèmes et de l'optimisation des performances.",
+      "projects": ["Logiciel de gestion des stages", "Interface de gestion des films récents", "Station de recharge VTT solaire"]
+    },
+    {
+      "title": "Répondre aux incidents et demandes d'assistance et d'évolution",
+      "icon": "WrenchScrewdriverIcon",
+      "description": "À travers mes chatbots intelligents et mes applications web, j'ai développé des solutions pour répondre aux besoins des utilisateurs. Le Chatbot Support Étudiant, par exemple, réduit le temps de recherche de 40% en fournissant des réponses rapides et pertinentes.",
+      "projects": ["Chatbot Support Étudiant", "Chatbot intelligent avec OpenAI", "Application Web Météo"]
+    },
+    {
+      "title": "Développer la présence en ligne de l'organisation",
+      "icon": "GlobeAltIcon",
+      "description": "Mes projets web et mes applications en ligne montrent ma capacité à créer une présence numérique efficace. Le Générateur avancé de README et mes applications web démontrent ma maîtrise du développement front-end et de l'optimisation pour le web.",
+      "projects": ["Générateur avancé de README", "Application Web de location de voitures", "API Pokémon"]
+    },
+    {
+      "title": "Travailler en mode projet",
+      "icon": "UserGroupIcon",
+      "description": "Tous mes projets sont développés en suivant une méthodologie de projet structurée. Par exemple, le Jeu de combat interactif et le Démineur Python montrent ma capacité à planifier, développer et livrer des projets complets dans les délais.",
+      "projects": ["Jeu de combat interactif", "Démineur Python", "Bataille navale en C++"]
+    },
+    {
+      "title": "Mettre à disposition des utilisateurs un service informatique",
+      "icon": "ServerIcon",
+      "description": "Mes applications sont conçues pour être accessibles et utiles aux utilisateurs. L'Application Web Météo et le Logiciel de gestion des stages sont des exemples de services informatiques que j'ai développés pour répondre aux besoins spécifiques des utilisateurs.",
+      "projects": ["Application Web Météo", "Logiciel de gestion des stages", "Application Web de location de voitures"]
+    },
+    {
+      "title": "Organiser son développement professionnel",
+      "icon": "AcademicCapIcon",
+      "description": "Mon portfolio et mes projets démontrent mon engagement dans le développement continu de mes compétences. Les stages chez Excelia et le développement du Chatbot Support Étudiant montrent ma capacité à apprendre et à évoluer professionnellement.",
+      "projects": ["Stage Excelia", "Chatbot Support Étudiant", "Simulation d'entretien en temps réel"]
+    }
+  ],
+  
+  "education": [
+    {
+      "title": "BTS Services informatiques aux organisations",
+      "subtitle": "Option Solution logicielles et application métiers",
+      "school": "Lycée Fénelon, La Rochelle",
+      "period": "Septembre 2023 — juin 2025",
+      "description": "Formation spécialisée en développement de solutions informatiques et applications métiers. (SLAM)",
+      "image": "https://fenelon-notredame.com/wp-content/uploads/2022/01/logo-Fenelon-Notre-Dame-ensemble-scolaire-La-Rochelle.jpg",
+      "skills": [
+        { "name": "Développement Web", "icon": "CodeBracketIcon" },
+        { "name": "Solutions Métiers", "icon": "WrenchScrewdriverIcon" },
+        { "name": "Base de données", "icon": "CloudIcon" }
+      ],
+      "keyPoints": [
+        "Formation en développement logiciel",
+        "Projets pratiques en entreprise",
+        "Spécialisation en solutions métiers"
+      ]
+    },
+    {
+      "title": "Baccalauréat Sciences et Technologies de l'Industrie et du Développement Durable",
+      "subtitle": "Option Systèmes d'Information et Numérique",
+      "school": "Lycée Ort, Strasbourg",
+      "period": "Septembre 2020 — juin 2022",
+      "description": "Formation initiale en systèmes d'information et développement numérique. (SIN)",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGlU0V7uj5tiA1arTvtYqyVFwzOrTeFFaysg&s",
+      "skills": [
+        { "name": "Programmation", "icon": "CodeBracketIcon" },
+        { "name": "Systèmes d'Information", "icon": "CpuChipIcon" },
+        { "name": "Développement Durable", "icon": "CloudArrowUpIcon" }
+      ],
+      "keyPoints": [
+        "Fondamentaux de la programmation",
+        "Conception de systèmes d'information",
+        "Approche développement durable"
+      ]
+    }
+  ],
+  
+  "certifications": [
+    {
+      "id": "ibm-ai",
+      "title": "Artificial Intelligence Fundamentals",
+      "issuer": "IBM",
+      "category": "Intelligence Artificielle",
+      "icon": "AiIcon",
+      "image": "https://images.credly.com/size/340x340/images/82b908e1-fdcd-4785-9d32-97f11ccbcf08/image.png",
+      "documentImage": "/certifications/ibm-ai-certification.pdf",
+      "description": "Cette certification atteste de ma compréhension fondamentale des concepts d'intelligence artificielle, y compris le machine learning, le deep learning, et les applications pratiques de l'IA."
+    },
+    {
+      "id": "cisco-junior",
+      "title": "Junior Cybersecurity Analyst Career Path",
+      "issuer": "Cisco",
+      "category": "Cybersécurité",
+      "icon": "ShieldCheckIcon",
+      "image": "https://images.credly.com/size/340x340/images/441578ec-c0f3-46cc-95fc-86b27e90cf4f/image.png",
+      "documentImage": "/certifications/cisco-junior-certification.pdf",
+      "description": "Cette certification valide mes compétences en analyse de cybersécurité, couvrant les concepts fondamentaux de la sécurité informatique et les meilleures pratiques de l'industrie."
+    },
+    {
+      "id": "cisco-essentials",
+      "title": "Cybersecurity Essentials",
+      "issuer": "Cisco",
+      "category": "Cybersécurité",
+      "icon": "ShieldCheckIcon",
+      "image": "https://images.credly.com/size/340x340/images/054913b2-e271-49a2-a1a4-9bf1c1f9a404/CyberEssentials.png",
+      "documentImage": "/certifications/cisco-essentials-certification.pdf",
+      "description": "Cette certification démontre ma maîtrise des concepts essentiels de la cybersécurité, y compris la protection des réseaux, la sécurité des applications et la gestion des incidents."
+    },
+    {
+      "id": "cisco-intro",
+      "title": "Introduction to Cybersecurity",
+      "issuer": "Cisco",
+      "category": "Cybersécurité",
+      "icon": "ShieldCheckIcon",
+      "image": "https://images.credly.com/size/340x340/images/af8c6b4e-fc31-47c4-8dcb-eb7a2065dc5b/I2CS__1_.png",
+      "documentImage": "/certifications/cisco-intro-certification.pdf",
+      "description": "Cette certification introduit les concepts fondamentaux de la cybersécurité, couvrant les menaces, les vulnérabilités et les mesures de protection de base."
+    },
+    {
+      "id": "codingame-js",
+      "title": "JavaScript",
+      "issuer": "CodinGame",
+      "category": "Programmation",
+      "icon": "ProgrammingIcon",
+      "image": "https://cdn.worldvectorlogo.com/logos/codingame-1.svg",
+      "documentImage": "/certifications/codingame-js-certification.pdf",
+      "description": "Cette certification atteste de mes compétences en JavaScript, démontrant ma capacité à résoudre des problèmes complexes et à développer des solutions efficaces."
+    },
+    {
+      "id": "codingame-csharp",
+      "title": "C#",
+      "issuer": "CodinGame",
+      "category": "Programmation",
+      "icon": "ProgrammingIcon",
+      "image": "https://cdn.worldvectorlogo.com/logos/codingame-1.svg",
+      "documentImage": "/certifications/codingame-csharp-certification.pdf",
+      "description": "Cette certification valide mes compétences en C#, montrant ma maîtrise du langage et de ses fonctionnalités avancées."
+    },
+    {
+      "id": "codingame-cpp",
+      "title": "C++",
+      "issuer": "CodinGame",
+      "category": "Programmation",
+      "icon": "ProgrammingIcon",
+      "image": "https://cdn.worldvectorlogo.com/logos/codingame-1.svg",
+      "documentImage": "/certifications/codingame-cpp-certification.pdf",
+      "description": "Cette certification démontre mes compétences en C++, couvrant la programmation orientée objet et la gestion de la mémoire."
+    },
+    {
+      "id": "codingame-python",
+      "title": "Python 3",
+      "issuer": "CodinGame",
+      "category": "Programmation",
+      "icon": "ProgrammingIcon",
+      "image": "https://cdn.worldvectorlogo.com/logos/codingame-1.svg",
+      "documentImage": "/certifications/codingame-python-certification.pdf",
+      "description": "Cette certification atteste de ma maîtrise de Python 3, incluant les structures de données, les algorithmes et les bonnes pratiques de programmation."
+    }
+  ],
+  
+  "technicalSkills": {
+    "languages": ["C#", "C++", "PHP", "JS", "Python", "Dart", "SQL", "TypeScript"],
+    "frameworks": ["Symfony", "Flask", "Node.js", "Next.js", "Tkinter", "Express.js"],
+    "databases": ["MySQL", "SQL Server", "PostgreSQL"],
+    "tools": [
+      { "name": "Docker", "icon": "DockerIcon" },
+      { "name": "Git", "icon": "GitIcon" },
+      { "name": "Postman", "icon": "ApiIcon" },
+      { "name": "OpenAI API", "icon": "CloudIcon" },
+      { "name": "Google Cloud", "icon": "CloudArrowUpIcon" }
+    ]
+  },
+  
+  "about": {
+    "description": [
+      "Passionné par le développement web et la création d'expériences numériques innovantes, je suis actuellement étudiant en BTS SIO SLAM au Lycée Fénelon. Mon objectif est de créer des applications web performantes et accessibles qui répondent aux besoins des utilisateurs.",
+      "Je combine mes compétences techniques avec une approche créative pour développer des solutions innovantes. Mon expertise couvre le développement front-end et back-end, avec une attention particulière portée à l'expérience utilisateur et aux performances."
+    ]
+  },
+  
+  "projects": [
+    {
+      "id": "automatisation-blender",
+      "title": "Automatisation Blender 3D",
+      "period": "2024",
+      "description": "Scripts Python pour automatiser les tâches répétitives dans Blender 3D, optimisant significativement le workflow.",
+      "technologies": [
+        { "name": "Python", "icon": "CommandLineIcon" },
+        { "name": "Blender API", "icon": "CodeBracketIcon" },
+        { "name": "Git", "icon": "CodeBracketIcon" }
+      ],
+      "features": [
+        "Automatisation des tâches répétitives",
+        "Interface utilisateur intégrée",
+        "Documentation technique",
+        "Optimisation du workflow"
+      ],
+      "image": "https://cdn-icons-png.flaticon.com/512/4712/4712027.png",
+      "projectImage": "https://cdn-icons-png.flaticon.com/512/4712/4712027.png",
+      "size": "col-span-1",
+      "gradient": "from-blue-500/20 to-purple-500/20",
+      "icon": "CubeIcon",
+      "category": "Projets Pro",
+      "isInternship": true,
+      "skillDetails": [
+        {
+          "name": "Gérer le patrimoine informatique",
+          "description": "Développement de scripts Python pour automatiser les processus de modélisation 3D, réduisant le temps de production de 40%"
+        },
+        {
+          "name": "Organiser son développement professionnel",
+          "description": "Apprentissage approfondi de l'API Blender et des bonnes pratiques d'automatisation en environnement 3D"
+        }
+      ]
+    },
+    {
+      "id": "optimisation-plans",
+      "title": "Optimisation Plans Interactifs",
+      "period": "2024",
+      "description": "Optimisation des performances d'une application web utilisant Babylon.js pour l'affichage de plans interactifs en 3D.",
+      "technologies": [
+        { "name": "Babylon.js", "icon": "CubeIcon" },
+        { "name": "JavaScript", "icon": "CodeBracketIcon" },
+        { "name": "HTML/CSS", "icon": "SwatchIcon" }
+      ],
+      "features": [
+        "Optimisation des performances",
+        "Refactorisation du code",
+        "Plans 3D interactifs",
+        "Documentation technique"
+      ],
+      "image": "https://cdn-icons-png.flaticon.com/512/4712/4712027.png",
+      "projectImage": "https://cdn-icons-png.flaticon.com/512/4712/4712027.png",
+      "size": "col-span-1",
+      "gradient": "from-purple-500/20 to-pink-500/20",
+      "icon": "CubeIcon",
+      "category": "Projets Pro",
+      "isInternship": true,
+      "skillDetails": [
+        {
+          "name": "Gérer le patrimoine informatique",
+          "description": "Refactorisation complète du code legacy et optimisation des performances, réduisant le temps de chargement de 60%"
+        },
+        {
+          "name": "Organiser son développement professionnel",
+          "description": "Acquisition d'expertise en optimisation 3D web et en techniques de refactorisation avancées"
+        },
+        {
+          "name": "Mettre à disposition un service informatique",
+          "description": "Amélioration significative de l'expérience utilisateur avec une navigation 3D fluide et responsive"
+        }
+      ]
+    },
+    {
+      "id": "chatbot-intelligent-openai",
+      "title": "Chatbot intelligent avec OpenAI et Google Cloud API",
+      "period": "2024",
+      "description": "Conception d'un chatbot bilingue avec outils administratifs pour la gestion de documents et l'affinage du modèle.",
+      "technologies": [
+        { "name": "Python/Flask", "icon": "CommandLineIcon" },
+        { "name": "JavaScript", "icon": "CodeBracketIcon" },
+        { "name": "OpenAI API", "icon": "CpuChipIcon" },
+        { "name": "Google Cloud Storage", "icon": "CloudIcon" }
+      ],
+      "features": [
+        "Conception d'un chatbot bilingue avec outils administratifs",
+        "Amélioration de la précision grâce à un entraînement IA spécifique",
+        "Interface responsive pour le suivi des performances"
+      ],
+      "image": "https://cdn-icons-png.flaticon.com/512/4712/4712027.png",
+      "projectImage": "https://cdn-icons-png.flaticon.com/512/4712/4712027.png",
+      "size": "col-span-1",
+      "gradient": "from-blue-500/20 to-purple-500/20",
+      "icon": "SparklesIcon",
+      "category": "Projets Pro",
+      "isInternship": true,
+      "skillDetails": [
+        {
+          "name": "Gérer le patrimoine informatique",
+          "description": "Mise en place d'un système de versionning Git avec des workflows CI/CD, et gestion sécurisée des ressources documentaires"
+        },
+        {
+          "name": "Répondre aux incidents et demandes",
+          "description": "Développement d'un système de support intelligent réduisant le temps de réponse moyen de 75% via l'IA"
+        },
+        {
+          "name": "Développer la présence en ligne",
+          "description": "Implémentation d'un chatbot multilingue optimisé pour le SEO, augmentant l'engagement utilisateur de 45%"
+        },
+        {
+          "name": "Travailler en mode projet",
+          "description": "Direction d'une équipe de 4 personnes en méthodologie SCRUM avec des sprints de 2 semaines"
+        }
+      ]
+    }
+  ]
+} 

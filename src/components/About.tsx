@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { useRef, useState } from 'react';
+import usePortfolioData from '@/data/usePortfolioData';
 import { 
   ComputerDesktopIcon, 
   WrenchScrewdriverIcon, 
@@ -38,131 +39,9 @@ type Certification = {
   description: string;
 };
 
-const competencies = [
-  {
-    title: 'Gérer le patrimoine informatique',
-    icon: ComputerDesktopIcon,
-    description: 'Mes projets démontrent ma capacité à gérer et maintenir des systèmes informatiques complexes. Par exemple, le Logiciel de gestion des stages et l\'Interface de gestion des films récents montrent ma maîtrise de la gestion de bases de données, de la maintenance des systèmes et de l\'optimisation des performances.',
-    projects: ['Logiciel de gestion des stages', 'Interface de gestion des films récents', 'Station de recharge VTT solaire']
-  },
-  {
-    title: 'Répondre aux incidents et demandes d\'assistance et d\'évolution',
-    icon: WrenchScrewdriverIcon,
-    description: 'À travers mes chatbots intelligents et mes applications web, j\'ai développé des solutions pour répondre aux besoins des utilisateurs. Le Chatbot Support Étudiant, par exemple, réduit le temps de recherche de 40% en fournissant des réponses rapides et pertinentes.',
-    projects: ['Chatbot Support Étudiant', 'Chatbot intelligent avec OpenAI', 'Application Web Météo']
-  },
-  {
-    title: 'Développer la présence en ligne de l\'organisation',
-    icon: GlobeAltIcon,
-    description: 'Mes projets web et mes applications en ligne montrent ma capacité à créer une présence numérique efficace. Le Générateur avancé de README et mes applications web démontrent ma maîtrise du développement front-end et de l\'optimisation pour le web.',
-    projects: ['Générateur avancé de README', 'Application Web de location de voitures', 'API Pokémon']
-  },
-  {
-    title: 'Travailler en mode projet',
-    icon: UserGroupIcon,
-    description: 'Tous mes projets sont développés en suivant une méthodologie de projet structurée. Par exemple, le Jeu de combat interactif et le Démineur Python montrent ma capacité à planifier, développer et livrer des projets complets dans les délais.',
-    projects: ['Jeu de combat interactif', 'Démineur Python', 'Bataille navale en C++']
-  },
-  {
-    title: 'Mettre à disposition des utilisateurs un service informatique',
-    icon: ServerIcon,
-    description: 'Mes applications sont conçues pour être accessibles et utiles aux utilisateurs. L\'Application Web Météo et le Logiciel de gestion des stages sont des exemples de services informatiques que j\'ai développés pour répondre aux besoins spécifiques des utilisateurs.',
-    projects: ['Application Web Météo', 'Logiciel de gestion des stages', 'Application Web de location de voitures']
-  },
-  {
-    title: 'Organiser son développement professionnel',
-    icon: AcademicCapIcon,
-    description: 'Mon portfolio et mes projets démontrent mon engagement dans le développement continu de mes compétences. Les stages chez Excelia et le développement du Chatbot Support Étudiant montrent ma capacité à apprendre et à évoluer professionnellement.',
-    projects: ['Stage Excelia', 'Chatbot Support Étudiant', 'Simulation d\'entretien en temps réel']
-  }
-];
-
-// Add certification data
-const certifications: Certification[] = [
-  {
-    id: 'ibm-ai',
-    title: 'Artificial Intelligence Fundamentals',
-    issuer: 'IBM',
-    category: 'Intelligence Artificielle',
-    icon: AiIcon,
-    image: 'https://images.credly.com/size/340x340/images/82b908e1-fdcd-4785-9d32-97f11ccbcf08/image.png',
-    documentImage: '/certifications/ibm-ai-certification.pdf',
-    description: 'Cette certification atteste de ma compréhension fondamentale des concepts d\'intelligence artificielle, y compris le machine learning, le deep learning, et les applications pratiques de l\'IA.'
-  },
-  {
-    id: 'cisco-junior',
-    title: 'Junior Cybersecurity Analyst Career Path',
-    issuer: 'Cisco',
-    category: 'Cybersécurité',
-    icon: ShieldCheckIcon,
-    image: 'https://images.credly.com/size/340x340/images/441578ec-c0f3-46cc-95fc-86b27e90cf4f/image.png',
-    documentImage: '/certifications/cisco-junior-certification.pdf',
-    description: 'Cette certification valide mes compétences en analyse de cybersécurité, couvrant les concepts fondamentaux de la sécurité informatique et les meilleures pratiques de l\'industrie.'
-  },
-  {
-    id: 'cisco-essentials',
-    title: 'Cybersecurity Essentials',
-    issuer: 'Cisco',
-    category: 'Cybersécurité',
-    icon: ShieldCheckIcon,
-    image: 'https://images.credly.com/size/340x340/images/054913b2-e271-49a2-a1a4-9bf1c1f9a404/CyberEssentials.png',
-    documentImage: '/certifications/cisco-essentials-certification.pdf',
-    description: 'Cette certification démontre ma maîtrise des concepts essentiels de la cybersécurité, y compris la protection des réseaux, la sécurité des applications et la gestion des incidents.'
-  },
-  {
-    id: 'cisco-intro',
-    title: 'Introduction to Cybersecurity',
-    issuer: 'Cisco',
-    category: 'Cybersécurité',
-    icon: ShieldCheckIcon,
-    image: 'https://images.credly.com/size/340x340/images/af8c6b4e-fc31-47c4-8dcb-eb7a2065dc5b/I2CS__1_.png',
-    documentImage: '/certifications/cisco-intro-certification.pdf',
-    description: 'Cette certification introduit les concepts fondamentaux de la cybersécurité, couvrant les menaces, les vulnérabilités et les mesures de protection de base.'
-  },
-  {
-    id: 'codingame-js',
-    title: 'JavaScript',
-    issuer: 'CodinGame',
-    category: 'Programmation',
-    icon: ProgrammingIcon,
-    image: 'https://cdn.worldvectorlogo.com/logos/codingame-1.svg',
-    documentImage: '/certifications/codingame-js-certification.pdf',
-    description: 'Cette certification atteste de mes compétences en JavaScript, démontrant ma capacité à résoudre des problèmes complexes et à développer des solutions efficaces.'
-  },
-  {
-    id: 'codingame-csharp',
-    title: 'C#',
-    issuer: 'CodinGame',
-    category: 'Programmation',
-    icon: ProgrammingIcon,
-    image: 'https://cdn.worldvectorlogo.com/logos/codingame-1.svg',
-    documentImage: '/certifications/codingame-csharp-certification.pdf',
-    description: 'Cette certification valide mes compétences en C#, montrant ma maîtrise du langage et de ses fonctionnalités avancées.'
-  },
-  {
-    id: 'codingame-cpp',
-    title: 'C++',
-    issuer: 'CodinGame',
-    category: 'Programmation',
-    icon: ProgrammingIcon,
-    image: 'https://cdn.worldvectorlogo.com/logos/codingame-1.svg',
-    documentImage: '/certifications/codingame-cpp-certification.pdf',
-    description: 'Cette certification démontre mes compétences en C++, couvrant la programmation orientée objet et la gestion de la mémoire.'
-  },
-  {
-    id: 'codingame-python',
-    title: 'Python 3',
-    issuer: 'CodinGame',
-    category: 'Programmation',
-    icon: ProgrammingIcon,
-    image: 'https://cdn.worldvectorlogo.com/logos/codingame-1.svg',
-    documentImage: '/certifications/codingame-python-certification.pdf',
-    description: 'Cette certification atteste de ma maîtrise de Python 3, incluant les structures de données, les algorithmes et les bonnes pratiques de programmation.'
-  }
-];
-
 const About = () => {
   const [selectedCertification, setSelectedCertification] = useState<Certification | null>(null);
+  const { competencies, certifications, technicalSkills, about } = usePortfolioData();
 
   return (
     <section id="about" className="min-h-screen py-20 px-4 sm:px-6 lg:px-8">
@@ -209,7 +88,7 @@ const About = () => {
                     <h4 className="text-lg font-semibold">Langages</h4>
                   </div>
                   <div className="flex flex-wrap gap-2">
-                    {['C#', 'C++', 'PHP', 'JS', 'Python', 'Dart', 'SQL', 'TypeScript'].map((lang) => (
+                    {technicalSkills.languages.map((lang) => (
                       <span
                         key={lang}
                         className="px-3 py-1 bg-white/5 rounded-full text-sm hover:bg-white/10 transition-colors flex items-center gap-2"
@@ -234,7 +113,7 @@ const About = () => {
                     <h4 className="text-lg font-semibold">Frameworks & Librairies</h4>
                   </div>
                   <div className="flex flex-wrap gap-2">
-                    {['Symfony', 'Flask', 'Node.js', 'Next.js', 'Tkinter', 'Express.js'].map((framework) => (
+                    {technicalSkills.frameworks.map((framework) => (
                       <span
                         key={framework}
                         className="px-3 py-1 bg-white/5 rounded-full text-sm hover:bg-white/10 transition-colors flex items-center gap-2"
@@ -259,7 +138,7 @@ const About = () => {
                     <h4 className="text-lg font-semibold">Bases de données</h4>
                   </div>
                   <div className="flex flex-wrap gap-2">
-                    {['MySQL', 'SQL Server', 'PostgreSQL'].map((db) => (
+                    {technicalSkills.databases.map((db) => (
                       <span
                         key={db}
                         className="px-3 py-1 bg-white/5 rounded-full text-sm hover:bg-white/10 transition-colors flex items-center gap-2"
@@ -284,13 +163,7 @@ const About = () => {
                     <h4 className="text-lg font-semibold">Outils</h4>
                   </div>
                   <div className="flex flex-wrap gap-2">
-                    {[
-                      { name: 'Docker', icon: DockerIcon },
-                      { name: 'Git', icon: GitIcon },
-                      { name: 'Postman', icon: ApiIcon },
-                      { name: 'OpenAI API', icon: CloudIcon },
-                      { name: 'Google Cloud', icon: CloudArrowUpIcon }
-                    ].map((tool) => (
+                    {technicalSkills.tools.map((tool) => (
                       <span
                         key={tool.name}
                         className="px-3 py-1 bg-white/5 rounded-full text-sm hover:bg-white/10 transition-colors flex items-center gap-2"
@@ -315,16 +188,57 @@ const About = () => {
             <h3 className="text-2xl font-semibold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white to-white/80">
               Mon Parcours
             </h3>
-            <p className="text-gray-300 mb-4">
-              Passionné par le développement web et la création d'expériences numériques innovantes, je suis actuellement étudiant en BTS SIO SLAM au Lycée Fénelon. Mon objectif est de créer des applications web performantes et accessibles qui répondent aux besoins des utilisateurs.
-            </p>
-            <p className="text-gray-300">
-              Je combine mes compétences techniques avec une approche créative pour développer des solutions innovantes. Mon expertise couvre le développement front-end et back-end, avec une attention particulière portée à l'expérience utilisateur et aux performances.
-            </p>
-                      </motion.div>
+            {about.description.map((paragraph, index) => (
+              <p key={index} className="text-gray-300 mb-4">
+                {paragraph}
+              </p>
+            ))}
+          </motion.div>
         </div>
 
-    
+        {/* Competencies Section */}
+        <div className="mt-20">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h3 className="text-2xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-white via-secondary to-white">
+              Compétences BTS SIO
+            </h3>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {competencies.map((competency) => (
+              <motion.div
+                key={competency.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+                viewport={{ once: true }}
+                className="glass p-6 rounded-lg border border-white/10 hover:border-white/20 transition-colors duration-300"
+              >
+                <div className="flex items-center gap-2 mb-4">
+                  <competency.icon className="w-6 h-6 text-secondary" />
+                  <h4 className="text-lg font-semibold">{competency.title}</h4>
+                </div>
+                <p className="text-gray-300 mb-4">{competency.description}</p>
+                <div className="flex flex-wrap gap-2">
+                  {competency.projects.map((project) => (
+                    <span
+                      key={project}
+                      className="px-3 py-1 bg-white/5 rounded-full text-sm hover:bg-white/10 transition-colors"
+                    >
+                      {project}
+                    </span>
+                  ))}
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
 
         {/* Certifications Section */}
         <div id="certifications" className="mt-20">
