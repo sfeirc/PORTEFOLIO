@@ -2,19 +2,11 @@
 
 import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
-
-const navItems = [
-  { name: 'Accueil', href: '#' },
-  { name: 'À propos', href: '#about' },
-  { name: 'Formation', href: '#formation' },
-  { name: 'Stages', href: '#stages' },
-  { name: 'Projets Pro', href: '#projets-pro' },
-  { name: 'Projets', href: '#projets' },
-  { name: 'Certifications', href: '#certifications' },
-  { name: 'Compétences', href: '#competences' },
-];
+import usePortfolioData from '@/data/usePortfolioData';
+import { NavbarItem } from '@/data/usePortfolioData';
 
 const Navbar = () => {
+  const { navbar } = usePortfolioData();
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -40,12 +32,12 @@ const Navbar = () => {
             whileHover={{ scale: 1.05 }}
             className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white via-secondary to-white"
           >
-            Clovis SFEIR
+            {navbar.title}
           </motion.div>
           
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-8">
-              {navItems.map((item) => (
+              {navbar.items.map((item: NavbarItem) => (
                 <motion.a
                   key={item.name}
                   whileHover={{ scale: 1.1 }}

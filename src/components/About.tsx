@@ -1,30 +1,15 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { useRef, useState } from 'react';
+import { useState } from 'react';
 import usePortfolioData from '@/data/usePortfolioData';
 import { 
-  ComputerDesktopIcon, 
-  WrenchScrewdriverIcon, 
-  GlobeAltIcon, 
-  UserGroupIcon, 
-  ServerIcon, 
-  AcademicCapIcon,
   CodeBracketIcon,
   CpuChipIcon,
-  CloudIcon,
-  CircleStackIcon,
   BeakerIcon,
-  CloudArrowUpIcon,
   SwatchIcon,
-  ServerIcon as DatabaseIcon,
-  WrenchIcon,
-  CommandLineIcon as GitIcon,
-  CommandLineIcon as DockerIcon,
-  CommandLineIcon as ApiIcon,
-  ShieldCheckIcon,
-  CpuChipIcon as AiIcon,
-  CodeBracketIcon as ProgrammingIcon
+  CircleStackIcon,
+  WrenchIcon
 } from '@heroicons/react/24/outline';
 
 // Add type definitions
@@ -41,7 +26,7 @@ type Certification = {
 
 const About = () => {
   const [selectedCertification, setSelectedCertification] = useState<Certification | null>(null);
-  const { competencies, certifications, technicalSkills, about } = usePortfolioData();
+  const { competencies, certifications, technicalSkills, about, getImageUrl, getPdfViewerUrl } = usePortfolioData();
 
   return (
     <section id="about" className="min-h-screen py-20 px-4 sm:px-6 lg:px-8">
@@ -134,7 +119,7 @@ const About = () => {
                   className="glass p-6 rounded-lg border border-white/10 hover:border-white/20 transition-colors duration-300"
                 >
                   <div className="flex items-center gap-2 mb-4">
-                    <DatabaseIcon className="w-6 h-6 text-secondary" />
+                    <CircleStackIcon className="w-6 h-6 text-secondary" />
                     <h4 className="text-lg font-semibold">Bases de données</h4>
                   </div>
                   <div className="flex flex-wrap gap-2">
@@ -188,11 +173,20 @@ const About = () => {
             <h3 className="text-2xl font-semibold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white to-white/80">
               Mon Parcours
             </h3>
-            {about.description.map((paragraph, index) => (
-              <p key={index} className="text-gray-300 mb-4">
-                {paragraph}
-              </p>
-            ))}
+            <div className="bg-white/5 backdrop-blur-sm rounded-lg p-6 shadow-lg border border-white/10">
+              <h3 className="text-xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-white via-secondary to-white">
+                À Propos de Moi
+              </h3>
+              <div className="text-gray-300 space-y-4">
+                {about.description && (
+                  Array.isArray(about.description) 
+                    ? about.description.map((paragraph: string, index: number) => (
+                        <p key={index}>{paragraph}</p>
+                      ))
+                    : <p>{about.description}</p>
+                )}
+              </div>
+            </div>
           </motion.div>
         </div>
 
@@ -226,10 +220,10 @@ const About = () => {
                 </div>
                 <p className="text-gray-300 mb-4">{competency.description}</p>
                 <div className="flex flex-wrap gap-2">
-                  {competency.projects.map((project) => (
+                  {competency.projects && competency.projects.map((project: string) => (
                     <span
                       key={project}
-                      className="px-3 py-1 bg-white/5 rounded-full text-sm hover:bg-white/10 transition-colors"
+                      className="text-sm px-2 py-0.5 bg-white/5 rounded-full"
                     >
                       {project}
                     </span>
@@ -271,7 +265,7 @@ const About = () => {
                 <div className="flex flex-col items-center text-center">
                   <div className="w-32 h-32 mb-4 rounded-xl overflow-hidden border-2 border-secondary/30 bg-white p-4">
                     <img 
-                      src={cert.image}
+                      src={getImageUrl(cert.image)}
                       alt={cert.title}
                       className="w-full h-full object-contain"
                     />
@@ -322,7 +316,7 @@ const About = () => {
                   <div className="lg:col-span-1 flex flex-col">
                     <div className="w-full aspect-square mb-4 rounded-xl overflow-hidden border-2 border-secondary/30 bg-white p-4">
                       <img 
-                        src={selectedCertification.image}
+                        src={getImageUrl(selectedCertification.image)}
                         alt={selectedCertification.title}
                         className="w-full h-full object-contain"
                       />
@@ -338,12 +332,29 @@ const About = () => {
                   <div className="lg:col-span-2 flex flex-col">
                     <h4 className="text-lg font-semibold mb-4">Document de Certification</h4>
                     {selectedCertification.documentImage ? (
-                      <div className="flex-1 rounded-xl overflow-hidden border-2 border-secondary/30">
-                        <iframe
-                          src={selectedCertification.documentImage}
-                          className="w-full h-full"
-                          title="Certification Document"
-                        />
+                      <div className="flex flex-col flex-1">
+                        <div className="flex-1 rounded-xl overflow-hidden border-2 border-secondary/30 mb-3">
+                          <iframe
+                            src={getPdfViewerUrl(selectedCertification.documentImage)}
+                            className="w-full h-full"
+                            title="Certification Document"
+                            allowFullScreen
+                          />
+                        </div>
+                        <div className="text-sm text-gray-400 flex items-center justify-between">
+                          <span>Document servi via Google Drive pour compatibilité GitHub Pages</span>
+                          <a 
+                            href={getPdfViewerUrl(selectedCertification.documentImage)}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-secondary hover:text-secondary/80 flex items-center gap-1 transition-colors"
+                          >
+                            <span>Ouvrir dans un nouvel onglet</span>
+                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                            </svg>
+                          </a>
+                        </div>
                       </div>
                     ) : (
                       <div className="flex-1 rounded-xl border-2 border-secondary/30 flex items-center justify-center text-gray-400">

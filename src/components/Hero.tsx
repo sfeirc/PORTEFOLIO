@@ -4,8 +4,10 @@ import { motion } from 'framer-motion';
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import Image from 'next/image';
+import usePortfolioData from '@/data/usePortfolioData';
 
 const Hero = () => {
+  const { about, getImageUrl } = usePortfolioData();
   const titleRef = useRef(null);
 
   useEffect(() => {
@@ -84,8 +86,8 @@ const Hero = () => {
                 transition={{ duration: 0.5, delay: 0.2 }}
               >
                 <Image
-                  src="https://avatars.githubusercontent.com/u/73343957?v=4"
-                  alt="Clovis SFEIR"
+                  src={getImageUrl(about.profileImage)}
+                  alt={about.name}
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-110"
                   priority
@@ -115,7 +117,7 @@ const Hero = () => {
                     whileHover={{ scale: 1.05 }}
                     transition={{ duration: 0.2 }}
                   >
-                    Clovis SFEIR
+                    {about.name}
                   </motion.span>
                   <motion.span
                     className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-white/50 to-secondary/50 rounded-full"
@@ -130,8 +132,8 @@ const Hero = () => {
                   transition={{ duration: 0.8, delay: 0.5 }}
                   className="relative"
                 >
-                  <p className="text-2xl text-gray-300 mb-2 font-light">Étudiant Développeur</p>
-                  <p className="text-xl text-gray-400 font-light">BTS SIO SLAM • Lycée Fénelon</p>
+                  <p className="text-2xl text-gray-300 mb-2 font-light">{about.title}</p>
+                  <p className="text-xl text-gray-400 font-light">{about.subtitle}</p>
                 </motion.div>
               </motion.div>
             </div>
@@ -145,26 +147,45 @@ const Hero = () => {
               transition={{ duration: 0.8, delay: 0.7 }}
               className="text-xl md:text-2xl text-gray-300 mb-12 max-w-2xl mx-auto font-light"
             >
-              Passionné par le développement web et la création d'expériences numériques innovantes
+              {about.tagline}
             </motion.p>
             <motion.div
+              className="flex justify-center mt-12"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.8 }}
-              className="flex flex-col sm:flex-row gap-6 justify-center"
+              transition={{ duration: 0.8, delay: 0.7 }}
             >
-              <motion.a 
-                href="#projets-pro"
-                className="px-8 py-3 bg-gradient-to-r from-primary to-secondary rounded-full text-white/90 font-medium transition-all duration-300"
-                whileHover={{ 
-                  scale: 1.05,
-                  boxShadow: "0 0 20px rgba(255, 255, 255, 0.2)",
-                }}
-                whileTap={{ scale: 0.95 }}
-              >
-                Voir mes projets
-              </motion.a>
-              
+              {about.cta && (
+                <motion.a 
+                  href={about.cta?.link}
+                  className="group relative overflow-hidden rounded-xl bg-gradient-to-r from-primary/50 to-secondary/50 px-8 py-4 text-white text-lg font-medium shadow-lg shadow-secondary/20 transition-all duration-300 hover:shadow-xl hover:shadow-secondary/40"
+                  whileHover={{ scale: 1.05, y: -5 }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  <motion.span className="relative z-10">
+                    {about.cta?.text}
+                  </motion.span>
+                  <motion.span
+                    className="absolute bottom-0 left-0 right-0 top-0 bg-gradient-to-r from-secondary via-primary to-secondary opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+                    initial={{ x: "-100%" }}
+                    whileHover={{ x: "0%" }}
+                    transition={{ duration: 0.5 }}
+                  />
+                  {/* Add subtle pulsing effect */}
+                  <motion.span 
+                    className="absolute inset-0 rounded-xl bg-white/20 opacity-0"
+                    animate={{ 
+                      scale: [1, 1.05, 1],
+                      opacity: [0, 0.2, 0]
+                    }}
+                    transition={{
+                      duration: 2,
+                      repeat: Infinity,
+                      repeatType: "loop"
+                    }}
+                  />
+                </motion.a>
+              )}
             </motion.div>
           </div>
         </div>

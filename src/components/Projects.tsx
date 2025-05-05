@@ -3,57 +3,34 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { 
-  ChatBubbleLeftRightIcon, 
-  MicrophoneIcon,
   CodeBracketIcon,
   CommandLineIcon,
   DocumentTextIcon,
-  CloudIcon,
   CpuChipIcon,
-  WrenchScrewdriverIcon,
-  CloudArrowUpIcon,
-  SunIcon,
-  BeakerIcon,
-  PresentationChartLineIcon,
-  PuzzlePieceIcon,
-  RocketLaunchIcon,
-  BoltIcon,
-  DevicePhoneMobileIcon,
   CircleStackIcon,
-  DocumentDuplicateIcon,
-  GlobeAltIcon,
-  SparklesIcon,
   SwatchIcon,
   ServerIcon,
-  ChartBarIcon,
   CubeIcon,
-  CommandLineIcon as GameIcon,
-  LightBulbIcon,
-  ArrowTopRightOnSquareIcon,
-  WindowIcon,
 } from '@heroicons/react/24/outline';
 import ProjectSkillsMatrix from './ProjectSkillsMatrix';
 import { useState, useEffect } from 'react';
-import projectsData from '@/data/projectsData';
-
-interface Technology {
-  name: string;
-  icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
-}
+import usePortfolioData from '@/data/usePortfolioData';
 
 interface Project {
   id: string;
   title: string;
   period: string;
   description: string;
-  technologies: Technology[];
+  technologies: {
+    name: string;
+    icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
+  }[];
   features: string[];
   image: string;
   size: string;
   gradient: string;
   icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
   category: string;
-  relatedTags: string[];
   projectImage?: string;
   isInternship: boolean;
   skillDetails: {
@@ -93,56 +70,9 @@ interface ProfessionalProjectDetails {
   image?: string;
 }
 
-const education = [
-  {
-    title: 'BTS Services informatiques aux organisations',
-    subtitle: 'Option Solution logicielles et application métiers',
-    school: 'Lycée Fénelon, La Rochelle',
-    period: 'Septembre 2023 — juin 2025',
-    description: 'Formation spécialisée en développement de solutions informatiques et applications métiers. (SLAM)',
-    image: 'https://fenelon-notredame.com/wp-content/uploads/2022/01/logo-Fenelon-Notre-Dame-ensemble-scolaire-La-Rochelle.jpg',
-    skills: [
-      { name: 'Développement Web', icon: CodeBracketIcon },
-      { name: 'Solutions Métiers', icon: WrenchScrewdriverIcon },
-      { name: 'Base de données', icon: CloudIcon }
-    ],
-    keyPoints: [
-      'Formation en développement logiciel',
-      'Projets pratiques en entreprise',
-      'Spécialisation en solutions métiers'
-    ]
-  },
-  {
-    title: 'Baccalauréat Sciences et Technologies de l\'Industrie et du Développement Durable',
-    subtitle: 'Option Systèmes d\'Information et Numérique',
-    school: 'Lycée Ort, Strasbourg',
-    period: 'Septembre 2020 — juin 2022',
-    description: 'Formation initiale en systèmes d\'information et développement numérique. (SIN)',
-    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGlU0V7uj5tiA1arTvtYqyVFwzOrTeFFaysg&s',
-    skills: [
-      { name: 'Programmation', icon: CodeBracketIcon },
-      { name: 'Systèmes d\'Information', icon: CpuChipIcon },
-      { name: 'Développement Durable', icon: CloudArrowUpIcon }
-    ],
-    keyPoints: [
-      'Fondamentaux de la programmation',
-      'Conception de systèmes d\'information',
-      'Approche développement durable'
-    ]
-  }
-];
-
-// Use the projectsData from the imported file
-const projects: Project[] = projectsData.map(project => {
-  // Add relatedTags based on skillDetails
-  const relatedTags = project.skillDetails.map(skill => skill.name.toLowerCase());
-  return {
-    ...project,
-    relatedTags
-  };
-});
-
 const Projects = () => {
+  const { projects, education, getImageUrl, getPdfViewerUrl } = usePortfolioData();
+  
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [selectedProfessionalProject, setSelectedProfessionalProject] = useState<ProfessionalProject | null>(null);
   const [selectedDocument, setSelectedDocument] = useState<{ title: string; path: string } | null>(null);
@@ -164,10 +94,11 @@ const Projects = () => {
 
   // Group projects by category
   const projectsByCategory = projects.reduce<ProjectsByCategory>((acc, project) => {
-    if (!acc[project.category]) {
-      acc[project.category] = [];
+    const category = project.category;
+    if (!acc[category]) {
+      acc[category] = [];
     }
-    acc[project.category].push(project);
+    acc[category].push(project as Project);
     return acc;
   }, {});
 
@@ -201,60 +132,65 @@ const Projects = () => {
             {/* Timeline line */}
             <div className="absolute left-0 h-full w-0.5 bg-gradient-to-b from-secondary/50 via-secondary/30 to-secondary/50" />
             
-            {education.map((edu, index) => (
-              <motion.div
-                key={edu.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.2 }}
-                viewport={{ once: true }}
-                className="relative mb-12 last:mb-0 pl-8"
-              >
-                {/* Timeline dot */}
-                <div className="absolute left-0 transform -translate-x-1/2 w-4 h-4 bg-secondary rounded-full z-10" />
-                
-                <div className="relative glass p-6 rounded-lg border border-white/10 hover:border-white/20 transition-colors duration-300">
-                  <div className="flex items-start gap-4">
-                    <div className="relative w-12 h-12 bg-white/5 rounded-full p-2 flex-shrink-0">
-                      <Image
-                        src={edu.image}
-                        alt="School Logo"
-                        fill
-                        className="object-contain"
-                        sizes="(max-width: 48px) 100vw, 48px"
-                      />
-                    </div>
-                    <div className="flex-1">
-                      <div className="flex items-center gap-2 mb-1">
-                        <DocumentTextIcon className="w-5 h-5 text-secondary" />
-                        <h3 className="text-lg font-semibold bg-clip-text text-transparent bg-gradient-to-r from-white to-white/80">
-                          {edu.title}
-                        </h3>
+            {education.map((edu, index) => {
+              // Extract the first skill icon if available
+              const SkillIcon = edu.skills.length > 0 ? edu.skills[0].icon : null;
+              
+              return (
+                <motion.div
+                  key={edu.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: index * 0.2 }}
+                  viewport={{ once: true }}
+                  className="relative mb-12 last:mb-0 pl-8"
+                >
+                  {/* Timeline dot */}
+                  <div className="absolute left-0 transform -translate-x-1/2 w-4 h-4 bg-secondary rounded-full z-10" />
+                  
+                  <div className="relative glass p-6 rounded-lg border border-white/10 hover:border-white/20 transition-colors duration-300">
+                    <div className="flex items-start gap-4">
+                      <div className="relative w-12 h-12 bg-white/5 rounded-full p-2 flex-shrink-0">
+                        <Image
+                          src={getImageUrl(edu.image)}
+                          alt="School Logo"
+                          fill
+                          className="object-contain"
+                          sizes="(max-width: 48px) 100vw, 48px"
+                        />
                       </div>
-                      <p className="text-gray-400 text-sm mb-1">{edu.subtitle}</p>
-                      <p className="text-gray-400 text-sm mb-1">{edu.school}</p>
-                      <p className="text-gray-400 text-sm font-medium">{edu.period}</p>
+                      <div className="flex-1">
+                        <div className="flex items-center gap-2 mb-1">
+                          {SkillIcon && <SkillIcon className="w-5 h-5 text-secondary" />}
+                          <h3 className="text-lg font-semibold bg-clip-text text-transparent bg-gradient-to-r from-white to-white/80">
+                            {edu.title}
+                          </h3>
+                        </div>
+                        <p className="text-gray-400 text-sm mb-1">{edu.subtitle}</p>
+                        <p className="text-gray-400 text-sm mb-1">{edu.school}</p>
+                        <p className="text-gray-400 text-sm font-medium">{edu.period}</p>
+                      </div>
+                    </div>
+                    
+                    <p className="text-gray-300 text-sm mt-4">{edu.description}</p>
+                    
+                    <div className="mt-4">
+                      <div className="flex flex-wrap gap-2">
+                        {edu.skills.map((skill: { name: string; icon: React.ComponentType<React.SVGProps<SVGSVGElement>> }) => (
+                          <span
+                            key={skill.name}
+                            className="px-2 py-1 bg-white/5 rounded-full text-xs hover:bg-white/10 transition-colors flex items-center gap-1"
+                          >
+                            <skill.icon className="w-3 h-3 text-secondary" />
+                            {skill.name}
+                          </span>
+                        ))}
+                      </div>
                     </div>
                   </div>
-                  
-                  <p className="text-gray-300 text-sm mt-4">{edu.description}</p>
-                  
-                  <div className="mt-4">
-                    <div className="flex flex-wrap gap-2">
-                      {edu.skills.map((skill) => (
-                        <span
-                          key={skill.name}
-                          className="px-2 py-1 bg-white/5 rounded-full text-xs hover:bg-white/10 transition-colors flex items-center gap-1"
-                        >
-                          <skill.icon className="w-3 h-3 text-secondary" />
-                          {skill.name}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
+                </motion.div>
+              );
+            })}
           </div>
         </div>
 
@@ -283,7 +219,7 @@ const Projects = () => {
               onClick={() => setSelectedProfessionalProject({
                 title: "Stage Excelia",
                 period: "Janvier 2025 — Mars 2025",
-                description: "Stage au sein d'Excelia, axé sur le développement d'applications innovantes pour améliorer l'expérience étudiante.",
+                description: "Stage au sein d&apos;Excelia, axé sur le développement d&apos;applications innovantes pour améliorer l&apos;expérience étudiante.",
                 technologies: [
                   { name: "Next.js", icon: CodeBracketIcon },
                   { name: "React.js", icon: CodeBracketIcon },
@@ -341,7 +277,7 @@ const Projects = () => {
                 </div>
                 
                 <p className="text-gray-300 mb-6">
-                  Stage au sein d'Excelia, axé sur le développement d'applications innovantes pour améliorer l'expérience étudiante.
+                  Stage au sein d&apos;Excelia, axé sur le développement d&apos;applications innovantes pour améliorer l&apos;expérience étudiante.
                 </p>
                 
                 <div className="mb-6">
@@ -370,7 +306,7 @@ const Projects = () => {
               onClick={() => setSelectedProfessionalProject({
                 title: "Stage Excelia",
                 period: "Mai 2024 — Juillet 2024",
-                description: "Stage de fin d'année chez Excelia, focalisé sur l'automatisation des processus, l'optimisation web et le développement d'outils d'assistance intelligents.",
+                description: "Stage de fin d&apos;année chez Excelia, focalisé sur l&apos;automatisation des processus, l&apos;optimisation web et le développement d&apos;outils d&apos;assistance intelligents.",
                 technologies: [
                   { name: "Python", icon: CommandLineIcon },
                   { name: "Flask", icon: CodeBracketIcon },
@@ -466,7 +402,7 @@ const Projects = () => {
                 </div>
                 
                 <p className="text-gray-300 mb-6">
-                  Stage de fin d'année chez Excelia, focalisé sur l'automatisation des processus, l'optimisation web et le développement d'outils d'assistance intelligents.
+                  Stage de fin d&apos;année chez Excelia, focalisé sur l&apos;automatisation des processus, l&apos;optimisation web et le développement d&apos;outils d&apos;assistance intelligents.
                 </p>
                 
                 <div className="mb-6">
@@ -504,102 +440,81 @@ const Projects = () => {
         </h2>
         {/* Projects Section */}
         <div id="projets">
-          {Object.entries(projectsByCategory).map(([category, categoryProjects]) => (
-            <div key={category} className="mb-20">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8 }}
-                viewport={{ once: true }}
-                className="text-center mb-8"
-              >
-                <h3 className="text-2xl font-bold mb-2 bg-clip-text text-transparent bg-gradient-to-r from-white via-secondary to-white">
-                  {category}
-                </h3>
-              </motion.div>
-
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                {categoryProjects.map((project, index) => (
-                  <motion.div
-                    key={project.title}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: index * 0.2 }}
-                    viewport={{ once: true }}
-                    className={`relative group ${project.size} cursor-pointer`}
-                    onClick={() => setSelectedProject(project)}
-                  >
-                    <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient} rounded-lg blur-xl opacity-50 group-hover:opacity-75 transition-opacity duration-300`} />
-                    <div className="relative glass p-8 rounded-lg border border-white/10 hover:border-white/20 transition-colors duration-300">
-                      <div className="flex items-center gap-4 mb-6">
-                        <div className="relative w-16 h-16 bg-white/5 rounded-full p-2">
-                          <Image
-                            src={project.image}
-                            alt={`${project.title} Logo`}
-                      fill
-                      className="object-contain"
-                      sizes="(max-width: 64px) 100vw, 64px"
-                    />
-                  </div>
-                  <div className="flex-1">
-                    <div className="flex items-center gap-2">
-                      <project.icon className="w-6 h-6 text-secondary" />
-                      <h3 className="text-xl font-semibold bg-clip-text text-transparent bg-gradient-to-r from-white to-white/80">
-                        {project.title}
-                      </h3>
-                    </div>
-                    <p className="text-gray-400 text-sm">{project.period}</p>
-                  </div>
-                </div>
+          {Object.entries(projectsByCategory)
+            .filter(([category]) => category !== 'Projets Pro')
+            .map(([category, projects]) => (
+              <div key={category} className="mb-20" id={category.toLowerCase().replace(/ /g, '-')}>
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8 }}
+                  viewport={{ once: true }}
+                  className="text-center mb-8"
+                >
+                  <h2 className="text-4xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-white via-secondary to-white">
+                    {category}
+                  </h2>
+                </motion.div>
                 
-                <p className="text-gray-300 mb-6">{project.description}</p>
-                
-                <div className="mb-6">
-                  <h4 className="text-sm font-medium text-gray-400 mb-3">Technologies utilisées :</h4>
-                  <div className="flex flex-wrap gap-2">
-                    {project.technologies.map((tech) => (
-                      <span
-                        key={tech.name}
-                        className="px-3 py-1 bg-white/5 rounded-full text-sm hover:bg-white/10 transition-colors flex items-center gap-2"
-                      >
-                        <tech.icon className="w-4 h-4 text-secondary" />
-                        {tech.name}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-
-                <div>
-                  <h4 className="text-sm font-medium text-gray-400 mb-3">Fonctionnalités :</h4>
-                  <ul className="space-y-2">
-                    {project.features.map((feature) => (
-                      <li key={feature} className="flex items-start gap-2">
-                        <span className="text-secondary">•</span>
-                        <span className="text-gray-300 text-sm">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                      <div className="mt-4">
-                        <h4 className="text-sm font-medium text-gray-400 mb-3">Compétences liées :</h4>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                  {projects.map((project) => (
+                    <motion.div
+                      key={project.id}
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.8 }}
+                      viewport={{ once: true }}
+                      className={`glass p-6 rounded-lg border border-white/10 hover:border-secondary/30 transition-all duration-300 hover:-translate-y-1 cursor-pointer ${project.gradient}`}
+                      onClick={() => setSelectedProject(project)}
+                    >
+                      <div className="flex items-center gap-3 mb-4">
+                        <div className="w-10 h-10 bg-white/5 p-2 rounded-full flex items-center justify-center">
+                          <project.icon className="w-5 h-5 text-secondary" />
+                        </div>
+                        <h3 className="text-lg font-semibold">{project.title}</h3>
+                      </div>
+                      <p className="text-gray-400 text-sm mb-3">{project.period}</p>
+                      <p className="text-gray-300 text-sm mb-4">{project.description}</p>
+                      
+                      <div className="flex flex-wrap gap-2 mb-4">
+                        {project.technologies.slice(0, 3).map((tech) => (
+                          <span
+                            key={tech.name}
+                            className="px-2 py-1 bg-white/5 rounded-full text-xs hover:bg-white/10 transition-colors flex items-center gap-1"
+                          >
+                            <tech.icon className="w-3 h-3 text-secondary" />
+                            {tech.name}
+                          </span>
+                        ))}
+                        {project.technologies.length > 3 && (
+                          <span className="px-2 py-1 bg-white/5 rounded-full text-xs hover:bg-white/10 transition-colors">
+                            +{project.technologies.length - 3}
+                          </span>
+                        )}
+                      </div>
+                      
+                      <div className="border-t border-white/10 pt-4 mt-auto">
                         <div className="flex flex-wrap gap-2">
-                          {project.relatedTags.map((tag) => (
-                            <span
-                              key={tag}
-                              className="px-2 py-1 bg-white/5 rounded-full text-xs hover:bg-white/10 transition-colors"
+                          {project.skillDetails.map(skill => skill.name).slice(0, 2).map((tag, index) => (
+                            <span 
+                              key={index}
+                              className="text-xs px-2 py-1 bg-secondary/10 text-secondary rounded-full"
                             >
                               {tag}
                             </span>
                           ))}
+                          {project.skillDetails.length > 2 && (
+                            <span className="text-xs px-2 py-1 bg-white/5 text-gray-400 rounded-full">
+                              +{project.skillDetails.length - 2}
+                            </span>
+                          )}
                         </div>
                       </div>
-                    </div>
-                  </motion.div>
-                ))}
+                    </motion.div>
+                  ))}
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
         </div>
 
         {/* Project Skills Matrix Section */}
@@ -654,7 +569,7 @@ const Projects = () => {
                   <div className="relative w-full aspect-square mb-4 rounded-xl overflow-hidden border-2 border-secondary/30 bg-white p-4">
                     <div className="relative w-full h-full">
                       <Image
-                        src={selectedProject.image}
+                        src={getImageUrl(selectedProject.image)}
                         alt={selectedProject.title}
                         fill
                         className="object-contain !p-4"
@@ -698,12 +613,12 @@ const Projects = () => {
                   <div className="mt-4">
                     <h4 className="text-sm font-medium text-gray-400 mb-3">Compétences liées :</h4>
                     <div className="flex flex-wrap gap-2">
-                      {selectedProject.relatedTags.map((tag) => (
+                      {selectedProject.skillDetails.map((skill, index) => (
                         <span
-                          key={tag}
+                          key={index}
                           className="px-2 py-1 bg-white/5 rounded-full text-xs hover:bg-white/10 transition-colors"
                         >
-                          {tag}
+                          {skill.name}
                         </span>
                       ))}
                     </div>
@@ -717,7 +632,7 @@ const Projects = () => {
                     <div className="relative flex-1 rounded-xl overflow-hidden border-2 border-secondary/30">
                       <div className="absolute inset-0">
                         <Image
-                          src={selectedProject.projectImage}
+                          src={getImageUrl(selectedProject.projectImage)}
                           alt={`${selectedProject.title} Preview`}
                           fill
                           className="object-contain !p-4"
@@ -771,7 +686,7 @@ const Projects = () => {
                 <div className="lg:col-span-1 flex flex-col overflow-y-auto">
                   <div className="relative w-full aspect-square mb-4 rounded-xl overflow-hidden border-2 border-secondary/30 bg-white p-4">
                     <Image
-                      src="https://play-lh.googleusercontent.com/eLFM1GELLZrKL849EB3b9o-91dJ7wWLJ535-3tz3QE-lzv3XZu26aYAiyxMVxOVG19w"
+                      src={getImageUrl("https://play-lh.googleusercontent.com/eLFM1GELLZrKL849EB3b9o-91dJ7wWLJ535-3tz3QE-lzv3XZu26aYAiyxMVxOVG19w")}
                       alt="Excelia Logo"
                       fill
                       className="object-contain"
@@ -897,12 +812,29 @@ const Projects = () => {
                 </button>
               </div>
               
-              <div className="flex-1 bg-white rounded-lg overflow-hidden">
-                <iframe
-                  src={selectedDocument.path}
-                  className="w-full h-full"
-                  title={selectedDocument.title}
-                />
+              <div className="flex-1 flex flex-col">
+                <div className="flex-1 bg-white rounded-lg overflow-hidden mb-3">
+                  <iframe
+                    src={getPdfViewerUrl(selectedDocument.path)}
+                    className="w-full h-full"
+                    title={selectedDocument.title}
+                    allowFullScreen
+                  />
+                </div>
+                <div className="text-sm text-white/70 flex items-center justify-between">
+                  <span>Document servi via Google Drive pour compatibilité GitHub Pages</span>
+                  <a 
+                    href={getPdfViewerUrl(selectedDocument.path)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-secondary hover:text-secondary/80 flex items-center gap-1 transition-colors"
+                  >
+                    <span>Ouvrir dans un nouvel onglet</span>
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
+                  </a>
+                </div>
               </div>
             </motion.div>
           </motion.div>
@@ -977,7 +909,7 @@ const Projects = () => {
                   {selectedInternshipProject.image ? (
                     <div className="relative flex-1 rounded-xl overflow-hidden border-2 border-secondary/30">
                       <Image
-                        src={selectedInternshipProject.image}
+                        src={getImageUrl(selectedInternshipProject.image)}
                         alt={`${selectedInternshipProject.title} Preview`}
                         fill
                         className="object-contain"
@@ -999,4 +931,4 @@ const Projects = () => {
   );
 };
 
-export default Projects; 
+export default Projects;
