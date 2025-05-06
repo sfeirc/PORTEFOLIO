@@ -3,9 +3,12 @@ const nextConfig = {
   output: 'export',
   images: {
     unoptimized: true,
+    loader: 'custom',
+    loaderFile: './image-loader.js',
   },
   basePath: '/PORTEFOLIO',
   assetPrefix: '/PORTEFOLIO/',
+  trailingSlash: true,
   remotePatterns: [
     {
       protocol: 'https',
