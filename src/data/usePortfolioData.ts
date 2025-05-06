@@ -104,56 +104,45 @@ export const getImageUrl = (path: string): string => {
 export const getPdfViewerUrl = (path: string): string => {
   // If the path is a Google Drive link, convert it to an embedded viewer URL
   if (path.includes('drive.google.com')) {
-    // Convert Google Drive link to embedded viewer format
-    // Example: https://drive.google.com/file/d/FILE_ID/view -> https://drive.google.com/file/d/FILE_ID/preview
+    // Extract the file ID from the URL
+    const fileIdMatch = path.match(/\/d\/(.*?)(\/|$)/);
+    if (fileIdMatch) {
+      const fileId = fileIdMatch[1];
+      return `https://drive.google.com/file/d/${fileId}/preview`;
+    }
     return path.replace('/view', '/preview');
   }
   
-  // If the path is already a full URL (likely an external PDF hosting service like PDF.io, DocDroid, etc.)
+  // If the path is already a full URL
   if (path.startsWith('http://') || path.startsWith('https://')) {
-    // For example, if we're using PDF Embed API service
+    // For PDF hosting services
     if (path.includes('pdf.io') || path.includes('docdroid.net') || path.includes('scribd.com')) {
       return path;
     }
     
-    // For other URLs, use Google Doc Viewer as a fallback
+    // For other URLs, use Google Doc Viewer
     return `https://docs.google.com/viewer?url=${encodeURIComponent(path)}&embedded=true`;
   }
   
-  // For placeholder or empty URLs, return a default "PDF not available" image URL
+  // For placeholder or empty URLs
   if (!path || path === "") {
     return "https://via.placeholder.com/800x600?text=PDF+Not+Available";
   }
 
-  // For local PDFs, we'll use a predefined Google Drive folder with the same PDF names
-  // Format: /filename.pdf -> Google Drive viewer URL
-  // 
-  // HOW TO UPDATE THIS MAPPING:
-  // 1. Upload your PDF to Google Drive
-  // 2. Right-click on the file and select "Share"
-  // 3. Make sure sharing is set to "Anyone with the link can view"
-  // 4. Click "Copy link"
-  // 5. The link will look like: https://drive.google.com/file/d/YOUR_FILE_ID/view?usp=sharing
-  // 6. Extract the FILE_ID portion and create a mapping entry like:
-  //    "/your/path/filename.pdf": "https://drive.google.com/file/d/YOUR_FILE_ID/preview"
-  //
-  const pdfMappings: Record<string, string> = {
-    "/certifications/ibm-ai-certification.pdf": "https://drive.google.com/file/d/1LPj5xO9Ly8xmPxQJUqV2XqYcL2SVPESJ/preview",
-    "/certifications/cisco-junior-certification.pdf": "https://drive.google.com/file/d/1TxHgEW5Qf8zLpYy2ZfFPzHR_1qQNIyD2/preview",
-    "/certifications/cisco-essentials-certification.pdf": "https://drive.google.com/file/d/1nE3kJA2M4QX4nMHx2rnKcBzOHMNnlH1M/preview",
-    "/certifications/cisco-intro-certification.pdf": "https://drive.google.com/file/d/1dXf9JfSIoD9Ke_dOP6XF-9c8DVTzGpZ7/preview",
-    "/certifications/codingame-js-certification.pdf": "https://drive.google.com/file/d/1VXPzs7VZuxM3bDNvLBZXHsVKpWtpAJu4/preview",
-    "/certifications/codingame-csharp-certification.pdf": "https://drive.google.com/file/d/1kL2V87MXPQsf0y_CKR9R0oCKaolwHLU0/preview",
-    "/certifications/codingame-cpp-certification.pdf": "https://drive.google.com/file/d/1P9qHKC4yWHMXylvYR6tnM0XR4QwsXZvT/preview",
-    "/certifications/codingame-python-certification.pdf": "https://drive.google.com/file/d/1bHzOWpXBL9-mMP_FhXB0EefoA2Rz-u8j/preview",
-    "/internships/excelia-internship-agreement-1.pdf": "https://drive.google.com/file/d/1w3MLXd-d2PuJdD6qOjfnq7CTL-9AjHYP/preview",
-    "/internships/excelia-internship-mission-1.pdf": "https://drive.google.com/file/d/16uXWJ4rKfFgrZb8X6Xw75ww6pFxdNu7j/preview",
-    "/internships/excelia-internship-agreement-2.pdf": "https://drive.google.com/file/d/1RwWKfLKqyDvWW3Rf6RJ8KLmCdwSC3Vu7/preview",
-    "/internships/excelia-internship-mission-2.pdf": "https://drive.google.com/file/d/1dEnYPGBDYcPE-xXCJb_dPkTWsKrdJnV8/preview"
-  };
+  // Use the PDF mappings from the JSON file
+  const pdfMappings = (portfolioData as any).pdfMappings;
   
-  // Return the mapped Google Drive URL or a placeholder if the mapping doesn't exist
-  return pdfMappings[path] || "https://via.placeholder.com/800x600?text=PDF+Not+Available";
+  // Check in certifications
+  if (path.startsWith('/certifications/') && pdfMappings.certifications[path]) {
+    return getPdfViewerUrl(pdfMappings.certifications[path]); // Recursively process the mapped URL
+  }
+  
+  // Check in internships
+  if (path.startsWith('/internships/') && pdfMappings.internships[path]) {
+    return getPdfViewerUrl(pdfMappings.internships[path]); // Recursively process the mapped URL
+  }
+  
+  return "https://via.placeholder.com/800x600?text=PDF+Not+Available";
 };
 
 // Type definitions that mirror the JSON structure
@@ -250,6 +239,32 @@ export interface TechnicalSkills {
   }[];
 }
 
+export interface InternshipDocument {
+  title: string;
+  path: string;
+  type: 'agreement' | 'mission';
+}
+
+export interface InternshipProject {
+  title: string;
+  description: string;
+  technologies: Technology[];
+  features: string[];
+  image?: string;
+}
+
+export interface Internship {
+  id: string;
+  title: string;
+  company: string;
+  companyLogo: string;
+  period: string;
+  description: string;
+  technologies: Technology[];
+  documents: InternshipDocument[];
+  projects: InternshipProject[];
+}
+
 // Type for raw data from JSON
 interface RawSkill {
   id: string;
@@ -313,20 +328,27 @@ interface RawProject {
 
 // Helper functions for data manipulation
 export const usePortfolioData = () => {
-  // Extract and process data from the JSON
-  const processedNavbar = {
-    title: portfolioData.navbar.title,
-    items: portfolioData.navbar.items
-  };
+  // Transform raw data into typed data
+  const {
+    navbar,
+    skills: rawSkills,
+    competencies: rawCompetencies,
+    education: rawEducation,
+    certifications: rawCertifications,
+    projects: rawProjects,
+    about: rawAbout,
+    technicalSkills: rawTechnicalSkills,
+    internships: rawInternships
+  } = portfolioData;
 
   // Process skills - adding icon components
-  const processedSkills = (portfolioData.skills as RawSkill[]).map((skill) => ({
+  const processedSkills = (rawSkills as RawSkill[]).map((skill) => ({
     ...skill,
     icon: iconMap[skill.icon] || DocumentTextIcon
   }));
 
   // Process competencies with icon components
-  const processedCompetencies = (portfolioData.competencies as RawCompetency[]).map((competency) => ({
+  const processedCompetencies = (rawCompetencies as RawCompetency[]).map((competency) => ({
     ...competency,
     icon: iconMap[competency.icon] || DocumentTextIcon,
     skills: competency.skills?.map((skill) => ({
@@ -336,7 +358,7 @@ export const usePortfolioData = () => {
   }));
 
   // Process education with icon components
-  const processedEducation = (portfolioData.education as RawEducation[]).map((education) => ({
+  const processedEducation = (rawEducation as RawEducation[]).map((education) => ({
     ...education,
     skills: education.skills.map((skill) => ({
       ...skill,
@@ -345,19 +367,12 @@ export const usePortfolioData = () => {
   }));
 
   // Process certifications with icon components
-  const processedCertifications = (portfolioData.certifications as RawCertification[]).map((cert) => ({
+  const processedCertifications = (rawCertifications as RawCertification[]).map((cert) => ({
     ...cert,
     icon: iconMap[cert.icon] || DocumentTextIcon
   }));
 
   // Process technical skills with icon components
-  const rawTechnicalSkills = portfolioData.technicalSkills as {
-    languages: string[];
-    frameworks: string[];
-    databases: string[];
-    tools: RawTechnology[];
-  };
-  
   const processedTechnicalSkills: TechnicalSkills = {
     languages: rawTechnicalSkills.languages,
     frameworks: rawTechnicalSkills.frameworks,
@@ -369,7 +384,7 @@ export const usePortfolioData = () => {
   };
 
   // Process projects with icon components
-  const processedProjects = (portfolioData.projects as RawProject[]).map((project) => ({
+  const processedProjects = (rawProjects as RawProject[]).map((project) => ({
     ...project,
     icon: iconMap[project.icon] || DocumentTextIcon,
     technologies: project.technologies.map((tech) => ({
@@ -378,14 +393,30 @@ export const usePortfolioData = () => {
     }))
   }));
 
+  // Transform internships data
+  const internships: Internship[] = (rawInternships || []).map((internship: any) => ({
+    ...internship,
+    technologies: internship.technologies.map((tech: RawTechnology) => ({
+      ...tech,
+      icon: iconMap[tech.icon]
+    })),
+    projects: internship.projects.map((project: any) => ({
+      ...project,
+      technologies: project.technologies.map((tech: RawTechnology) => ({
+        ...tech,
+        icon: iconMap[tech.icon]
+      }))
+    }))
+  }));
+
   // Extract processed data
-  const navbar = processedNavbar;
   const skills = processedSkills;
   const competencies = processedCompetencies;
   const education = processedEducation;
   const certifications = processedCertifications;
   const technicalSkills = processedTechnicalSkills;
   const projects = processedProjects;
+  const about = rawAbout as About;
 
   // Helper functions
   const getProjectById = (id: string) => {
@@ -428,7 +459,8 @@ export const usePortfolioData = () => {
     certifications,
     technicalSkills,
     projects,
-    about: portfolioData.about as About,
+    about,
+    internships,
     navbar,
     getProjectById,
     getProjectsByCategory,

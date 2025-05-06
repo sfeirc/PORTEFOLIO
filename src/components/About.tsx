@@ -9,7 +9,11 @@ import {
   BeakerIcon,
   SwatchIcon,
   CircleStackIcon,
-  WrenchIcon
+  WrenchIcon,
+  XMarkIcon,
+  DocumentDuplicateIcon,
+  DocumentIcon,
+  DocumentTextIcon
 } from '@heroicons/react/24/outline';
 
 // Add type definitions
@@ -26,7 +30,24 @@ type Certification = {
 
 const About = () => {
   const [selectedCertification, setSelectedCertification] = useState<Certification | null>(null);
-  const { competencies, certifications, technicalSkills, about, getImageUrl, getPdfViewerUrl } = usePortfolioData();
+  const [selectedSkill, setSelectedSkill] = useState<string | null>(null);
+  const { competencies, certifications, technicalSkills, about, getImageUrl, getPdfViewerUrl, projects } = usePortfolioData();
+
+  // Function to get projects related to a skill
+  const getRelatedProjects = (skillTitle: string) => {
+    // Find the competency that matches the skill title
+    const competency = competencies.find(comp => comp.title === skillTitle);
+    if (!competency) return [];
+    
+    // Get the project titles from the competency
+    const projectTitles = competency.projects || [];
+    
+    // Find the matching projects from the projects array
+    return projects.filter(project => projectTitles.includes(project.title));
+  };
+
+  // Get the selected competency object
+  const selectedCompetency = competencies.find(comp => comp.title === selectedSkill);
 
   return (
     <section id="about" className="min-h-screen py-20 px-4 sm:px-6 lg:px-8">
@@ -212,27 +233,113 @@ const About = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
                 viewport={{ once: true }}
-                className="glass p-6 rounded-lg border border-white/10 hover:border-white/20 transition-colors duration-300"
+                onClick={() => setSelectedSkill(competency.title)}
+                className="glass p-6 rounded-lg border cursor-pointer transition-all duration-300 border-white/10 hover:border-white/20 hover:bg-white/5"
               >
                 <div className="flex items-center gap-2 mb-4">
                   <competency.icon className="w-6 h-6 text-secondary" />
                   <h4 className="text-lg font-semibold">{competency.title}</h4>
                 </div>
                 <p className="text-gray-300 mb-4">{competency.description}</p>
-                <div className="flex flex-wrap gap-2">
-                  {competency.projects && competency.projects.map((project: string) => (
-                    <span
-                      key={project}
-                      className="text-sm px-2 py-0.5 bg-white/5 rounded-full"
-                    >
-                      {project}
-                    </span>
-                  ))}
-                </div>
               </motion.div>
             ))}
           </div>
         </div>
+
+        {/* Skills Modal */}
+        {selectedSkill && selectedCompetency && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4 z-50"
+            onClick={() => setSelectedSkill(null)}
+          >
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0, y: 20 }}
+              animate={{ scale: 1, opacity: 1, y: 0 }}
+              exit={{ scale: 0.95, opacity: 0, y: 10 }}
+              transition={{ type: "spring", duration: 0.5 }}
+              className="bg-gradient-to-b from-gray-900/95 to-gray-800/95 p-8 rounded-2xl max-w-4xl w-full max-h-[85vh] overflow-y-auto border border-white/10 shadow-xl relative"
+              onClick={e => e.stopPropagation()}
+            >
+              <div className="absolute top-4 right-4">
+                <button
+                  onClick={() => setSelectedSkill(null)}
+                  className="p-2 rounded-full hover:bg-white/10 transition-colors group"
+                >
+                  <XMarkIcon className="w-6 h-6 text-gray-400 group-hover:text-white transition-colors" />
+                </button>
+              </div>
+
+              <div className="flex items-center gap-4 mb-8">
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-secondary/20 to-secondary/10 border border-secondary/20 flex items-center justify-center shadow-lg">
+                  {selectedCompetency?.icon && <selectedCompetency.icon className="w-7 h-7 text-secondary" />}
+                </div>
+                <div>
+                  <h3 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white via-secondary to-white">
+                    {selectedCompetency.title}
+                  </h3>
+                  <p className="text-gray-400 text-sm mt-1">Compétence BTS SIO</p>
+                </div>
+              </div>
+              
+              <div className="prose prose-invert max-w-none mb-8">
+                <p className="text-gray-300 leading-relaxed">{selectedCompetency.description}</p>
+              </div>
+              
+              <div className="space-y-6">
+                <h4 className="text-xl font-semibold text-white/90 flex items-center gap-2">
+                  <DocumentDuplicateIcon className="w-5 h-5 text-secondary" />
+                  Projets associés
+                </h4>
+                
+                <div className="grid grid-cols-1 gap-4">
+                  {getRelatedProjects(selectedSkill).map((project, index) => (
+                    <motion.div 
+                      key={index}
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: index * 0.1 }}
+                      className="group"
+                    >
+                      <div className="glass p-6 rounded-xl border border-white/10 hover:border-secondary/30 transition-all duration-300 bg-gradient-to-br from-white/5 to-transparent hover:from-white/10">
+                        <div className="flex items-start gap-4">
+                          <div className="w-10 h-10 rounded-lg bg-secondary/10 border border-secondary/20 flex items-center justify-center flex-shrink-0">
+                            {project.icon ? (
+                              <project.icon className="w-5 h-5 text-secondary" />
+                            ) : (
+                              <DocumentIcon className="w-5 h-5 text-secondary" />
+                            )}
+                          </div>
+                          <div className="flex-1">
+                            <h5 className="text-lg font-semibold mb-2 text-white group-hover:text-secondary transition-colors">
+                              {project.title}
+                            </h5>
+                            <p className="text-gray-300 text-sm mb-4 line-clamp-2">{project.description}</p>
+                            {project.technologies && (
+                              <div className="flex flex-wrap gap-2">
+                                {project.technologies.map((tech, techIndex) => (
+                                  <span
+                                    key={techIndex}
+                                    className="px-3 py-1.5 bg-white/5 hover:bg-white/10 rounded-full text-xs flex items-center gap-2 border border-white/5 transition-colors"
+                                  >
+                                    {tech.icon && <tech.icon className="w-3.5 h-3.5 text-secondary" />}
+                                    <span className="text-gray-300">{tech.name}</span>
+                                  </span>
+                                ))}
+                              </div>
+                            )}
+                          </div>
+                        </div>
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
 
         {/* Certifications Section */}
         <div id="certifications" className="mt-20">
@@ -333,18 +440,46 @@ const About = () => {
                     <h4 className="text-lg font-semibold mb-4">Document de Certification</h4>
                     {selectedCertification.documentImage ? (
                       <div className="flex flex-col flex-1">
-                        <div className="flex-1 rounded-xl overflow-hidden border-2 border-secondary/30 mb-3">
+                        <div className="flex-1 rounded-xl overflow-hidden border-2 border-secondary/30 mb-3 relative">
                           <iframe
                             src={getPdfViewerUrl(selectedCertification.documentImage)}
                             className="w-full h-full"
                             title="Certification Document"
                             allowFullScreen
+                            onError={(e) => {
+                              const iframe = e.target as HTMLIFrameElement;
+                              if (iframe.contentDocument?.body.innerHTML.includes('Une autorisation est nécessaire')) {
+                                iframe.style.display = 'none';
+                                const fallback = iframe.parentElement?.querySelector('.pdf-fallback');
+                                if (fallback) {
+                                  fallback.classList.remove('hidden');
+                                }
+                              }
+                            }}
                           />
+                          <div className="pdf-fallback hidden absolute inset-0 bg-gray-900/95 flex flex-col items-center justify-center text-center p-8">
+                            <div className="w-16 h-16 mb-4 text-secondary">
+                              <DocumentTextIcon className="w-full h-full" />
+                            </div>
+                            <h5 className="text-xl font-semibold mb-2">Accès au document restreint</h5>
+                            <p className="text-gray-400 mb-6">Le document nécessite une autorisation pour être visualisé dans l'aperçu intégré.</p>
+                            <a 
+                              href={selectedCertification.documentImage}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="px-6 py-3 bg-secondary/20 hover:bg-secondary/30 text-secondary rounded-lg border border-secondary/20 transition-colors flex items-center gap-2"
+                            >
+                              <span>Ouvrir dans Google Drive</span>
+                              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                              </svg>
+                            </a>
+                          </div>
                         </div>
                         <div className="text-sm text-gray-400 flex items-center justify-between">
-                          <span>Document servi via Google Drive pour compatibilité GitHub Pages</span>
+                          <span>Document servi via Google Drive</span>
                           <a 
-                            href={getPdfViewerUrl(selectedCertification.documentImage)}
+                            href={selectedCertification.documentImage}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="text-secondary hover:text-secondary/80 flex items-center gap-1 transition-colors"

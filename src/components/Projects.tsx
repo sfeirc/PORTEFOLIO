@@ -11,10 +11,12 @@ import {
   SwatchIcon,
   ServerIcon,
   CubeIcon,
+  XMarkIcon,
 } from '@heroicons/react/24/outline';
 import ProjectSkillsMatrix from './ProjectSkillsMatrix';
 import { useState, useEffect } from 'react';
 import usePortfolioData from '@/data/usePortfolioData';
+import type { Internship, InternshipProject, Technology, InternshipDocument } from '@/data/usePortfolioData';
 
 interface Project {
   id: string;
@@ -71,12 +73,12 @@ interface ProfessionalProjectDetails {
 }
 
 const Projects = () => {
-  const { projects, education, getImageUrl, getPdfViewerUrl } = usePortfolioData();
+  const { projects, education, internships, getImageUrl, getPdfViewerUrl } = usePortfolioData();
   
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
-  const [selectedProfessionalProject, setSelectedProfessionalProject] = useState<ProfessionalProject | null>(null);
+  const [selectedProfessionalProject, setSelectedProfessionalProject] = useState<Internship | null>(null);
   const [selectedDocument, setSelectedDocument] = useState<{ title: string; path: string } | null>(null);
-  const [selectedInternshipProject, setSelectedInternshipProject] = useState<ProfessionalProjectDetails | null>(null);
+  const [selectedInternshipProject, setSelectedInternshipProject] = useState<InternshipProject | null>(null);
   
   // Add effect to handle body scroll for all modals
   useEffect(() => {
@@ -197,241 +199,69 @@ const Projects = () => {
         {/* Professional Projects Section */}
         <div id="stages" className="mb-20">
           <div id="projets-pro">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-8"
-          >
-            <h2 className="text-4xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-white via-secondary to-white">
-              Stages
-            </h2>
-          </motion.div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-20">
-            {/* Stage Excelia 1 */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
-              className="relative group cursor-pointer"
-              onClick={() => setSelectedProfessionalProject({
-                title: "Stage Excelia",
-                period: "Janvier 2025 — Mars 2025",
-                description: "Stage au sein d&apos;Excelia, axé sur le développement d&apos;applications innovantes pour améliorer l&apos;expérience étudiante.",
-                technologies: [
-                  { name: "Next.js", icon: CodeBracketIcon },
-                  { name: "React.js", icon: CodeBracketIcon },
-                  { name: "Elevenlabs API", icon: CpuChipIcon }
-                ],
-                documents: [
-                  {
-                    title: "Convention de stage",
-                    path: "/internships/excelia-internship-agreement-1.pdf",
-                    type: "agreement"
-                  },
-                  {
-                    title: "Fiche de mission",
-                    path: "/internships/excelia-internship-mission-1.pdf",
-                    type: "mission"
-                  }
-                ],
-                projects: [
-                  {
-                    title: "Simulateur d'entretien d'embauche",
-                    description: "Développement d'un simulateur d'entretien utilisant l'IA pour aider les étudiants à préparer leurs entretiens professionnels.",
-                    technologies: [
-                      { name: "Next.js", icon: CodeBracketIcon },
-                      { name: "React.js", icon: CodeBracketIcon },
-                      { name: "Elevenlabs API", icon: CpuChipIcon }
-                    ],
-                    features: [
-                      "Interface conversationnelle en temps réel",
-                      "Analyse du langage et des réponses",
-                      "Feedback personnalisé",
-                      "Voix synthétisée réaliste"
-                    ]
-                  }
-                ]
-              })}
+              className="text-center mb-8"
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-lg blur-xl opacity-50 group-hover:opacity-75 transition-opacity duration-300" />
-              <div className="relative glass p-8 rounded-lg border border-white/10 hover:border-white/20 transition-colors duration-300">
-                <div className="flex items-center gap-4 mb-6">
-                  <div className="relative w-16 h-16 bg-white/5 rounded-full p-2">
-                    <Image
-                      src="https://play-lh.googleusercontent.com/eLFM1GELLZrKL849EB3b9o-91dJ7wWLJ535-3tz3QE-lzv3XZu26aYAiyxMVxOVG19w"
-                      alt="Excelia Logo"
-                      fill
-                      className="object-contain"
-                      sizes="(max-width: 64px) 100vw, 64px"
-                    />
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="text-xl font-semibold bg-clip-text text-transparent bg-gradient-to-r from-white to-white/80">
-                      Stage Excelia
-                    </h3>
-                    <p className="text-gray-400 text-sm">Janvier 2025 — Mars 2025</p>
-                  </div>
-                </div>
-                
-                <p className="text-gray-300 mb-6">
-                  Stage au sein d&apos;Excelia, axé sur le développement d&apos;applications innovantes pour améliorer l&apos;expérience étudiante.
-                </p>
-                
-                <div className="mb-6">
-                  <h4 className="text-sm font-medium text-gray-400 mb-3">Technologies principales :</h4>
-                  <div className="flex flex-wrap gap-2">
-                    <span className="px-3 py-1 bg-white/5 rounded-full text-sm hover:bg-white/10 transition-colors flex items-center gap-2">
-                      <CodeBracketIcon className="w-4 h-4 text-secondary" />
-                      Next.js
-                    </span>
-                    <span className="px-3 py-1 bg-white/5 rounded-full text-sm hover:bg-white/10 transition-colors flex items-center gap-2">
-                      <CpuChipIcon className="w-4 h-4 text-secondary" />
-                      Elevenlabs API
-                    </span>
-                  </div>
-                </div>
-              </div>
+              <h2 className="text-4xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-white via-secondary to-white">
+                Stages
+              </h2>
             </motion.div>
-
-            {/* Stage Excelia 2 */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              viewport={{ once: true }}
-              className="relative group cursor-pointer"
-              onClick={() => setSelectedProfessionalProject({
-                title: "Stage Excelia",
-                period: "Mai 2024 — Juillet 2024",
-                description: "Stage de fin d&apos;année chez Excelia, focalisé sur l&apos;automatisation des processus, l&apos;optimisation web et le développement d&apos;outils d&apos;assistance intelligents.",
-                technologies: [
-                  { name: "Python", icon: CommandLineIcon },
-                  { name: "Flask", icon: CodeBracketIcon },
-                  { name: "OpenAI GPT-4", icon: CpuChipIcon },
-                  { name: "Babylon.js", icon: CubeIcon },
-                  { name: "Blender API", icon: CodeBracketIcon },
-                  { name: "Base de données vectorielle", icon: CircleStackIcon },
-                  { name: "Architecture RAG", icon: ServerIcon }
-                ],
-                documents: [
-                  {
-                    title: "Convention de stage",
-                    path: "/internships/excelia-internship-agreement-2.pdf",
-                    type: "agreement"
-                  },
-                  {
-                    title: "Fiche de mission",
-                    path: "/internships/excelia-internship-mission-2.pdf",
-                    type: "mission"
-                  }
-                ],
-                projects: [
-                  {
-                    title: "Automatisation Blender 3D",
-                    description: "Développement de scripts Python pour automatiser des tâches répétitives dans Blender 3D, améliorant significativement le workflow de création 3D.",
-                    technologies: [
-                      { name: "Python", icon: CommandLineIcon },
-                      { name: "Blender API", icon: CodeBracketIcon }
-                    ],
-                    features: [
-                      "Automatisation des tâches répétitives",
-                      "Optimisation du workflow de modélisation",
-                      "Scripts personnalisables selon les besoins",
-                      "Interface utilisateur intégrée à Blender"
-                    ],
-                    image: "/projects/blender-automation.png"
-                  },
-                  {
-                    title: "Optimisation Plans Interactifs",
-                    description: "Optimisation des performances et refactorisation du code d'une application web utilisant Babylon.js pour l'affichage de plans interactifs en 3D.",
-                    technologies: [
-                      { name: "Babylon.js", icon: CubeIcon },
-                      { name: "JavaScript", icon: CodeBracketIcon },
-                      { name: "HTML5", icon: CodeBracketIcon },
-                      { name: "CSS3", icon: SwatchIcon }
-                    ],
-                    features: [
-                      "Amélioration des performances de rendu 3D",
-                      "Optimisation du chargement des ressources",
-                      "Interface interactive fluide",
-                      "Navigation intuitive dans les plans"
-                    ],
-                    image: "/projects/interactive-plans.png"
-                  },
-                  {
-                    title: "Chatbot Support Étudiant",
-                    description: "Développement d'un chatbot intelligent pour le support étudiant, utilisant l'IA pour fournir des réponses précises et personnalisées, réduisant le temps de recherche de 40%.",
-                    technologies: [
-                      { name: "Python/Flask", icon: CommandLineIcon },
-                      { name: "OpenAI GPT-4", icon: CpuChipIcon },
-                      { name: "Base de données vectorielle", icon: CircleStackIcon },
-                      { name: "Architecture RAG", icon: ServerIcon }
-                    ],
-                    features: [
-                      "Réponses en temps réel aux questions des étudiants",
-                      "Base de connaissances vectorielle pour recherche rapide",
-                      "Architecture RAG pour une meilleure précision",
-                      "Réduction de 40% du temps de recherche",
-                      "Interface web responsive"
-                    ]
-                  }
-                ]
-              })}
-            >
-              <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-lg blur-xl opacity-50 group-hover:opacity-75 transition-opacity duration-300" />
-              <div className="relative glass p-8 rounded-lg border border-white/10 hover:border-white/20 transition-colors duration-300">
-                <div className="flex items-center gap-4 mb-6">
-                  <div className="relative w-16 h-16 bg-white/5 rounded-full p-2">
-                    <Image
-                      src="https://play-lh.googleusercontent.com/eLFM1GELLZrKL849EB3b9o-91dJ7wWLJ535-3tz3QE-lzv3XZu26aYAiyxMVxOVG19w"
-                      alt="Excelia Logo"
-                      fill
-                      className="object-contain"
-                      sizes="(max-width: 64px) 100vw, 64px"
-                    />
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-20">
+              {internships.map((internship) => (
+                <motion.div
+                  key={internship.id}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8 }}
+                  viewport={{ once: true }}
+                  className="relative group cursor-pointer"
+                  onClick={() => setSelectedProfessionalProject(internship)}
+                >
+                  <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-lg blur-xl opacity-50 group-hover:opacity-75 transition-opacity duration-300" />
+                  <div className="relative glass p-8 rounded-lg border border-white/10 hover:border-white/20 transition-colors duration-300">
+                    <div className="flex items-center gap-4 mb-6">
+                      <div className="relative w-16 h-16 bg-white/5 rounded-full p-2">
+                        <Image
+                          src={internship.companyLogo}
+                          alt={`${internship.company} Logo`}
+                          fill
+                          className="object-contain"
+                          sizes="(max-width: 64px) 100vw, 64px"
+                        />
+                      </div>
+                      <div className="flex-1">
+                        <h3 className="text-xl font-semibold bg-clip-text text-transparent bg-gradient-to-r from-white to-white/80">
+                          {internship.title}
+                        </h3>
+                        <p className="text-gray-400 text-sm">{internship.period}</p>
+                      </div>
+                    </div>
+                    
+                    <p className="text-gray-300 mb-6">
+                      {internship.description}
+                    </p>
+                    
+                    <div className="mb-6">
+                      <h4 className="text-sm font-medium text-gray-400 mb-3">Technologies principales :</h4>
+                      <div className="flex flex-wrap gap-2">
+                        {internship.technologies.map((tech: Technology, index: number) => (
+                          <span
+                            key={index}
+                            className="px-3 py-1 bg-white/5 rounded-full text-sm hover:bg-white/10 transition-colors flex items-center gap-2"
+                          >
+                            <tech.icon className="w-4 h-4 text-secondary" />
+                            {tech.name}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
                   </div>
-                  <div className="flex-1">
-                    <h3 className="text-xl font-semibold bg-clip-text text-transparent bg-gradient-to-r from-white to-white/80">
-                      Stage Excelia
-                    </h3>
-                    <p className="text-gray-400 text-sm">Mai 2024 — Juillet 2024</p>
-                  </div>
-                </div>
-                
-                <p className="text-gray-300 mb-6">
-                  Stage de fin d&apos;année chez Excelia, focalisé sur l&apos;automatisation des processus, l&apos;optimisation web et le développement d&apos;outils d&apos;assistance intelligents.
-                </p>
-                
-                <div className="mb-6">
-                  <h4 className="text-sm font-medium text-gray-400 mb-3">Technologies principales :</h4>
-                  <div className="flex flex-wrap gap-2">
-                    <span className="px-3 py-1 bg-white/5 rounded-full text-sm hover:bg-white/10 transition-colors flex items-center gap-2">
-                      <CommandLineIcon className="w-4 h-4 text-secondary" />
-                      Python
-                    </span>
-                    <span className="px-3 py-1 bg-white/5 rounded-full text-sm hover:bg-white/10 transition-colors flex items-center gap-2">
-                      <CodeBracketIcon className="w-4 h-4 text-secondary" />
-                      Flask
-                    </span>
-                    <span className="px-3 py-1 bg-white/5 rounded-full text-sm hover:bg-white/10 transition-colors flex items-center gap-2">
-                      <CpuChipIcon className="w-4 h-4 text-secondary" />
-                      OpenAI GPT-4
-                    </span>
-                    <span className="px-3 py-1 bg-white/5 rounded-full text-sm hover:bg-white/10 transition-colors flex items-center gap-2">
-                      <CubeIcon className="w-4 h-4 text-secondary" />
-                      Babylon.js
-                    </span>
-                    <span className="px-3 py-1 bg-white/5 rounded-full text-sm hover:bg-white/10 transition-colors flex items-center gap-2">
-                      <CodeBracketIcon className="w-4 h-4 text-secondary" />
-                      Blender API
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
+                </motion.div>
+              ))}
             </div>
           </div>
         </div>
@@ -477,9 +307,9 @@ const Projects = () => {
                       <p className="text-gray-300 text-sm mb-4">{project.description}</p>
                       
                       <div className="flex flex-wrap gap-2 mb-4">
-                        {project.technologies.slice(0, 3).map((tech) => (
+                        {project.technologies.slice(0, 3).map((tech: Technology, index: number) => (
                           <span
-                            key={tech.name}
+                            key={index}
                             className="px-2 py-1 bg-white/5 rounded-full text-xs hover:bg-white/10 transition-colors flex items-center gap-1"
                           >
                             <tech.icon className="w-3 h-3 text-secondary" />
@@ -586,9 +416,9 @@ const Projects = () => {
                   <div className="mb-4">
                     <h4 className="text-sm font-medium text-gray-400 mb-3">Technologies utilisées :</h4>
                     <div className="flex flex-wrap gap-2">
-                      {selectedProject.technologies.map((tech) => (
+                      {selectedProject.technologies.map((tech: Technology, index: number) => (
                         <span
-                          key={tech.name}
+                          key={index}
                           className="px-3 py-1 bg-white/5 rounded-full text-sm hover:bg-white/10 transition-colors flex items-center gap-2"
                         >
                           <tech.icon className="w-4 h-4 text-secondary" />
@@ -601,8 +431,8 @@ const Projects = () => {
                   <div>
                     <h4 className="text-sm font-medium text-gray-400 mb-3">Fonctionnalités :</h4>
                     <ul className="space-y-2">
-                      {selectedProject.features.map((feature) => (
-                        <li key={feature} className="flex items-start gap-2">
+                      {selectedProject.features.map((feature: string, index: number) => (
+                        <li key={index} className="flex items-start gap-2">
                           <span className="text-secondary">•</span>
                           <span className="text-gray-300 text-sm">{feature}</span>
                         </li>
@@ -686,8 +516,8 @@ const Projects = () => {
                 <div className="lg:col-span-1 flex flex-col overflow-y-auto">
                   <div className="relative w-full aspect-square mb-4 rounded-xl overflow-hidden border-2 border-secondary/30 bg-white p-4">
                     <Image
-                      src={getImageUrl("https://play-lh.googleusercontent.com/eLFM1GELLZrKL849EB3b9o-91dJ7wWLJ535-3tz3QE-lzv3XZu26aYAiyxMVxOVG19w")}
-                      alt="Excelia Logo"
+                      src={selectedProfessionalProject.companyLogo}
+                      alt={`${selectedProfessionalProject.company} Logo`}
                       fill
                       className="object-contain"
                       sizes="(max-width: 64px) 100vw, 64px"
@@ -699,9 +529,9 @@ const Projects = () => {
                   <div className="mb-6">
                     <h4 className="text-sm font-medium text-gray-400 mb-3">Technologies utilisées :</h4>
                     <div className="flex flex-wrap gap-2">
-                      {selectedProfessionalProject.technologies.map((tech) => (
+                      {selectedProfessionalProject.technologies.map((tech: Technology, index: number) => (
                         <span
-                          key={tech.name}
+                          key={index}
                           className="px-3 py-1 bg-white/5 rounded-full text-sm hover:bg-white/10 transition-colors flex items-center gap-2"
                         >
                           <tech.icon className="w-4 h-4 text-secondary" />
@@ -714,7 +544,7 @@ const Projects = () => {
                   <div className="mb-6">
                     <h4 className="text-sm font-medium text-gray-400 mb-3">Documents de Stage :</h4>
                     <div className="flex flex-col gap-2">
-                      {selectedProfessionalProject.documents.map((doc) => (
+                      {selectedProfessionalProject.documents.map((doc: InternshipDocument) => (
                         <button
                           key={doc.path}
                           onClick={(e) => {
@@ -735,7 +565,7 @@ const Projects = () => {
                 <div className="lg:col-span-2 flex flex-col overflow-y-auto">
                   <h4 className="text-lg font-semibold mb-4">Projets réalisés</h4>
                   <div className="flex flex-col gap-6">
-                    {selectedProfessionalProject.projects.map((project, index) => (
+                    {selectedProfessionalProject.projects.map((project: InternshipProject, index: number) => (
                       <div
                         key={index}
                         className="mb-6 last:mb-0 glass p-4 rounded-lg border border-white/10 hover:border-white/20 transition-colors cursor-pointer"
@@ -750,7 +580,7 @@ const Projects = () => {
                         <div className="mb-3">
                           <h6 className="text-sm font-medium text-gray-400 mb-2">Technologies :</h6>
                           <div className="flex flex-wrap gap-2">
-                            {project.technologies.map((tech, techIndex) => (
+                            {project.technologies.map((tech: Technology, techIndex: number) => (
                               <span
                                 key={techIndex}
                                 className="px-2 py-1 bg-white/5 rounded-full text-xs hover:bg-white/10 transition-colors flex items-center gap-1"
@@ -765,7 +595,7 @@ const Projects = () => {
                         <div>
                           <h6 className="text-sm font-medium text-gray-400 mb-2">Fonctionnalités :</h6>
                           <ul className="space-y-1">
-                            {project.features.map((feature, featureIndex) => (
+                            {project.features.map((feature: string, featureIndex: number) => (
                               <li key={featureIndex} className="flex items-start gap-2 text-sm">
                                 <span className="text-secondary">•</span>
                                 <span className="text-gray-300">{feature}</span>
@@ -795,36 +625,61 @@ const Projects = () => {
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}
-              className="w-full h-full max-w-7xl flex flex-col"
+              className="glass p-8 rounded-lg w-full max-w-7xl h-[90vh] flex flex-col"
               onClick={e => e.stopPropagation()}
             >
-              <div className="flex justify-between items-center mb-4">
-                <h3 className="text-xl font-bold text-white">
+              <div className="flex justify-between items-start mb-6">
+                <h3 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white via-secondary to-white">
                   {selectedDocument.title}
                 </h3>
                 <button
                   onClick={() => setSelectedDocument(null)}
-                  className="text-white/80 hover:text-white transition-colors"
+                  className="text-gray-400 hover:text-white transition-colors"
                 >
-                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                  </svg>
+                  <XMarkIcon className="w-6 h-6" />
                 </button>
               </div>
-              
               <div className="flex-1 flex flex-col">
-                <div className="flex-1 bg-white rounded-lg overflow-hidden mb-3">
+                <div className="flex-1 bg-white rounded-lg overflow-hidden mb-3 relative">
                   <iframe
                     src={getPdfViewerUrl(selectedDocument.path)}
                     className="w-full h-full"
                     title={selectedDocument.title}
                     allowFullScreen
+                    onError={(e) => {
+                      const iframe = e.target as HTMLIFrameElement;
+                      if (iframe.contentDocument?.body.innerHTML.includes('Une autorisation est nécessaire')) {
+                        iframe.style.display = 'none';
+                        const fallback = iframe.parentElement?.querySelector('.pdf-fallback');
+                        if (fallback) {
+                          fallback.classList.remove('hidden');
+                        }
+                      }
+                    }}
                   />
+                  <div className="pdf-fallback hidden absolute inset-0 bg-gray-900/95 flex flex-col items-center justify-center text-center p-8">
+                    <div className="w-16 h-16 mb-4 text-secondary">
+                      <DocumentTextIcon className="w-full h-full" />
+                    </div>
+                    <h5 className="text-xl font-semibold mb-2">Accès au document restreint</h5>
+                    <p className="text-gray-400 mb-6">Le document nécessite une autorisation pour être visualisé dans l'aperçu intégré.</p>
+                    <a 
+                      href={selectedDocument.path}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="px-6 py-3 bg-secondary/20 hover:bg-secondary/30 text-secondary rounded-lg border border-secondary/20 transition-colors flex items-center gap-2"
+                    >
+                      <span>Ouvrir dans Google Drive</span>
+                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                      </svg>
+                    </a>
+                  </div>
                 </div>
                 <div className="text-sm text-white/70 flex items-center justify-between">
-                  <span>Document servi via Google Drive pour compatibilité GitHub Pages</span>
+                  <span>Document servi via Google Drive</span>
                   <a 
-                    href={getPdfViewerUrl(selectedDocument.path)}
+                    href={selectedDocument.path}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-secondary hover:text-secondary/80 flex items-center gap-1 transition-colors"
@@ -878,7 +733,7 @@ const Projects = () => {
                   <div className="mb-6">
                     <h4 className="text-sm font-medium text-gray-400 mb-3">Technologies utilisées :</h4>
                     <div className="flex flex-wrap gap-2">
-                      {selectedInternshipProject.technologies.map((tech, index) => (
+                      {selectedInternshipProject.technologies.map((tech: Technology, index: number) => (
                         <span
                           key={index}
                           className="px-3 py-1 bg-white/5 rounded-full text-sm hover:bg-white/10 transition-colors flex items-center gap-2"
@@ -893,7 +748,7 @@ const Projects = () => {
                   <div>
                     <h4 className="text-sm font-medium text-gray-400 mb-3">Fonctionnalités :</h4>
                     <ul className="space-y-2">
-                      {selectedInternshipProject.features.map((feature, index) => (
+                      {selectedInternshipProject.features.map((feature: string, index: number) => (
                         <li key={index} className="flex items-start gap-2">
                           <span className="text-secondary">•</span>
                           <span className="text-gray-300 text-sm">{feature}</span>

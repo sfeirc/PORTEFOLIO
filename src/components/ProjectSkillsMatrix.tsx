@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { XMarkIcon, DocumentIcon } from '@heroicons/react/24/outline';
+import { XMarkIcon, DocumentIcon, DocumentDuplicateIcon, BeakerIcon, CpuChipIcon, SparklesIcon } from '@heroicons/react/24/outline';
 import usePortfolioData, { SkillDetail } from '@/data/usePortfolioData';
 
 interface Skill {
@@ -270,14 +270,14 @@ const ProjectSkillsMatrix: React.FC = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50"
+            className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center p-4 z-50"
             onClick={() => setSelectedSkill(null)}
           >
             <motion.div
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}
-              className="relative glass p-8 rounded-lg max-w-2xl w-full mx-4 border border-white/10"
+              className="relative glass p-8 rounded-lg max-w-2xl w-full mx-4 max-h-[85vh] flex flex-col border border-white/10"
               onClick={e => e.stopPropagation()}
             >
               <button
@@ -300,12 +300,12 @@ const ProjectSkillsMatrix: React.FC = () => {
                 {selectedSkill.description}
               </p>
 
-              <div>
+              <div className="overflow-y-auto flex-1 pr-2 custom-scrollbar">
                 <h4 className="text-sm font-medium text-gray-400 mb-3">Projets liés :</h4>
                 <div className="space-y-3">
                   {getProjectsBySkill(selectedSkill.id).map((project) => (
                     <motion.div
-                        key={project.id}
+                      key={project.id}
                       whileHover={{ scale: 1.02 }}
                       className="glass p-4 rounded-lg border border-white/10 hover:border-white/20 transition-colors cursor-pointer"
                       onClick={() => {
@@ -318,7 +318,7 @@ const ProjectSkillsMatrix: React.FC = () => {
                       <h5 className="font-medium mb-1">{project.title}</h5>
                       <p className="text-sm text-gray-400 line-clamp-2">{project.description}</p>
                     </motion.div>
-                    ))}
+                  ))}
                 </div>
               </div>
             </motion.div>
@@ -333,83 +333,132 @@ const ProjectSkillsMatrix: React.FC = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50"
+            className="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4 z-50"
             onClick={() => {
               setSelectedProject(null);
               setSelectedProjectSkill(null);
             }}
           >
             <motion.div
-              initial={{ scale: 0.9, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.9, opacity: 0 }}
-              className="relative glass p-8 rounded-lg max-w-2xl w-full mx-4 border border-white/10"
+              initial={{ scale: 0.9, opacity: 0, y: 20 }}
+              animate={{ scale: 1, opacity: 1, y: 0 }}
+              exit={{ scale: 0.95, opacity: 0, y: 10 }}
+              transition={{ type: "spring", duration: 0.5 }}
+              className="bg-gradient-to-b from-gray-900/95 to-gray-800/95 p-8 rounded-2xl max-w-4xl w-full max-h-[85vh] overflow-y-auto border border-white/10 shadow-xl relative"
               onClick={e => e.stopPropagation()}
             >
-              <button
-                onClick={() => {
-                  setSelectedProject(null);
-                  setSelectedProjectSkill(null);
-                }}
-                className="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors"
-              >
-                <XMarkIcon className="w-6 h-6" />
-              </button>
-              
-              <div className="flex items-center gap-4 mb-6">
-                <div className="relative w-16 h-16 rounded-lg overflow-hidden border border-white/10">
-                  <div className="absolute inset-0 flex items-center justify-center bg-white/5">
-                    {selectedProject.icon ? (
-                      <selectedProject.icon className="w-8 h-8 text-secondary" />
-                    ) : (
-                      <DocumentIcon className="w-8 h-8 text-secondary" />
-                    )}
-                  </div>
+              <div className="absolute top-4 right-4">
+                <button
+                  onClick={() => {
+                    setSelectedProject(null);
+                    setSelectedProjectSkill(null);
+                  }}
+                  className="p-2 rounded-full hover:bg-white/10 transition-colors group"
+                >
+                  <XMarkIcon className="w-6 h-6 text-gray-400 group-hover:text-white transition-colors" />
+                </button>
+              </div>
+
+              <div className="flex items-start gap-6 mb-8">
+                <div className="relative w-16 h-16 rounded-xl overflow-hidden border border-secondary/20 bg-gradient-to-br from-secondary/20 to-secondary/10 flex items-center justify-center shadow-lg">
+                  {selectedProject.icon ? (
+                    <selectedProject.icon className="w-8 h-8 text-secondary" />
+                  ) : (
+                    <DocumentIcon className="w-8 h-8 text-secondary" />
+                  )}
                 </div>
-                <div>
-                  <h3 className="text-xl font-bold">{selectedProject.title}</h3>
-                  <div className="flex items-center gap-2 mt-1">
+                <div className="flex-1">
+                  <h3 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white via-secondary to-white">
+                    {selectedProject.title}
+                  </h3>
+                  <div className="flex items-center gap-2 mt-2">
                     {selectedProjectSkill && (
-                      <span className="text-sm px-2 py-0.5 bg-secondary/20 text-secondary rounded-full">
+                      <span className="text-sm px-3 py-1.5 bg-secondary/20 text-secondary rounded-full border border-secondary/20">
                         {skills.find(s => s.id === selectedProjectSkill)?.title}
+                      </span>
+                    )}
+                    {selectedProject.isInternship && (
+                      <span className="text-sm px-3 py-1.5 bg-white/5 text-white/80 rounded-full border border-white/10">
+                        Stage
                       </span>
                     )}
                   </div>
                 </div>
               </div>
 
-              <div className="mb-8">
-                <h4 className="text-lg font-medium mb-2">Description</h4>
-                <p className="text-gray-300">{selectedProject.description}</p>
-              </div>
-
-              {selectedProjectSkill && (
-                <div className="glass p-4 rounded-lg bg-secondary/5 mb-6">
-                  <h4 className="text-lg font-medium mb-2">Compétence spécifique</h4>
-                  <p className="text-secondary font-medium mb-1">
-                    {skills.find(s => s.id === selectedProjectSkill)?.title}
-                  </p>
-                  <p className="text-gray-300">
-                    {selectedProject.skillDetails.find(
-                      skill => skill.name === skills.find(s => s.id === selectedProjectSkill)?.title
-                    )?.description}
-                  </p>
+              <div className="space-y-8">
+                <div>
+                  <h4 className="text-lg font-semibold text-white/90 flex items-center gap-2 mb-3">
+                    <DocumentDuplicateIcon className="w-5 h-5 text-secondary" />
+                    Description
+                  </h4>
+                  <p className="text-gray-300 leading-relaxed">{selectedProject.description}</p>
                 </div>
-              )}
 
-              <div>
-                <h4 className="text-lg font-medium mb-2">Technologies utilisées</h4>
-                <div className="flex flex-wrap gap-2">
-                  {selectedProject.technologies.map(tech => (
-                    <span
-                      key={tech.name}
-                      className="px-3 py-1 bg-white/5 rounded-full text-sm hover:bg-white/10 transition-colors flex items-center gap-2"
-                    >
-                      <tech.icon className="w-4 h-4 text-secondary" />
-                      {tech.name}
-                    </span>
-                  ))}
-                </div>
+                {selectedProjectSkill && (
+                  <div className="glass p-6 rounded-xl bg-secondary/5 border border-secondary/20">
+                    <h4 className="text-lg font-semibold text-white/90 flex items-center gap-2 mb-4">
+                      <BeakerIcon className="w-5 h-5 text-secondary" />
+                      Compétence spécifique
+                    </h4>
+                    <div className="space-y-2">
+                      <p className="text-secondary font-medium">
+                        {skills.find(s => s.id === selectedProjectSkill)?.title}
+                      </p>
+                      <p className="text-gray-300">
+                        {selectedProject.skillDetails.find(
+                          skill => skill.name === skills.find(s => s.id === selectedProjectSkill)?.title
+                        )?.description}
+                      </p>
+                    </div>
+                  </div>
+                )}
+
+                {selectedProject.technologies && (
+                  <div>
+                    <h4 className="text-lg font-semibold text-white/90 flex items-center gap-2 mb-4">
+                      <CpuChipIcon className="w-5 h-5 text-secondary" />
+                      Technologies utilisées
+                    </h4>
+                    <div className="flex flex-wrap gap-2">
+                      {selectedProject.technologies.map((tech, index) => (
+                        <motion.span
+                          key={index}
+                          initial={{ opacity: 0, scale: 0.8 }}
+                          animate={{ opacity: 1, scale: 1 }}
+                          transition={{ delay: index * 0.1 }}
+                          className="px-4 py-2 bg-white/5 hover:bg-white/10 rounded-lg text-sm flex items-center gap-2 border border-white/10 transition-colors"
+                        >
+                          {tech.icon && <tech.icon className="w-4 h-4 text-secondary" />}
+                          <span className="text-gray-300">{tech.name}</span>
+                        </motion.span>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {selectedProject.features && (
+                  <div>
+                    <h4 className="text-lg font-semibold text-white/90 flex items-center gap-2 mb-4">
+                      <SparklesIcon className="w-5 h-5 text-secondary" />
+                      Fonctionnalités clés
+                    </h4>
+                    <ul className="space-y-2">
+                      {selectedProject.features.map((feature, index) => (
+                        <motion.li
+                          key={index}
+                          initial={{ opacity: 0, x: -20 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          transition={{ delay: index * 0.1 }}
+                          className="flex items-center gap-3 text-gray-300"
+                        >
+                          <div className="w-1.5 h-1.5 rounded-full bg-secondary flex-shrink-0" />
+                          {feature}
+                        </motion.li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
               </div>
             </motion.div>
           </motion.div>

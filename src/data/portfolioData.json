@@ -61,38 +61,73 @@
     {
       "title": "Gérer le patrimoine informatique",
       "icon": "ComputerDesktopIcon",
-      "description": "Mes projets démontrent ma capacité à gérer et maintenir des systèmes informatiques complexes. Par exemple, le Logiciel de gestion des stages et l'Interface de gestion des films récents montrent ma maîtrise de la gestion de bases de données, de la maintenance des systèmes et de l'optimisation des performances.",
-      "projects": ["Logiciel de gestion des stages", "Interface de gestion des films récents", "Station de recharge VTT solaire"]
+      "description": "Mes projets démontrent ma capacité à gérer et maintenir des systèmes informatiques complexes, optimiser les performances, et assurer la sécurité des données.",
+      "projects": [
+        "Automatisation Blender 3D",
+        "Optimisation Plans Interactifs",
+        "Chatbot intelligent avec OpenAI et Google Cloud API",
+        "Chatbot intelligent avec Fine Tuning OpenAIs",
+        "Simulation d'entretien en temps réel (voix)",
+        "Application Web Météo",
+        "Logiciel de gestion des stages",
+        "Interface de gestion des films récents",
+        "Application Web de location de voitures"
+      ]
     },
     {
-      "title": "Répondre aux incidents et demandes d'assistance et d'évolution",
+      "title": "Répondre aux incidents et demandes",
       "icon": "WrenchScrewdriverIcon",
-      "description": "À travers mes chatbots intelligents et mes applications web, j'ai développé des solutions pour répondre aux besoins des utilisateurs. Le Chatbot Support Étudiant, par exemple, réduit le temps de recherche de 40% en fournissant des réponses rapides et pertinentes.",
-      "projects": ["Chatbot Support Étudiant", "Chatbot intelligent avec OpenAI", "Application Web Météo"]
+      "description": "À travers mes chatbots intelligents et mes applications web, j'ai développé des solutions efficaces pour répondre aux besoins des utilisateurs et résoudre les incidents rapidement.",
+      "projects": [
+        "Chatbot intelligent avec OpenAI et Google Cloud API",
+        "Chatbot intelligent avec Fine Tuning OpenAIs",
+        "Logiciel de gestion des stages"
+      ]
     },
     {
-      "title": "Développer la présence en ligne de l'organisation",
+      "title": "Développer la présence en ligne",
       "icon": "GlobeAltIcon",
-      "description": "Mes projets web et mes applications en ligne montrent ma capacité à créer une présence numérique efficace. Le Générateur avancé de README et mes applications web démontrent ma maîtrise du développement front-end et de l'optimisation pour le web.",
-      "projects": ["Générateur avancé de README", "Application Web de location de voitures", "API Pokémon"]
+      "description": "Mes projets web et applications en ligne démontrent ma capacité à créer une présence numérique efficace et à optimiser l'expérience utilisateur.",
+      "projects": [
+        "Chatbot intelligent avec OpenAI et Google Cloud API",
+        "Chatbot intelligent avec Fine Tuning OpenAIs",
+        "Portfolio Professionnel",
+        "Application Web Météo",
+        "Application Web de location de voitures"
+      ]
     },
     {
       "title": "Travailler en mode projet",
       "icon": "UserGroupIcon",
-      "description": "Tous mes projets sont développés en suivant une méthodologie de projet structurée. Par exemple, le Jeu de combat interactif et le Démineur Python montrent ma capacité à planifier, développer et livrer des projets complets dans les délais.",
-      "projects": ["Jeu de combat interactif", "Démineur Python", "Bataille navale en C++"]
+      "description": "J'ai démontré ma capacité à travailler en équipe et à gérer des projets complexes en utilisant des méthodologies agiles.",
+      "projects": [
+        "Chatbot intelligent avec OpenAI et Google Cloud API",
+        "Application Web Météo",
+        "Application Web de location de voitures"
+      ]
     },
     {
-      "title": "Mettre à disposition des utilisateurs un service informatique",
+      "title": "Mettre à disposition un service informatique",
       "icon": "ServerIcon",
-      "description": "Mes applications sont conçues pour être accessibles et utiles aux utilisateurs. L'Application Web Météo et le Logiciel de gestion des stages sont des exemples de services informatiques que j'ai développés pour répondre aux besoins spécifiques des utilisateurs.",
-      "projects": ["Application Web Météo", "Logiciel de gestion des stages", "Application Web de location de voitures"]
+      "description": "Mes applications sont conçues pour être accessibles, performantes et répondre aux besoins spécifiques des utilisateurs.",
+      "projects": [
+        "Optimisation Plans Interactifs",
+        "Simulation d'entretien en temps réel (voix)",
+        "Logiciel de gestion des stages",
+        "Interface de gestion des films récents",
+        "Application Web de location de voitures"
+      ]
     },
     {
       "title": "Organiser son développement professionnel",
       "icon": "AcademicCapIcon",
-      "description": "Mon portfolio et mes projets démontrent mon engagement dans le développement continu de mes compétences. Les stages chez Excelia et le développement du Chatbot Support Étudiant montrent ma capacité à apprendre et à évoluer professionnellement.",
-      "projects": ["Stage Excelia", "Chatbot Support Étudiant", "Simulation d'entretien en temps réel"]
+      "description": "Mon portfolio et mes projets démontrent mon engagement dans le développement continu de mes compétences et ma veille technologique.",
+      "projects": [
+        "Automatisation Blender 3D",
+        "Optimisation Plans Interactifs",
+        "Simulation d'entretien en temps réel (voix)",
+        "Portfolio Professionnel"
+      ]
     }
   ],
   
@@ -117,16 +152,17 @@
     },
     {
         "title": "BUT Informatique",
-        "subtitle": "Réalisation d'applications conception et développement",
+        "subtitle": "Parcours réalisation d'applications conception et validation",
         "school": "IUT de La Rochelle",
         "period": "Septembre 2022 — juin 2023",
-        "description": "Formation en développement logiciel. (DIM)",
+        "description": "Formation en développement logiciel.",
         "image": "https://www.iut-larochelle.fr/wp-content/themes/iutlarochelle/img/logo-iut.png",
         "skills": [
             { "name": "Développement logiciel", "icon": "CodeBracketIcon" },
             { "name": "Conception d'applications", "icon": "WrenchScrewdriverIcon" },
             { "name": "Développement web", "icon": "CloudIcon" },
             { "name": "Base de données", "icon": "CloudIcon" }
+
         ],
         "keyPoints": [
             "Formation en développement logiciel",
@@ -154,92 +190,243 @@
     }
   ],
   
+  "internships": [
+    {
+      "id": "excelia-1",
+      "title": "Stage Excelia",
+      "company": "Excelia",
+      "companyLogo": "https://play-lh.googleusercontent.com/eLFM1GELLZrKL849EB3b9o-91dJ7wWLJ535-3tz3QE-lzv3XZu26aYAiyxMVxOVG19w",
+      "period": "Janvier 2025 — Mars 2025",
+      "description": "Stage au sein d'Excelia, axé sur le développement d'applications innovantes pour améliorer l'expérience étudiante.",
+      "technologies": [
+        { "name": "Next.js", "icon": "CodeBracketIcon" },
+        { "name": "React.js", "icon": "CodeBracketIcon" },
+        { "name": "Elevenlabs API", "icon": "CpuChipIcon" },
+        { "name": "OpenAI API", "icon": "CpuChipIcon" },
+        { "name": "Google Cloud API", "icon": "CloudIcon" },
+        { "name": "Fine Tuning OpenAI", "icon": "CpuChipIcon" },
+        { "name": "TypeScript", "icon": "CodeBracketIcon" },
+        { "name": "Tailwind CSS", "icon": "SwatchIcon" }
+      ],
+      "documents": [
+        {
+          "title": "Convention de stage",
+          "path": "/internships/excelia-internship-agreement-1.pdf",
+          "type": "agreement"
+        },
+        {
+          "title": "Fiche de mission",
+          "path": "/internships/excelia-internship-mission-1.pdf",
+          "type": "mission"
+        }
+      ],
+      "projects": [
+        {
+          "title": "Simulateur d'entretien d'embauche",
+          "description": "Développement d'un simulateur d'entretien utilisant un système prédictictionnel pour aider les étudiants à préparer leurs entretiens professionnels.",
+          "technologies": [
+            { "name": "Next.js", "icon": "CodeBracketIcon" },
+            { "name": "React.js", "icon": "CodeBracketIcon" },
+            { "name": "Elevenlabs API", "icon": "CpuChipIcon" },
+            { "name": "OpenAI API", "icon": "CpuChipIcon" },
+            { "name": "TypeScript", "icon": "CodeBracketIcon" },
+            { "name": "Tailwind CSS", "icon": "SwatchIcon" }
+          ],
+          "features": [
+            "Interface conversationnelle en temps réel",
+            "Analyse du langage et des réponses",
+            "Feedback personnalisé",
+            "Voix synthétisée réaliste française",
+            "Système prédictictionnel"
+          ],
+          "image": "/projects/simulator-entretien.png"
+        },
+        {
+          "title": "Chatbot fine tuner avec OpenAI et Google Cloud API",
+          "description": "Développement d'un chatbot intelligent pour le support étudiant, utilisant la technologie de fine tuning d'OpenAI pour améliorer la qualité des réponses et la rapidité de réponse, et Google Cloud API pour la gestion des données. (stockage des documents, et récupération des informations)",
+          "technologies": [
+            { "name": "Python/Flask", "icon": "CommandLineIcon" },
+            { "name": "OpenAI GPT-4", "icon": "CpuChipIcon" },
+            { "name": "Google Cloud API", "icon": "CloudIcon" }
+          ],
+          "features": [
+            "Réponses précises et personnalisées",
+            "Récupération des informations",
+            "Stockage des documents"
+          ],
+          "image": "/projects/chatbot-fine-tuner.png"
+        }
+      ]
+    },
+    {
+      "id": "excelia-2",
+      "title": "Stage Excelia",
+      "company": "Excelia",
+      "companyLogo": "https://play-lh.googleusercontent.com/eLFM1GELLZrKL849EB3b9o-91dJ7wWLJ535-3tz3QE-lzv3XZu26aYAiyxMVxOVG19w",
+      "period": "Mai 2024 — Juillet 2024",
+      "description": "Stage de fin d'année chez Excelia, focalisé sur l'automatisation des processus, l'optimisation web et le développement d'outils d'assistance intelligents.",
+      "technologies": [
+        { "name": "Python", "icon": "CommandLineIcon" },
+        { "name": "Flask", "icon": "CodeBracketIcon" },
+        { "name": "JavaScript", "icon": "CodeBracketIcon" },
+        { "name": "OpenAI GPT-4o API", "icon": "CpuChipIcon" },
+        { "name": "Babylon.js", "icon": "CubeIcon" },
+        { "name": "Blender API", "icon": "CodeBracketIcon" },
+        { "name": "Base de données vectorielle", "icon": "CircleStackIcon" },
+        { "name": "Architecture RAG", "icon": "ServerIcon" }
+      ],
+      "documents": [
+        {
+          "title": "Convention de stage",
+          "path": "/internships/excelia-internship-agreement-2.pdf",
+          "type": "agreement"
+        },
+        {
+          "title": "Fiche de mission",
+          "path": "/internships/excelia-internship-mission-2.pdf",
+          "type": "mission"
+        }
+      ],
+      "projects": [
+        {
+          "title": "Automatisation Blender 3D",
+          "description": "Développement de scripts Python pour automatiser des tâches répétitives qui crée des propriétés personnalisées à chaque objet qu'on crée, améliorant significativement le workflow de création 3D.",
+          "technologies": [
+            { "name": "Python", "icon": "CommandLineIcon" },
+            { "name": "Blender API", "icon": "CodeBracketIcon" }
+          ],
+          "features": [
+            "Automatisation des tâches répétitives",
+            "Optimisation du workflow de modélisation",
+            "Scripts personnalisables selon les besoins",
+            "Interface utilisateur intégrée à Blender"
+          ],
+          "image": "/projects/blender-automation.png"
+        },
+        {
+          "title": "Optimisation Plans Interactifs",
+          "description": "Optimisation des performances et refactorisation du code d'une application web utilisant Babylon.js pour l'affichage de plans interactifs en 3D de la XL Factory d'Excelia.",
+          "technologies": [
+            { "name": "Babylon.js", "icon": "CubeIcon" },
+            { "name": "JavaScript", "icon": "CodeBracketIcon" },
+            { "name": "HTML5", "icon": "CodeBracketIcon" },
+            { "name": "CSS3", "icon": "SwatchIcon" }
+          ],
+          "features": [
+            "Amélioration des performances de rendu 3D",
+            "Optimisation du chargement des ressources",
+            "Interface interactive fluide",
+            "Navigation intuitive dans les plans"
+          ],
+          "image": "/projects/interactive-plans.png"
+        },
+        {
+          "title": "Chatbot Support Étudiant",
+          "description": "Développement d'un chatbot intelligent pour le support étudiant, utilisant l'IA pour fournir des réponses précises et personnalisées, réduisant le temps de recherche de 40%.",
+          "technologies": [
+            { "name": "Python/Flask", "icon": "CommandLineIcon" },
+            { "name": "OpenAI GPT-4", "icon": "CpuChipIcon" },
+            { "name": "Base de données vectorielle", "icon": "CircleStackIcon" },
+            { "name": "Architecture RAG", "icon": "ServerIcon" }
+          ],
+          "features": [
+            "Réponses en temps réel aux questions des étudiants",
+            "Base de connaissances vectorielle pour recherche rapide",
+            "Architecture RAG pour une meilleure précision",
+            "Réduction de 40% du temps de recherche",
+            "Interface web responsive"
+          ]
+        }
+      ]
+    }
+  ],
+  
   "certifications": [
     {
       "id": "ibm-ai",
-      "title": "Artificial Intelligence Fundamentals",
+      "title": "IBM AI Engineering Professional Certificate",
       "issuer": "IBM",
-      "category": "Intelligence Artificielle",
-      "icon": "AiIcon",
-      "image": "https://images.credly.com/size/340x340/images/82b908e1-fdcd-4785-9d32-97f11ccbcf08/image.png",
+      "category": "AI & Machine Learning",
+      "icon": "CpuChipIcon",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg",
       "documentImage": "/certifications/ibm-ai-certification.pdf",
-      "description": "Cette certification atteste de ma compréhension fondamentale des concepts d'intelligence artificielle, y compris le machine learning, le deep learning, et les applications pratiques de l'IA."
+      "description": "Formation approfondie en intelligence artificielle et apprentissage automatique avec IBM."
     },
     {
       "id": "cisco-junior",
-      "title": "Junior Cybersecurity Analyst Career Path",
+      "title": "Cisco Junior Cybersecurity Analyst",
       "issuer": "Cisco",
-      "category": "Cybersécurité",
+      "category": "Cybersecurity",
       "icon": "ShieldCheckIcon",
-      "image": "https://images.credly.com/size/340x340/images/441578ec-c0f3-46cc-95fc-86b27e90cf4f/image.png",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/6/64/Cisco_logo.svg",
       "documentImage": "/certifications/cisco-junior-certification.pdf",
-      "description": "Cette certification valide mes compétences en analyse de cybersécurité, couvrant les concepts fondamentaux de la sécurité informatique et les meilleures pratiques de l'industrie."
+      "description": "Certification en analyse de cybersécurité niveau junior."
     },
     {
       "id": "cisco-essentials",
-      "title": "Cybersecurity Essentials",
+      "title": "Cisco Cybersecurity Essentials",
       "issuer": "Cisco",
-      "category": "Cybersécurité",
-      "icon": "ShieldCheckIcon",
-      "image": "https://images.credly.com/size/340x340/images/054913b2-e271-49a2-a1a4-9bf1c1f9a404/CyberEssentials.png",
+      "category": "Cybersecurity",
+      "icon": "ServerIcon",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/6/64/Cisco_logo.svg",
       "documentImage": "/certifications/cisco-essentials-certification.pdf",
-      "description": "Cette certification démontre ma maîtrise des concepts essentiels de la cybersécurité, y compris la protection des réseaux, la sécurité des applications et la gestion des incidents."
+      "description": "Fondamentaux des réseaux informatiques et de leur administration."
     },
     {
       "id": "cisco-intro",
-      "title": "Introduction to Cybersecurity",
+      "title": "Cisco Introduction to Cybersecurity",
       "issuer": "Cisco",
-      "category": "Cybersécurité",
+      "category": "Cybersecurity",
       "icon": "ShieldCheckIcon",
-      "image": "https://images.credly.com/size/340x340/images/af8c6b4e-fc31-47c4-8dcb-eb7a2065dc5b/I2CS__1_.png",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/6/64/Cisco_logo.svg",
       "documentImage": "/certifications/cisco-intro-certification.pdf",
-      "description": "Cette certification introduit les concepts fondamentaux de la cybersécurité, couvrant les menaces, les vulnérabilités et les mesures de protection de base."
+      "description": "Introduction aux concepts fondamentaux de la cybersécurité."
     },
     {
       "id": "codingame-js",
-      "title": "JavaScript",
+      "title": "CodinGame JavaScript Certification",
       "issuer": "CodinGame",
-      "category": "Programmation",
-      "icon": "ProgrammingIcon",
+      "category": "Programming",
+      "icon": "CodeBracketIcon",
       "image": "https://cdn.worldvectorlogo.com/logos/codingame-1.svg",
       "documentImage": "/certifications/codingame-js-certification.pdf",
-      "description": "Cette certification atteste de mes compétences en JavaScript, démontrant ma capacité à résoudre des problèmes complexes et à développer des solutions efficaces."
+      "description": "Maîtrise avancée du développement JavaScript."
     },
     {
       "id": "codingame-csharp",
-      "title": "C#",
+      "title": "CodinGame C# Certification",
       "issuer": "CodinGame",
-      "category": "Programmation",
-      "icon": "ProgrammingIcon",
+      "category": "Programming",
+      "icon": "CodeBracketIcon",
       "image": "https://cdn.worldvectorlogo.com/logos/codingame-1.svg",
       "documentImage": "/certifications/codingame-csharp-certification.pdf",
-      "description": "Cette certification valide mes compétences en C#, montrant ma maîtrise du langage et de ses fonctionnalités avancées."
+      "description": "Expertise en développement C# et .NET."
     },
     {
       "id": "codingame-cpp",
-      "title": "C++",
+      "title": "CodinGame C++ Certification",
       "issuer": "CodinGame",
-      "category": "Programmation",
-      "icon": "ProgrammingIcon",
+      "category": "Programming",
+      "icon": "CodeBracketIcon",
       "image": "https://cdn.worldvectorlogo.com/logos/codingame-1.svg",
       "documentImage": "/certifications/codingame-cpp-certification.pdf",
-      "description": "Cette certification démontre mes compétences en C++, couvrant la programmation orientée objet et la gestion de la mémoire."
+      "description": "Maîtrise du développement C++ et de la programmation orientée objet."
     },
     {
       "id": "codingame-python",
-      "title": "Python 3",
+      "title": "CodinGame Python Certification",
       "issuer": "CodinGame",
-      "category": "Programmation",
-      "icon": "ProgrammingIcon",
+      "category": "Programming",
+      "icon": "CodeBracketIcon",
       "image": "https://cdn.worldvectorlogo.com/logos/codingame-1.svg",
       "documentImage": "/certifications/codingame-python-certification.pdf",
-      "description": "Cette certification atteste de ma maîtrise de Python 3, incluant les structures de données, les algorithmes et les bonnes pratiques de programmation."
+      "description": "Expertise en développement Python et ses frameworks."
     }
   ],
   
   "technicalSkills": {
     "languages": ["C#", "C++", "PHP", "JS", "Python", "Dart", "SQL", "TypeScript"],
-    "frameworks": ["Symfony", "Flask", "Node.js", "Next.js", "Tkinter", "Express.js"],
+    "frameworks": ["Symfony", "Flask", "Node.js", "Next.js", "Tkinter", "Express.js", "Flutter"],
     "databases": ["MySQL", "SQL Server", "PostgreSQL"],
     "tools": [
       { "name": "Docker", "icon": "DockerIcon" },
@@ -1008,5 +1195,24 @@
         }
       ]
     }
-  ]
+  ],
+
+  "pdfMappings": {
+    "certifications": {
+      "/certifications/ibm-ai-certification.pdf": "https://drive.google.com/file/d/1R0PQxZfCDENyoE9_AGOThG2a4nCmznhh/view?usp=sharing",
+      "/certifications/cisco-junior-certification.pdf": "https://drive.google.com/file/d/1lAuDxvQ7nbwDCBDSq8OIgZqNBRT6EY7D/view?usp=sharing",
+      "/certifications/cisco-essentials-certification.pdf": "https://drive.google.com/file/d/1NAloq3ZSVQ7vB5mNvkQCe3RwXpDBgPCE/view?usp=sharing",
+      "/certifications/cisco-intro-certification.pdf": "https://drive.google.com/file/d/1Q8ed7e-oqEj2vls_QDaZANZJ8jMSG9b1/view?usp=sharing",
+      "/certifications/codingame-js-certification.pdf": "https://drive.google.com/file/d/1OmdACZCyULiXvAINnrTYbs3xS0W-Y1va/view?usp=sharing",
+      "/certifications/codingame-csharp-certification.pdf": "https://drive.google.com/file/d/10IT6uwJWBBhQP7cYw_w9rtsosPp09akG/view?usp=sharing",
+      "/certifications/codingame-cpp-certification.pdf": "https://drive.google.com/file/d/1y_ewRnxxtxP1JkwES0fYbMO4F_rXYOe9/view?usp=sharing",
+      "/certifications/codingame-python-certification.pdf": "https://drive.google.com/file/d/1lzvcyPw2X2M1xmEkq715MWs8sO6aPiGK/view?usp=sharing"
+    },
+    "internships": {
+      "/internships/excelia-internship-agreement-1.pdf": "https://drive.google.com/file/d/1XdAr1yyJ4dohLvOu83ekS-A1O1fbWb5O/view?usp=sharing",
+      "/internships/excelia-internship-mission-1.pdf": "https://drive.google.com/file/d/1tWrx3zPzTsvY-efnfTLda5iBxLkhV0pM/view?usp=sharing",
+      "/internships/excelia-internship-agreement-2.pdf": "https://drive.google.com/file/d/13Arx-iazgzYZW5wcQXPDuTbir9TqtUJG/view?usp=sharing",
+      "/internships/excelia-internship-mission-2.pdf": "https://drive.google.com/file/d/1-lBpSeTiDWpLNjFAL0qt1t0t6jL77xRh/view?usp=sharing"
+    }
+  }
 } 
