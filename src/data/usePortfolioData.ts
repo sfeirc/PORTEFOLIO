@@ -87,13 +87,16 @@ export const getImageUrl = (path: string): string => {
     return path;
   }
   
+  // Get the base path for GitHub Pages
+  const basePath = process.env.NODE_ENV === 'production' ? '/PORTEFOLIO' : '';
+  
   // If the path starts with a slash, it's a public path
   if (path.startsWith('/')) {
-    return path;
+    return `${basePath}${path}`;
   }
   
   // Otherwise, assume it's a relative path to the images folder
-  return `/images/${path}`;
+  return `${basePath}/images/${path}`;
 };
 
 /**
