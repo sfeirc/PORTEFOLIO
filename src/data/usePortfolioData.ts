@@ -166,6 +166,12 @@ export interface SkillDetail {
   description: string;
 }
 
+export interface ProjectImage {
+  url: string;
+  alt: string;
+  caption: string;
+}
+
 export interface Project {
   id: string;
   title: string;
@@ -175,6 +181,7 @@ export interface Project {
   features: string[];
   image: string;
   projectImage?: string;
+  projectImages?: ProjectImage[];
   size: string;
   gradient: string;
   icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
@@ -274,13 +281,7 @@ interface RawSkill {
   color: string;
 }
 
-interface RawCompetency {
-  title: string;
-  icon: string;
-  description: string;
-  projects: string[];
-  skills?: { name: string; icon: string }[];
-}
+
 
 interface RawEducation {
   title: string;
@@ -318,6 +319,7 @@ interface RawProject {
   features: string[];
   image: string;
   projectImage?: string;
+  projectImages?: ProjectImage[];
   size: string;
   gradient: string;
   icon: string;
@@ -332,7 +334,7 @@ export const usePortfolioData = () => {
   const {
     navbar,
     skills: rawSkills,
-    competencies: rawCompetencies,
+
     education: rawEducation,
     certifications: rawCertifications,
     projects: rawProjects,
@@ -347,15 +349,7 @@ export const usePortfolioData = () => {
     icon: iconMap[skill.icon] || DocumentTextIcon
   }));
 
-  // Process competencies with icon components
-  const processedCompetencies = (rawCompetencies as RawCompetency[]).map((competency) => ({
-    ...competency,
-    icon: iconMap[competency.icon] || DocumentTextIcon,
-    skills: competency.skills?.map((skill) => ({
-      ...skill,
-      icon: iconMap[skill.icon] || DocumentTextIcon
-    })) || []
-  }));
+
 
   // Process education with icon components
   const processedEducation = (rawEducation as RawEducation[]).map((education) => ({
@@ -411,7 +405,6 @@ export const usePortfolioData = () => {
 
   // Extract processed data
   const skills = processedSkills;
-  const competencies = processedCompetencies;
   const education = processedEducation;
   const certifications = processedCertifications;
   const technicalSkills = processedTechnicalSkills;
@@ -454,7 +447,6 @@ export const usePortfolioData = () => {
 
   return {
     skills,
-    competencies,
     education,
     certifications,
     technicalSkills,

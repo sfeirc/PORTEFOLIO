@@ -12,11 +12,19 @@ import {
   ServerIcon,
   CubeIcon,
   XMarkIcon,
+  ChevronLeftIcon,
+  ChevronRightIcon,
 } from '@heroicons/react/24/outline';
 import ProjectSkillsMatrix from './ProjectSkillsMatrix';
 import { useState, useEffect } from 'react';
 import usePortfolioData from '@/data/usePortfolioData';
 import type { Internship, InternshipProject, Technology, InternshipDocument } from '@/data/usePortfolioData';
+
+interface ProjectImage {
+  url: string;
+  alt: string;
+  caption: string;
+}
 
 interface Project {
   id: string;
@@ -34,6 +42,7 @@ interface Project {
   icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
   category: string;
   projectImage?: string;
+  projectImages?: ProjectImage[];
   isInternship: boolean;
   skillDetails: {
     name: string;
@@ -41,9 +50,7 @@ interface Project {
   }[];
 }
 
-interface ProjectsByCategory {
-  [key: string]: Project[];
-}
+
 
 interface ProfessionalProject {
   title: string;
@@ -79,6 +86,7 @@ const Projects = () => {
   const [selectedProfessionalProject, setSelectedProfessionalProject] = useState<Internship | null>(null);
   const [selectedDocument, setSelectedDocument] = useState<{ title: string; path: string } | null>(null);
   const [selectedInternshipProject, setSelectedInternshipProject] = useState<InternshipProject | null>(null);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
   
   // Add effect to handle body scroll for all modals
   useEffect(() => {
@@ -94,15 +102,51 @@ const Projects = () => {
     };
   }, [selectedProject, selectedProfessionalProject, selectedDocument, selectedInternshipProject]);
 
-  // Group projects by category
-  const projectsByCategory = projects.reduce<ProjectsByCategory>((acc, project) => {
-    const category = project.category;
-    if (!acc[category]) {
-      acc[category] = [];
+  // Reset image index when project changes
+  useEffect(() => {
+    setCurrentImageIndex(0);
+  }, [selectedProject]);
+
+  // Keyboard navigation for carousel
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (selectedProject?.projectImages && selectedProject.projectImages.length > 1) {
+        if (event.key === 'ArrowLeft') {
+          handlePrevImage();
+        } else if (event.key === 'ArrowRight') {
+          handleNextImage();
+        }
+      }
+    };
+
+    if (selectedProject) {
+      document.addEventListener('keydown', handleKeyDown);
     }
-    acc[category].push(project as Project);
-    return acc;
-  }, {});
+
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [selectedProject, currentImageIndex]);
+
+  // Carousel navigation functions
+  const handlePrevImage = () => {
+    if (selectedProject?.projectImages) {
+      setCurrentImageIndex((prev) => 
+        prev === 0 ? selectedProject.projectImages!.length - 1 : prev - 1
+      );
+    }
+  };
+
+  const handleNextImage = () => {
+    if (selectedProject?.projectImages) {
+      setCurrentImageIndex((prev) => 
+        prev === selectedProject.projectImages!.length - 1 ? 0 : prev + 1
+      );
+    }
+  };
+
+  // Include all projects (both personal and internship projects)
+  const filteredProjects = projects;
 
   return (
     <section id="projets" className="min-h-screen py-20 px-4 sm:px-6 lg:px-8">
@@ -198,7 +242,7 @@ const Projects = () => {
 
         {/* Professional Projects Section */}
         <div id="stages" className="mb-20">
-          <div id="projets-pro">
+          <div>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -265,86 +309,88 @@ const Projects = () => {
             </div>
           </div>
         </div>
-        <h2 className="text-4xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-white via-secondary to-white text-center">
-          Mes Projets
-        </h2>
         {/* Projects Section */}
-        <div id="projets">
-          {Object.entries(projectsByCategory)
-            .filter(([category]) => category !== 'Projets Pro')
-            .map(([category, projects]) => (
-              <div key={category} className="mb-20" id={category.toLowerCase().replace(/ /g, '-')}>
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8 }}
-                  viewport={{ once: true }}
-                  className="text-center mb-8"
-                >
-                  <h2 className="text-4xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-white via-secondary to-white">
-                    {category}
-                  </h2>
-                </motion.div>
-                
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                  {projects.map((project) => (
-                    <motion.div
-                      key={project.id}
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.8 }}
-                      viewport={{ once: true }}
-                      className={`glass p-6 rounded-lg border border-white/10 hover:border-secondary/30 transition-all duration-300 hover:-translate-y-1 cursor-pointer ${project.gradient}`}
-                      onClick={() => setSelectedProject(project)}
-                    >
-                      <div className="flex items-center gap-3 mb-4">
-                        <div className="w-10 h-10 bg-white/5 p-2 rounded-full flex items-center justify-center">
-                          <project.icon className="w-5 h-5 text-secondary" />
-                        </div>
-                        <h3 className="text-lg font-semibold">{project.title}</h3>
-                      </div>
-                      <p className="text-gray-400 text-sm mb-3">{project.period}</p>
-                      <p className="text-gray-300 text-sm mb-4">{project.description}</p>
-                      
-                      <div className="flex flex-wrap gap-2 mb-4">
-                        {project.technologies.slice(0, 3).map((tech: Technology, index: number) => (
-                          <span
-                            key={index}
-                            className="px-2 py-1 bg-white/5 rounded-full text-xs hover:bg-white/10 transition-colors flex items-center gap-1"
-                          >
-                            <tech.icon className="w-3 h-3 text-secondary" />
-                            {tech.name}
-                          </span>
-                        ))}
-                        {project.technologies.length > 3 && (
-                          <span className="px-2 py-1 bg-white/5 rounded-full text-xs hover:bg-white/10 transition-colors">
-                            +{project.technologies.length - 3}
-                          </span>
-                        )}
-                      </div>
-                      
-                      <div className="border-t border-white/10 pt-4 mt-auto">
-                        <div className="flex flex-wrap gap-2">
-                          {project.skillDetails.map(skill => skill.name).slice(0, 2).map((tag, index) => (
-                            <span 
-                              key={index}
-                              className="text-xs px-2 py-1 bg-secondary/10 text-secondary rounded-full"
-                            >
-                              {tag}
-                            </span>
-                          ))}
-                          {project.skillDetails.length > 2 && (
-                            <span className="text-xs px-2 py-1 bg-white/5 text-gray-400 rounded-full">
-                              +{project.skillDetails.length - 2}
-                            </span>
-                          )}
-                        </div>
-                      </div>
-                    </motion.div>
-                  ))}
+        <div id="projets" className="mb-20">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-8"
+          >
+            <h2 className="text-4xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-white via-secondary to-white">
+              Mes Projets
+            </h2>
+          </motion.div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {filteredProjects.map((project) => (
+              <motion.div
+                key={project.id}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+                viewport={{ once: true }}
+                className={`glass p-6 rounded-lg border transition-all duration-300 hover:-translate-y-1 cursor-pointer ${
+                  project.isInternship 
+                    ? 'border-blue-500/30 hover:border-blue-400/50 bg-blue-500/5' 
+                    : 'border-white/10 hover:border-secondary/30'
+                } ${project.gradient}`}
+                onClick={() => setSelectedProject(project as Project)}
+              >
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-10 h-10 bg-white/5 p-2 rounded-full flex items-center justify-center">
+                    <project.icon className="w-5 h-5 text-secondary" />
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-lg font-semibold">{project.title}</h3>
+                    {project.isInternship && (
+                      <span className="inline-block px-2 py-0.5 bg-blue-500/20 text-blue-400 text-xs rounded-full mt-1">
+                        Projet de Stage
+                      </span>
+                    )}
+                  </div>
                 </div>
-              </div>
+                <p className="text-gray-400 text-sm mb-3">{project.period}</p>
+                <p className="text-gray-300 text-sm mb-4">{project.description}</p>
+                
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {project.technologies.slice(0, 3).map((tech: Technology, index: number) => (
+                    <span
+                      key={index}
+                      className="px-2 py-1 bg-white/5 rounded-full text-xs hover:bg-white/10 transition-colors flex items-center gap-1"
+                    >
+                      <tech.icon className="w-3 h-3 text-secondary" />
+                      {tech.name}
+                    </span>
+                  ))}
+                  {project.technologies.length > 3 && (
+                    <span className="px-2 py-1 bg-white/5 rounded-full text-xs hover:bg-white/10 transition-colors">
+                      +{project.technologies.length - 3}
+                    </span>
+                  )}
+                </div>
+                
+                <div className="border-t border-white/10 pt-4 mt-auto">
+                  <div className="flex flex-wrap gap-2">
+                    {project.skillDetails.map((skill: { name: string }) => skill.name).slice(0, 2).map((tag: string, index: number) => (
+                      <span 
+                        key={index}
+                        className="text-xs px-2 py-1 bg-secondary/10 text-secondary rounded-full"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                    {project.skillDetails.length > 2 && (
+                      <span className="text-xs px-2 py-1 bg-white/5 text-gray-400 rounded-full">
+                        +{project.skillDetails.length - 2}
+                      </span>
+                    )}
+                  </div>
+                </div>
+              </motion.div>
             ))}
+          </div>
         </div>
 
         {/* Project Skills Matrix Section */}
@@ -455,10 +501,65 @@ const Projects = () => {
                   </div>
                 </div>
                 
-                {/* Right column: Project image */}
+                {/* Right column: Project image/carousel */}
                 <div className="lg:col-span-2 flex flex-col">
                   <h4 className="text-lg font-semibold mb-4">Aperçu du Projet</h4>
-                  {selectedProject.projectImage ? (
+                  {selectedProject.projectImages && selectedProject.projectImages.length > 0 ? (
+                    <div className="relative flex-1 rounded-xl overflow-hidden border-2 border-secondary/30">
+                      {/* Main image */}
+                      <div className="relative w-full h-full">
+                        <Image
+                          src={getImageUrl(selectedProject.projectImages[currentImageIndex].url)}
+                          alt={selectedProject.projectImages[currentImageIndex].alt}
+                          fill
+                          className="object-contain !p-4"
+                          sizes="(max-width: 768px) 100vw, 66vw"
+                        />
+                      </div>
+                      
+                      {/* Navigation arrows */}
+                      {selectedProject.projectImages.length > 1 && (
+                        <>
+                          <button
+                            onClick={handlePrevImage}
+                            className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-colors z-10"
+                          >
+                            <ChevronLeftIcon className="w-6 h-6" />
+                          </button>
+                          <button
+                            onClick={handleNextImage}
+                            className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-colors z-10"
+                          >
+                            <ChevronRightIcon className="w-6 h-6" />
+                          </button>
+                        </>
+                      )}
+                      
+                      {/* Image indicators */}
+                      {selectedProject.projectImages.length > 1 && (
+                        <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2 z-10">
+                          {selectedProject.projectImages.map((_, index) => (
+                            <button
+                              key={index}
+                              onClick={() => setCurrentImageIndex(index)}
+                              className={`w-3 h-3 rounded-full transition-colors ${
+                                index === currentImageIndex 
+                                  ? 'bg-secondary' 
+                                  : 'bg-white/50 hover:bg-white/70'
+                              }`}
+                            />
+                          ))}
+                        </div>
+                      )}
+                      
+                      {/* Image caption */}
+                      <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
+                        <p className="text-white text-sm text-center">
+                          {selectedProject.projectImages[currentImageIndex].caption}
+                        </p>
+                      </div>
+                    </div>
+                  ) : selectedProject.projectImage ? (
                     <div className="relative flex-1 rounded-xl overflow-hidden border-2 border-secondary/30">
                       <div className="absolute inset-0">
                         <Image

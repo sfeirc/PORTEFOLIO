@@ -31,6 +31,7 @@ const ProjectSkillsMatrix: React.FC = () => {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [selectedProjectSkill, setSelectedProjectSkill] = useState<string | null>(null);
   const [isHeaderVisible, setIsHeaderVisible] = useState(false);
+  const [isMatrixInView, setIsMatrixInView] = useState(false);
   const matrixRef = useRef<HTMLDivElement>(null);
   const headerRef = useRef<HTMLDivElement>(null);
   const headerPlaceholderRef = useRef<HTMLDivElement>(null);
@@ -49,7 +50,7 @@ const ProjectSkillsMatrix: React.FC = () => {
           setIsHeaderVisible(false);
         }
       },
-      { threshold: 0.05 } // Trigger when at least 5% of the element is visible
+      { threshold: 0.1 } // Trigger when at least 10% of the element is visible
     );
 
     // Create a separate observer for the header placeholder
@@ -59,8 +60,8 @@ const ProjectSkillsMatrix: React.FC = () => {
         if (entries[0].isIntersecting) {
           setIsHeaderVisible(false);
         } else {
-          // Check if the header is above the viewport (scrolled past it)
-          if (entries[0].boundingClientRect.y < 0) {
+          // Check if the header is above the viewport (scrolled past it) AND we're significantly scrolled down
+          if (entries[0].boundingClientRect.y < -100 && window.scrollY > 300) {
             setIsHeaderVisible(true);
           } else {
             setIsHeaderVisible(false);
@@ -69,7 +70,7 @@ const ProjectSkillsMatrix: React.FC = () => {
       },
       { 
         threshold: [0, 0.1, 0.5, 1],
-        rootMargin: '-80px 0px 0px 0px' // Start transition when header is 80px from top edge
+        rootMargin: '-200px 0px 0px 0px' // Start transition when header is 200px from top edge
       }
     );
 
@@ -126,7 +127,7 @@ const ProjectSkillsMatrix: React.FC = () => {
           opacity: isHeaderVisible ? 1 : 0
         }}
         transition={{ duration: 0.3 }}
-        className="fixed top-0 left-0 right-0 z-50 pt-4 pb-4 bg-dark-300/95 backdrop-blur-md shadow-lg shadow-black/30 border-b border-white/10"
+        className="fixed top-0 left-0 right-0 z-30 pt-4 pb-4 bg-dark-300/95 backdrop-blur-md shadow-lg shadow-black/30 border-b border-white/10"
       >
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-[200px_repeat(6,1fr)] gap-4 min-w-[800px] max-w-7xl mx-auto">

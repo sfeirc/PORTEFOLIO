@@ -11,8 +11,6 @@ import {
   CircleStackIcon,
   WrenchIcon,
   XMarkIcon,
-  DocumentDuplicateIcon,
-  DocumentIcon,
   DocumentTextIcon
 } from '@heroicons/react/24/outline';
 
@@ -30,24 +28,7 @@ type Certification = {
 
 const About = () => {
   const [selectedCertification, setSelectedCertification] = useState<Certification | null>(null);
-  const [selectedSkill, setSelectedSkill] = useState<string | null>(null);
-  const { competencies, certifications, technicalSkills, about, getImageUrl, getPdfViewerUrl, projects } = usePortfolioData();
-
-  // Function to get projects related to a skill
-  const getRelatedProjects = (skillTitle: string) => {
-    // Find the competency that matches the skill title
-    const competency = competencies.find(comp => comp.title === skillTitle);
-    if (!competency) return [];
-    
-    // Get the project titles from the competency
-    const projectTitles = competency.projects || [];
-    
-    // Find the matching projects from the projects array
-    return projects.filter(project => projectTitles.includes(project.title));
-  };
-
-  // Get the selected competency object
-  const selectedCompetency = competencies.find(comp => comp.title === selectedSkill);
+  const { certifications, technicalSkills, about, getImageUrl, getPdfViewerUrl } = usePortfolioData();
 
   return (
     <section id="about" className="min-h-screen py-20 px-4 sm:px-6 lg:px-8">
@@ -211,135 +192,7 @@ const About = () => {
           </motion.div>
         </div>
 
-        {/* Competencies Section */}
-        <div className="mt-20">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
-            <h3 className="text-2xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-white via-secondary to-white">
-              Compétences BTS SIO
-            </h3>
-          </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {competencies.map((competency) => (
-              <motion.div
-                key={competency.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8 }}
-                viewport={{ once: true }}
-                onClick={() => setSelectedSkill(competency.title)}
-                className="glass p-6 rounded-lg border cursor-pointer transition-all duration-300 border-white/10 hover:border-white/20 hover:bg-white/5"
-              >
-                <div className="flex items-center gap-2 mb-4">
-                  <competency.icon className="w-6 h-6 text-secondary" />
-                  <h4 className="text-lg font-semibold">{competency.title}</h4>
-                </div>
-                <p className="text-gray-300 mb-4">{competency.description}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-
-        {/* Skills Modal */}
-        {selectedSkill && selectedCompetency && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4 z-50"
-            onClick={() => setSelectedSkill(null)}
-          >
-            <motion.div
-              initial={{ scale: 0.9, opacity: 0, y: 20 }}
-              animate={{ scale: 1, opacity: 1, y: 0 }}
-              exit={{ scale: 0.95, opacity: 0, y: 10 }}
-              transition={{ type: "spring", duration: 0.5 }}
-              className="bg-gradient-to-b from-gray-900/95 to-gray-800/95 p-8 rounded-2xl max-w-4xl w-full max-h-[85vh] overflow-y-auto border border-white/10 shadow-xl relative"
-              onClick={e => e.stopPropagation()}
-            >
-              <div className="absolute top-4 right-4">
-                <button
-                  onClick={() => setSelectedSkill(null)}
-                  className="p-2 rounded-full hover:bg-white/10 transition-colors group"
-                >
-                  <XMarkIcon className="w-6 h-6 text-gray-400 group-hover:text-white transition-colors" />
-                </button>
-              </div>
-
-              <div className="flex items-center gap-4 mb-8">
-                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-secondary/20 to-secondary/10 border border-secondary/20 flex items-center justify-center shadow-lg">
-                  {selectedCompetency?.icon && <selectedCompetency.icon className="w-7 h-7 text-secondary" />}
-                </div>
-                <div>
-                  <h3 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white via-secondary to-white">
-                    {selectedCompetency.title}
-                  </h3>
-                  <p className="text-gray-400 text-sm mt-1">Compétence BTS SIO</p>
-                </div>
-              </div>
-              
-              <div className="prose prose-invert max-w-none mb-8">
-                <p className="text-gray-300 leading-relaxed">{selectedCompetency.description}</p>
-              </div>
-              
-              <div className="space-y-6">
-                <h4 className="text-xl font-semibold text-white/90 flex items-center gap-2">
-                  <DocumentDuplicateIcon className="w-5 h-5 text-secondary" />
-                  Projets associés
-                </h4>
-                
-                <div className="grid grid-cols-1 gap-4">
-                  {getRelatedProjects(selectedSkill).map((project, index) => (
-                    <motion.div 
-                      key={index}
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: index * 0.1 }}
-                      className="group"
-                    >
-                      <div className="glass p-6 rounded-xl border border-white/10 hover:border-secondary/30 transition-all duration-300 bg-gradient-to-br from-white/5 to-transparent hover:from-white/10">
-                        <div className="flex items-start gap-4">
-                          <div className="w-10 h-10 rounded-lg bg-secondary/10 border border-secondary/20 flex items-center justify-center flex-shrink-0">
-                            {project.icon ? (
-                              <project.icon className="w-5 h-5 text-secondary" />
-                            ) : (
-                              <DocumentIcon className="w-5 h-5 text-secondary" />
-                            )}
-                          </div>
-                          <div className="flex-1">
-                            <h5 className="text-lg font-semibold mb-2 text-white group-hover:text-secondary transition-colors">
-                              {project.title}
-                            </h5>
-                            <p className="text-gray-300 text-sm mb-4 line-clamp-2">{project.description}</p>
-                            {project.technologies && (
-                              <div className="flex flex-wrap gap-2">
-                                {project.technologies.map((tech, techIndex) => (
-                                  <span
-                                    key={techIndex}
-                                    className="px-3 py-1.5 bg-white/5 hover:bg-white/10 rounded-full text-xs flex items-center gap-2 border border-white/5 transition-colors"
-                                  >
-                                    {tech.icon && <tech.icon className="w-3.5 h-3.5 text-secondary" />}
-                                    <span className="text-gray-300">{tech.name}</span>
-                                  </span>
-                                ))}
-                              </div>
-                            )}
-                          </div>
-                        </div>
-                      </div>
-                    </motion.div>
-                  ))}
-                </div>
-              </div>
-            </motion.div>
-          </motion.div>
-        )}
 
         {/* Certifications Section */}
         <div id="certifications" className="mt-20">
