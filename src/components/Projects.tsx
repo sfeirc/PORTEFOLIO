@@ -18,7 +18,7 @@ import {
 import ProjectSkillsMatrix from './ProjectSkillsMatrix';
 import { useState, useEffect } from 'react';
 import usePortfolioData from '@/data/usePortfolioData';
-import type { Internship, InternshipProject, Technology, InternshipDocument } from '@/data/usePortfolioData';
+import type { Internship, InternshipProject, Technology, InternshipDocument, Certification } from '@/data/usePortfolioData';
 
 interface ProjectImage {
   url: string;
@@ -80,7 +80,7 @@ interface ProfessionalProjectDetails {
 }
 
 const Projects = () => {
-  const { projects, education, internships, getImageUrl, getPdfViewerUrl } = usePortfolioData();
+  const { projects, education, internships, certifications, getImageUrl, getPdfViewerUrl } = usePortfolioData();
   
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [selectedProfessionalProject, setSelectedProfessionalProject] = useState<Internship | null>(null);
@@ -149,17 +149,8 @@ const Projects = () => {
   const filteredProjects = projects;
 
   return (
-    <section id="projets" className="min-h-screen py-20 px-4 sm:px-6 lg:px-8">
+    <section className="min-h-screen py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
-          
-        </motion.div>
 
         {/* Formation Section */}
         <div id="formation" className="mb-20">
@@ -393,6 +384,61 @@ const Projects = () => {
           </div>
         </div>
 
+        {/* Certifications Section */}
+        <div id="certifications" className="mb-20">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-8"
+          >
+            <h2 className="text-4xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-white via-secondary to-white">
+              Certifications
+            </h2>
+          </motion.div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {certifications.map((cert: Certification) => (
+              <motion.div
+                key={cert.id}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+                viewport={{ once: true }}
+                className="glass p-6 rounded-lg border border-white/10 hover:border-white/20 transition-colors duration-300"
+              >
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="relative w-12 h-12 bg-white/5 rounded-full p-2">
+                    <Image
+                      src={getImageUrl(cert.image)}
+                      alt={`${cert.issuer} Logo`}
+                      fill
+                      className="object-contain"
+                      sizes="(max-width: 48px) 100vw, 48px"
+                    />
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-lg font-semibold">{cert.title}</h3>
+                    <p className="text-gray-400 text-sm">{cert.issuer}</p>
+                  </div>
+                </div>
+                <p className="text-gray-300 text-sm mb-4">{cert.description}</p>
+                <div className="flex items-center justify-between">
+                  <span className="px-2 py-1 bg-secondary/20 text-secondary text-xs rounded-full">
+                    {cert.category}
+                  </span>
+                  <button
+                    onClick={() => window.open(getPdfViewerUrl(cert.documentImage), '_blank')}
+                    className="text-secondary hover:text-secondary/80 text-sm transition-colors"
+                  >
+                    Voir le certificat →
+                  </button>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+
         {/* Project Skills Matrix Section */}
         <div id="competences" className="mt-20">
           <motion.div
@@ -402,7 +448,10 @@ const Projects = () => {
             viewport={{ once: true }}
             className="text-center mb-8"
           >
-            <h3 className="text-2xl font-bold mb-2 bg-clip-text text-transparent bg-gradient-to-r from-white via-secondary to-white">
+            <h2 className="text-4xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-white via-secondary to-white">
+              Compétences
+            </h2>
+            <h3 className="text-xl font-medium mb-2 bg-clip-text text-transparent bg-gradient-to-r from-white via-secondary to-white">
               Matrice des Compétences par Projet
             </h3>
           </motion.div>

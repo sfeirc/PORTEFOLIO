@@ -4,10 +4,10 @@
     "items": [
       { "name": "Accueil", "href": "#top" },
       { "name": "À propos", "href": "#about" },
+      { "name": "Certifications", "href": "#certifications" },
       { "name": "Formation", "href": "#formation" },
       { "name": "Stages", "href": "#stages" },
       { "name": "Projets", "href": "#projets" },
-      { "name": "Certifications", "href": "#certifications" },
       { "name": "Compétences", "href": "#competences" }
     ]
   },
@@ -372,12 +372,11 @@
     "tagline": "Passionné par le développement web et la création d'expériences numériques innovantes",
     "cta": {
       "text": "Voir mes projets",
-      "link": "#projets-pro"
+      "link": "#projets"
     },
     "description": [
-      "Étudiant passionné par le développement et les technologies web, actuellement en formation BTS SIO option SLAM à La Rochelle.",
-      "Mon parcours combine une solide formation technique avec une expérience pratique acquise lors de stages et projets personnels. Je me spécialise particulièrement dans les technologies web modernes comme React, Next.js, et le développement backend avec Node.js.",
-      "Proactif et méthodique, j'aime relever des défis techniques et contribuer à des projets innovants. Mon objectif est de continuer à développer mes compétences tout en apportant des solutions concrètes aux problématiques digitales."
+      "Je suis Clovis SFEIR, actuellement en fin de BTS SIO option SLAM à La Rochelle, et je m’apprête à intégrer, dès septembre 2025, un cycle d’ingénieur en apprentissage. Curieux et engagé, j’ai déjà mis en pratique mes connaissances lors de plusieurs stages et projets personnels : de la mise en place de chatbots intelligents à l’optimisation d’applications web et mobiles, en passant par l’automatisation de workflows 3D sous Blender.",
+      "Au-delà des technologies que j’affectionne (Node.js, Next.js, Flutter, C#…), j’aime avant tout résoudre des problématiques concrètes et concevoir des expériences utilisateur fluides et accessibles. Proactif, j’apprécie le travail en équipe et les méthodes agiles, tout en continuant à structurer mon apprentissage pour devenir un ingénieur capable d’accompagner durablement les organisations dans leur transformation digitale."
     ]
   },
   
