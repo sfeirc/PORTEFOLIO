@@ -82,6 +82,17 @@ const iconMap: Record<string, React.ComponentType<React.SVGProps<SVGSVGElement>>
  * @returns - Resolved image URL
  */
 export const getImageUrl = (path: string): string => {
+  // If the path is a Google Drive link, convert it to a direct image URL
+  if (path.includes('drive.google.com')) {
+    // Extract the file ID from the URL
+    const fileIdMatch = path.match(/\/d\/(.*?)(\/|$)/);
+    if (fileIdMatch) {
+      const fileId = fileIdMatch[1];
+      // Convert to direct image URL
+      return `https://drive.google.com/uc?export=view&id=${fileId}`;
+    }
+  }
+  
   // If the path is already a URL (starts with http or https), return it as is
   if (path.startsWith('http://') || path.startsWith('https://')) {
     return path;
@@ -143,6 +154,11 @@ export const getPdfViewerUrl = (path: string): string => {
   // Check in internships
   if (path.startsWith('/internships/') && pdfMappings.internships[path]) {
     return getPdfViewerUrl(pdfMappings.internships[path]); // Recursively process the mapped URL
+  }
+  
+  // Check in skillsMatrix
+  if (path.startsWith('/skills-matrix/') && pdfMappings.skillsMatrix && pdfMappings.skillsMatrix[path]) {
+    return getPdfViewerUrl(pdfMappings.skillsMatrix[path]); // Recursively process the mapped URL
   }
   
   return "https://via.placeholder.com/800x600?text=PDF+Not+Available";

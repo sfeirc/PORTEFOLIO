@@ -327,7 +327,7 @@
       "icon": "CodeBracketIcon",
       "image": "https://cdn.worldvectorlogo.com/logos/codingame-1.svg",
       "documentImage": "/certifications/codingame-csharp-certification.pdf",
-      "description": "Expertise en développement C# et .NET."
+      "description": "Expertise en développement C#."
     },
     {
       "id": "codingame-cpp",
@@ -399,6 +399,18 @@
       ],
       "image": "https://cdn-icons-png.flaticon.com/512/4712/4712027.png",
       "projectImage": "https://cdn-icons-png.flaticon.com/512/4712/4712027.png",
+      "projectImages": [
+        {
+          "url": "https://private-user-images.githubusercontent.com/73343957/447547553-6172780c-e271-48ee-8b83-c539b28beefb.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDgyNjAyNTIsIm5iZiI6MTc0ODI1OTk1MiwicGF0aCI6Ii83MzM0Mzk1Ny80NDc1NDc1NTMtNjE3Mjc4MGMtZTI3MS00OGVlLThiODMtYzUzOWIyOGJlZWZiLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTA1MjYlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwNTI2VDExNDU1MlomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTdjNGIxMmQ1YzczMWM4NDQ3NDk5NDAzNjk0ZGZlZmJhNDZlNWI5NWU5N2QyZmIzNzA4MDliNzFhZDhhNzllMDgmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.yknmRU6Bhg0ENcHp0bf3fOLtn2UWHmW7Od4dUtIqBuY",
+          "alt": "",
+          "caption": ""
+        },
+        {
+          "url": "https://private-user-images.githubusercontent.com/73343957/447548719-a5dfe37a-2f60-476a-81d3-26a24918ce77.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDgyNjAyNTIsIm5iZiI6MTc0ODI1OTk1MiwicGF0aCI6Ii83MzM0Mzk1Ny80NDc1NDg3MTktYTVkZmUzN2EtMmY2MC00NzZhLTgxZDMtMjZhMjQ5MThjZTc3LnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTA1MjYlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwNTI2VDExNDU1MlomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWRiYTYwM2RiMWEyYmY5Mjk5ZTAyNWRiOWM1YTM3YTAzNjZhMGJkN2ZmNzZmYzY3Yzc3NzcxODE0MjI2MTBmYWMmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.tY-5baRqfQ6GYZqpEJxuLfJpoX42Ukeggv_ZYLC5Zbk",
+          "alt": "",
+          "caption": ""
+        }
+      ],
       "size": "col-span-1",
       "gradient": "from-blue-500/20 to-purple-500/20",
       "icon": "CubeIcon",
@@ -433,6 +445,23 @@
       ],
       "image": "https://cdn-icons-png.flaticon.com/512/4712/4712027.png",
       "projectImage": "https://cdn-icons-png.flaticon.com/512/4712/4712027.png",
+      "projectImages": [
+        {
+          "url": "https://private-user-images.githubusercontent.com/73343957/447549687-e0df7831-f700-4eac-ac18-b0877c1ee148.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDgyNjA0OTUsIm5iZiI6MTc0ODI2MDE5NSwicGF0aCI6Ii83MzM0Mzk1Ny80NDc1NDk2ODctZTBkZjc4MzEtZjcwMC00ZWFjLWFjMTgtYjA4NzdjMWVlMTQ4LnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTA1MjYlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwNTI2VDExNDk1NVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWU2NTU0YTM2ZjA4ZDAyZjFhNmIzZmI0N2VjZTQxOTJiMDcwMDhjY2JlYWQxZTMxOGQxZGFhOTNiYmJhMTFjYWMmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.5JNhvlsZbtoyqcRpsYgFkZY_YthhAZmbFAKMEBMD1OU",
+          "alt": "",
+          "caption": ""
+        },
+        {
+          "url": "https://private-user-images.githubusercontent.com/73343957/447549791-ceba642a-9a86-45c3-b8d6-155da038c150.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDgyNjkyOTYsIm5iZiI6MTc0ODI2ODk5NiwicGF0aCI6Ii83MzM0Mzk1Ny80NDc1NDk3OTEtY2ViYTY0MmEtOWE4Ni00NWMzLWI4ZDYtMTU1ZGEwMzhjMTUwLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTA1MjYlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwNTI2VDE0MTYzNlomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWVhODViODYwMTgwZDk4Mjg1NmI2NWQxN2Y5ZGMzMmVmZjRmNDVhM2U1YzU5MGY2ZTEyZGU0NzFmMWIzMWQxYTMmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.ps-GwkI0UjgGxR7PZwhc80TEwafdJILT_GmT4Sg7mBQ",
+          "alt": "",
+          "caption": ""
+        },
+        {
+          "url" : "https://private-user-images.githubusercontent.com/73343957/447549873-323f5024-f297-4329-9d33-2a8f29ba18db.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDgyNjkyOTYsIm5iZiI6MTc0ODI2ODk5NiwicGF0aCI6Ii83MzM0Mzk1Ny80NDc1NDk4NzMtMzIzZjUwMjQtZjI5Ny00MzI5LTlkMzMtMmE4ZjI5YmExOGRiLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTA1MjYlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwNTI2VDE0MTYzNlomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTcwZWYzMzVkNTkyMTA4OWQxNTcxNDZhYzBlYmE1ZTU2MzE2YThmMGU2MTQxYzU0NDkxODcyNGNjZmI0ZTAyZjAmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.wVnC8ABiLJTUXc8FjJL9qBln7IGEt38o8OAg_uWsxY0",
+          "alt": "",
+          "caption": ""
+        }
+      ],
       "size": "col-span-1",
       "gradient": "from-purple-500/20 to-pink-500/20",
       "icon": "CubeIcon",
@@ -450,6 +479,10 @@
         {
           "name": "Travailler en mode projet",
           "description": "Organisation du chantier de refactorisation et d’optimisation, coordination avec l’équipe et gestion des versions jusqu’à la livraison."
+        },
+        {
+          "name": "Organiser son développement professionnel",
+          "description": "Apprentissage et maîtrise de Babylon.js, renforçant mes compétences en développement web 3D."
         }
       ]
 
@@ -472,6 +505,18 @@
       ],
       "image": "https://cdn-icons-png.flaticon.com/512/4712/4712027.png",
       "projectImage": "https://cdn-icons-png.flaticon.com/512/4712/4712027.png",
+      "projectImages":[
+        {
+          "url": "https://private-user-images.githubusercontent.com/73343957/447569444-fdc0bb1d-88a6-4202-9ed5-cc09d069390e.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDgyNjM1NTksIm5iZiI6MTc0ODI2MzI1OSwicGF0aCI6Ii83MzM0Mzk1Ny80NDc1Njk0NDQtZmRjMGJiMWQtODhhNi00MjAyLTllZDUtY2MwOWQwNjkzOTBlLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTA1MjYlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwNTI2VDEyNDA1OVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWYwODFkOTU2MjVlMzNlY2MwMGU0YmY3ZTM5MzkwNDU1YTE4YjAyZDUxODUwZGI4MDY1MzVlZDJjZDEwYjU2MDQmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.roKwTE9UEogch3syUSOtm48oaVt3nmeCEG2ZziMsZX8",
+          "alt" :"",
+          "caption":""
+        },
+        {
+          "url": "https://private-user-images.githubusercontent.com/73343957/447571122-320f4c1a-a371-4e54-8718-e052c521bffd.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDgyNjkzNDEsIm5iZiI6MTc0ODI2OTA0MSwicGF0aCI6Ii83MzM0Mzk1Ny80NDc1NzExMjItMzIwZjRjMWEtYTM3MS00ZTU0LTg3MTgtZTA1MmM1MjFiZmZkLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTA1MjYlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwNTI2VDE0MTcyMVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTM5NzFhNWJkMjY2ZjliMzU5Zjk3NDNjMzA2NDdlNjYyMjliNjgxOTE2MzM4ZjU2MGM2MzY5ZTE2M2FmYzliNmEmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.XTnBIMlV8kV0bxiAWlBESa9gvX7ccdNG5a7udVVaUg8",
+          "alt":"",
+          "caption" : ""
+        }
+      ],
       "size": "col-span-1",
       "gradient": "from-blue-500/20 to-purple-500/20",
       "icon": "SparklesIcon",
@@ -493,6 +538,14 @@
         {
           "name": "Travailler en mode projet",
           "description": "Collaboration étroite avec le service support et les équipes pédagogiques, planification des livrables, gestion des versions et coordination des sprints via Git."
+        },
+        {
+          "name": "Organiser son développement professionnel",
+          "description": "Apprentissage et maîtrise de Python, Flask, OpenAI API et Pinecone, renforçant mes compétences en développement de chatbots."
+        },
+        {
+          "name": "Développer la présence en ligne de l’organisation",
+          "description": "Développement d'un chatbot pour excelia qui devrais être utilisé par les nouveaux étudiants et enseignants"
         }
       ]
 
@@ -516,6 +569,33 @@
       ],
       "image": "https://cdn-icons-png.flaticon.com/512/4712/4712027.png",
       "projectImage": "https://cdn-icons-png.flaticon.com/512/4712/4712027.png",
+      "projectImages":[
+        {
+          "url": "https://private-user-images.githubusercontent.com/73343957/447575810-8da65396-d3cf-4460-bf65-806f25f589f0.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDgyNjUwNTUsIm5iZiI6MTc0ODI2NDc1NSwicGF0aCI6Ii83MzM0Mzk1Ny80NDc1NzU4MTAtOGRhNjUzOTYtZDNjZi00NDYwLWJmNjUtODA2ZjI1ZjU4OWYwLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTA1MjYlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwNTI2VDEzMDU1NVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWU5NDgwMjkxMTZhMmJjYmE3MTI1MmNjYzhlZjViOWYxNWUzZTJjZmU3ZGE4ODhjOTg4YjI0NzFjZDdlZmUzZmQmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.fN4_oUnh6Sgg_F6e9R2BajHEzFYMKU2vL2HOLX-vl1c",
+          "alt" :"",
+          "caption":""
+        },
+        {
+          "url": "https://private-user-images.githubusercontent.com/73343957/447575902-c54ed041-fb2f-484e-bde1-4a821db28bfd.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDgyNjkwNDMsIm5iZiI6MTc0ODI2ODc0MywicGF0aCI6Ii83MzM0Mzk1Ny80NDc1NzU5MDItYzU0ZWQwNDEtZmIyZi00ODRlLWJkZTEtNGE4MjFkYjI4YmZkLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTA1MjYlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwNTI2VDE0MTIyM1omWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTM0YzFmMTQxYmI0YzI3M2U1MmQ2ZjNiMGU0MjJkY2Y0MGUxYjY3NGMzZDFkZmQyYzE1MjU0OThmNGRkOWFlNjgmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.pfwqwGdYOCbjlgBjndzOFtCTQbehmAPPWr19S9QZVcY",
+          "alt":"",
+          "caption" : ""
+        },
+        {
+          "url": "https://private-user-images.githubusercontent.com/73343957/447575949-5edec92f-e780-4dc3-b8bf-dfe4721c286b.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDgyNjkwNDMsIm5iZiI6MTc0ODI2ODc0MywicGF0aCI6Ii83MzM0Mzk1Ny80NDc1NzU5NDktNWVkZWM5MmYtZTc4MC00ZGMzLWI4YmYtZGZlNDcyMWMyODZiLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTA1MjYlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwNTI2VDE0MTIyM1omWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWQ5M2EzZTkyYTIyZDcwMDg5N2VmMzZkMTVkNGFkMmRkODZlYWFlNjg3NzIwMWY5MjdhYzQyNGM5ZDUyOGRlMDUmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.IDWiK5JiyyXXzFjdDYG96vSERiFU7m9F2bbdXUntrFs",
+          "alt":"",
+          "caption" : ""
+        },
+        {
+          "url": "https://private-user-images.githubusercontent.com/73343957/447576748-51b138aa-49a7-4e4d-a026-0565cd028006.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDgyNjkwNDMsIm5iZiI6MTc0ODI2ODc0MywicGF0aCI6Ii83MzM0Mzk1Ny80NDc1NzY3NDgtNTFiMTM4YWEtNDlhNy00ZTRkLWEwMjYtMDU2NWNkMDI4MDA2LnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTA1MjYlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwNTI2VDE0MTIyM1omWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWJmN2Y4OGRiOGQxOTZiNTIzYTBiMWI3ZjI2NjY4NzcwYjY1YTVlNzc0YzliYmIwZTIzNDJlZTkyMDAyYTBjYWQmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.no6kF3t8nhFZHZMlY0lGwktKEt4ncVa-j1rDWzqlvrg",
+          "alt":"",
+          "caption" : ""
+        },
+        {
+          "url": "https://private-user-images.githubusercontent.com/73343957/447577514-a8148497-410e-4576-843d-080b45644e1e.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDgyNjkwNDMsIm5iZiI6MTc0ODI2ODc0MywicGF0aCI6Ii83MzM0Mzk1Ny80NDc1Nzc1MTQtYTgxNDg0OTctNDEwZS00NTc2LTg0M2QtMDgwYjQ1NjQ0ZTFlLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTA1MjYlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwNTI2VDE0MTIyM1omWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWMxNDQ3Zjg2MzMyNTFiNzZlZmFjZTViNWI5NGI5YWJhZWY2NzExMmRkZjRmN2Y2NGMyNDlkYzRmNmE1ODI3ZTEmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.W-ygrSErN3pE0fbRSqRMdhGHSFMG5dzIDqTG_hCZpcA",
+          "alt":"",
+          "caption" : ""
+        }
+      ],
       "size": "col-span-1",
       "gradient": "from-purple-500/20 to-pink-500/20",
       "icon": "SparklesIcon",
@@ -537,6 +617,14 @@
         {
           "name": "Travailler en mode projet",
           "description": "Collaboration étroite avec le service support et le départment infrastructure d'excelia, planification des livrables, gestion des versions et coordination des sprints via Git."
+        },
+        {
+          "name": "Organiser son développement professionnel",
+          "description": "Apprentissage et maitrise de l'api Google cloud storage et du fine tuning de l'api OpenAI."
+        },
+        {
+          "name": "Développer la présence en ligne de l’organisation",
+          "description": "Développement d'un chatbot pour excelia qui devrais être utilisé par les nouveaux étudiants et enseignants"
         }
       ]
 
@@ -560,6 +648,43 @@
       ],
       "image": "https://cdn-icons-png.flaticon.com/512/1995/1995574.png",
       "projectImage": "https://cdn-icons-png.flaticon.com/512/1995/1995574.png",
+      "projectImages":[
+        {
+          "url": "https://private-user-images.githubusercontent.com/73343957/447597769-d6ff21c4-b59b-406b-8f7a-c0388dd6f379.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDgyNjg3NjYsIm5iZiI6MTc0ODI2ODQ2NiwicGF0aCI6Ii83MzM0Mzk1Ny80NDc1OTc3NjktZDZmZjIxYzQtYjU5Yi00MDZiLThmN2EtYzAzODhkZDZmMzc5LnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTA1MjYlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwNTI2VDE0MDc0NlomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWY2ZTJhY2FjYzM5MzM0NTQ0MzA4MWYyNjhkNmRkZDcwMTY4NjI4MmU5MmFlMzc2MDY0OWE3MTY0YTc1MjA2OGQmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.waF7mD_H0YiQLTijAjKAkZU2NNw8RB1mECCPJFzEwb8",
+          "alt": "",
+          "caption": ""
+        },
+        {
+          "url": "https://private-user-images.githubusercontent.com/73343957/447597864-d9f0621f-c7cd-45fa-8208-6212cc945fe9.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDgyNjg3NjYsIm5iZiI6MTc0ODI2ODQ2NiwicGF0aCI6Ii83MzM0Mzk1Ny80NDc1OTc4NjQtZDlmMDYyMWYtYzdjZC00NWZhLTgyMDgtNjIxMmNjOTQ1ZmU5LnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTA1MjYlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwNTI2VDE0MDc0NlomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTVlMGU2ZjZmOTk5NmI5M2U3M2U2NTMyZDVjN2UyNDc4ODZhMTM5N2U1ODBjOWYxMjhmNjlmMmIyNGZhNWE5MTMmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.xktxq7uL5X-V_IDUGJmdaVRTHE8PhyBI6mfIW8eLFw4",
+          "alt": "",
+          "caption": ""
+        },
+        {
+          "url": "https://private-user-images.githubusercontent.com/73343957/447596810-bdb8e370-b9b3-48b5-a547-5d7ba5085cff.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDgyNjg3NjYsIm5iZiI6MTc0ODI2ODQ2NiwicGF0aCI6Ii83MzM0Mzk1Ny80NDc1OTY4MTAtYmRiOGUzNzAtYjliMy00OGI1LWE1NDctNWQ3YmE1MDg1Y2ZmLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTA1MjYlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwNTI2VDE0MDc0NlomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTUyNmI5OWUzM2NmOTJhZjkwYzgwNTZkNjUxODg5NDBlNWViZDkyYWZiZDAwZTFkZGJkYjA3ZmJkMThjZWM1MjImWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.9ixsG9KRlcjWIYjGWMHGQrCWin4fqqCnwB9zpwXjOEM",
+          "alt": "",
+          "caption": ""
+        },
+        {
+          "url": "https://private-user-images.githubusercontent.com/73343957/447597448-dd33865b-5a17-4269-8718-0730de9d943c.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDgyNjg3NjYsIm5iZiI6MTc0ODI2ODQ2NiwicGF0aCI6Ii83MzM0Mzk1Ny80NDc1OTc0NDgtZGQzMzg2NWItNWExNy00MjY5LTg3MTgtMDczMGRlOWQ5NDNjLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTA1MjYlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwNTI2VDE0MDc0NlomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWVhZWVmNDk5MGNlMTU5ZjU4MTQ3MTJkN2VlM2QwMzZlMTkzOWM5NmU0YTYwMGExNDc0NjQxZmQyODA0ZTgxNTgmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.-ai1lHcukHgSGigHGSRLgS3YCmRKOxhFjDb9XWPUDXE",
+          "alt": "",
+          "caption": ""
+        },
+        {
+          "url": "https://private-user-images.githubusercontent.com/73343957/447598106-24d41935-dd24-487c-9b5c-ed80078eab46.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDgyNjg3NjYsIm5iZiI6MTc0ODI2ODQ2NiwicGF0aCI6Ii83MzM0Mzk1Ny80NDc1OTgxMDYtMjRkNDE5MzUtZGQyNC00ODdjLTliNWMtZWQ4MDA3OGVhYjQ2LnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTA1MjYlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwNTI2VDE0MDc0NlomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTlmZTZmYWRhZmUyODljMjZlZDA5MTY3MmQ2ZmY2MDZhZDliYTQ1YTZmZTVlYWM5NTM2MjUwYjFkMDA4MjBhNTEmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.fw0XpcBsEbyyryAK9EQ4yb5J4t40Kh8B1iqTsPFuReg",
+          "alt": "",
+          "caption": ""
+        },
+        {
+          "url": "https://private-user-images.githubusercontent.com/73343957/447598210-39c394ab-7b99-41f0-87c3-1a23fb959f0c.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDgyNjg3NjYsIm5iZiI6MTc0ODI2ODQ2NiwicGF0aCI6Ii83MzM0Mzk1Ny80NDc1OTgyMTAtMzljMzk0YWItN2I5OS00MWYwLTg3YzMtMWEyM2ZiOTU5ZjBjLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTA1MjYlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwNTI2VDE0MDc0NlomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTU5MzliYTkxZWM0ZWRiNDg1NjExODllYTM1YjFjNDlkNDY3NDhjZjdkZjc2NjAxODg2ZmEzNmU2MGI0NWZlY2MmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.JgpuWdPaK-kwplc7vQR2DyWdkv7qBggDrCW7BqTs214",
+          "alt": "",
+          "caption": ""
+        },
+        {
+          "url": "https://private-user-images.githubusercontent.com/73343957/447598250-cfbfa8b6-b33e-4248-b36a-b54b8b97e5d0.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDgyNjg3NjYsIm5iZiI6MTc0ODI2ODQ2NiwicGF0aCI6Ii83MzM0Mzk1Ny80NDc1OTgyNTAtY2ZiZmE4YjYtYjMzZS00MjQ4LWIzNmEtYjU0YjhiOTdlNWQwLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTA1MjYlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwNTI2VDE0MDc0NlomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWI3ZTliNzIyY2I0YWY1Y2FmNjQzZTgzNGJlM2IyOTkxYWU5MTFiODc2NGJiZjkxYWEwMjgzZjNkMTZmM2YwZTYmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.sdv1iO0vkqTFfQs5Yq7kX_RReVa8O_qiB6vdBWs7l80",
+          "alt": "",
+          "caption": ""
+        }
+      ],
       "size": "col-span-1",
       "gradient": "from-blue-500/20 to-indigo-500/20",
       "icon": "MicrophoneIcon",
@@ -613,20 +738,16 @@
       "image": "https://cdn-icons-png.flaticon.com/512/414/414927.png",
       "projectImages": [
         {
-          "url": "https://cdn-icons-png.flaticon.com/512/414/414927.png",
-          "alt": "Interface principale de l'application météo",
-          "caption": "Page d'accueil avec recherche de ville"
+          "url": "https://private-user-images.githubusercontent.com/73343957/447545633-5a19116a-f737-411a-b2b1-645ad00b1c88.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDgyNzAyOTEsIm5iZiI6MTc0ODI2OTk5MSwicGF0aCI6Ii83MzM0Mzk1Ny80NDc1NDU2MzMtNWExOTExNmEtZjczNy00MTFhLWIyYjEtNjQ1YWQwMGIxYzg4LnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTA1MjYlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwNTI2VDE0MzMxMVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTY0YThiYmFkOWNkNTYzMzM5MDA4NzM1ZWQ4NmY5ZDk3M2ViNGU5OWU3M2Y4OTA5ZDU0YjI5MjdhZjliNjU5ZTgmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.npPRgfrzJEPMEZv7cPtcOLB8epmyjzGZcqDzZjUObjM",
+          "alt": "",
+          "caption": ""
         },
         {
-          "url": "https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?w=800&h=600&fit=crop",
-          "alt": "Affichage des prévisions détaillées",
-          "caption": "Vue détaillée des prévisions sur 7 jours"
-        },
-        {
-          "url": "https://images.unsplash.com/photo-1592210454359-9043f067919b?w=800&h=600&fit=crop",
-          "alt": "Interface responsive mobile",
-          "caption": "Version mobile responsive"
+          "url": "https://private-user-images.githubusercontent.com/73343957/447545719-434a1fa3-3d5a-4a3b-b916-879529194791.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDgyNzAyOTEsIm5iZiI6MTc0ODI2OTk5MSwicGF0aCI6Ii83MzM0Mzk1Ny80NDc1NDU3MTktNDM0YTFmYTMtM2Q1YS00YTNiLWI5MTYtODc5NTI5MTk0NzkxLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTA1MjYlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwNTI2VDE0MzMxMVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTRmM2UwMTNkNzVmZWJmYjhjMDQ4ZDI3ZWUwNDUzMzdmNjRiMDJkYmNjZjQ5NjBjZjcwNWViZDIxMzUxYzI3NzMmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.ko0VnwkWiwfQHpAKIApilUK1KshuG3k4XgkhOUqxZhM",
+          "alt": "",
+          "caption": ""
         }
+
       ],
       "size": "col-span-1",
       "gradient": "from-green-500/20 to-blue-500/20",
@@ -640,11 +761,11 @@
         },
         {
           "name": "Développer la présence en ligne de l’organisation",
-          "description": "Conception d'une interface météo innovante et accessible, générant plus de 500 visites quotidiennes et valorisant le projet lors de la Nuit de l'Info."
+          "description": "Conception d'une interface météo innovante et accessible, valorisant le projet lors de la Nuit de l'Info."
         },
         {
           "name": "Travailler en mode projet",
-          "description": "Gestion autonome du projet en deux semaines, planification des tâches et respect des délais pour le défi national."
+          "description": "Gestion autonome du projet en une nuit, planification des tâches et respect des délais pour le défi national."
         }
       ]
     },    
@@ -691,8 +812,8 @@
 
     },
     {
-      "id": "gestion-films",
-      "title": "Interface de gestion des films récents",
+      "id": "affichage-films",
+      "title": "Interface d'affichage des films récents",
       "period": "2025",
       "description": "Outil de recherche des acteurs par film et inversement avec gestion optimisée des métadonnées.",
       "technologies": [
@@ -751,19 +872,39 @@
       "image": "https://cdn-icons-png.flaticon.com/512/3774/3774299.png",
       "projectImages": [
         {
-          "url": "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=800&h=600&fit=crop",
+          "url": "https://private-user-images.githubusercontent.com/73343957/447601783-bcb9dcfb-2992-49fd-bb20-2321c8a96383.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDgyNjk1MzMsIm5iZiI6MTc0ODI2OTIzMywicGF0aCI6Ii83MzM0Mzk1Ny80NDc2MDE3ODMtYmNiOWRjZmItMjk5Mi00OWZkLWJiMjAtMjMyMWM4YTk2MzgzLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTA1MjYlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwNTI2VDE0MjAzM1omWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTZjM2VjNDI3ZjQ3YzZiMTg0NGE4MTg4ODZhYjc5NDdmY2JkYmY2YmRhN2I4ZTBlZTJhZjEwZjU5ZTQyMjQ4YjEmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.iqS8fbD81Sr_OP6u4HC7oxYYFez5ZJmNkiJkGDjRcMA",
           "alt": "Page d'accueil Vroom Prestige",
           "caption": "Interface d'accueil avec catalogue de véhicules"
         },
         {
-          "url": "https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=800&h=600&fit=crop",
+          "url": "https://private-user-images.githubusercontent.com/73343957/447602851-dfca1c65-1e2b-4ad7-87a5-0da78359f729.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDgyNjk2MTUsIm5iZiI6MTc0ODI2OTMxNSwicGF0aCI6Ii83MzM0Mzk1Ny80NDc2MDI4NTEtZGZjYTFjNjUtMWUyYi00YWQ3LTg3YTUtMGRhNzgzNTlmNzI5LnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTA1MjYlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwNTI2VDE0MjE1NVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWU2ZjE0ODAzY2Q4NjBjMDVlZWVhYzM4YzEzMDUxMjc0ZWQyY2U2YmY1M2EzMDNlZDhlNDVhNmUzMjNlZDhhM2QmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.H3bxQxOmtPH_Yxau2rharZPIPH0A4KiuTyUje-fwcVw",
           "alt": "Système de réservation",
           "caption": "Interface de réservation en ligne"
         },
         {
-          "url": "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=800&h=600&fit=crop",
+          "url": "https://private-user-images.githubusercontent.com/73343957/447602032-bf0149a9-87b0-4e31-8890-8ed0efe01430.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDgyNjk2MTUsIm5iZiI6MTc0ODI2OTMxNSwicGF0aCI6Ii83MzM0Mzk1Ny80NDc2MDIwMzItYmYwMTQ5YTktODdiMC00ZTMxLTg4OTAtOGVkMGVmZTAxNDMwLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTA1MjYlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwNTI2VDE0MjE1NVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTAwYTA3OTBkZjNhZWU5MTdlZDNlYWEzMTZjOTBkNjU1ZDBiZjU1MTcyODRkZjg2MDBjNzY3ZGIwNmE2OTEyZjgmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.pJkM6MOFyE--iZMXZUvPe1577g8-c93R6RDzAQMQL9U",
           "alt": "Espace client personnalisé",
           "caption": "Dashboard utilisateur avec historique"
+        },
+        {
+          "url": "https://private-user-images.githubusercontent.com/73343957/447602256-ac091a21-cb25-4bbb-b5c8-8a2a28a3390d.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDgyNjk2MTUsIm5iZiI6MTc0ODI2OTMxNSwicGF0aCI6Ii83MzM0Mzk1Ny80NDc2MDIyNTYtYWMwOTFhMjEtY2IyNS00YmJiLWI1YzgtOGEyYTI4YTMzOTBkLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTA1MjYlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwNTI2VDE0MjE1NVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTA4NjQ3NDgwYThhZWYwZmQ3ZDBiZWYyNWI5MTViYjJlMzFkZjg1NDVlNjg5MDMzMGE4Y2I1NDM2YjQyMGE2NmMmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.y8Pjd4BuRhWyVtYLPxEi8uFrb4fzaTmnlLY1VurNXOk",
+          "alt": "Page d'accueil Vroom Prestige",
+          "caption": "Interface d'accueil avec catalogue de véhicules"
+        },
+        {
+          "url": "https://private-user-images.githubusercontent.com/73343957/447602289-c7b6190c-be70-43aa-a119-eea92228fcad.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDgyNjk2MTUsIm5iZiI6MTc0ODI2OTMxNSwicGF0aCI6Ii83MzM0Mzk1Ny80NDc2MDIyODktYzdiNjE5MGMtYmU3MC00M2FhLWExMTktZWVhOTIyMjhmY2FkLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTA1MjYlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwNTI2VDE0MjE1NVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWFkOWVkMzFlOGUzYjQ2MjYxNzhiNjllZWU3MjgxNTAxMjM4NjIzMGNlYWEwMmJlZGVmYmEwMjUwMGY5NmQxYzImWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.3qlwvD8077_8V4rIa3sGuqk6LNRd2aIq6kU5UO1i8z0",
+          "alt": "Système de réservation",
+          "caption": "Interface de réservation en ligne"
+        },
+        {
+          "url": "https://private-user-images.githubusercontent.com/73343957/447602338-a1b04454-5ad5-4f52-afb5-b9c75da0597b.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDgyNjk2MTUsIm5iZiI6MTc0ODI2OTMxNSwicGF0aCI6Ii83MzM0Mzk1Ny80NDc2MDIzMzgtYTFiMDQ0NTQtNWFkNS00ZjUyLWFmYjUtYjljNzVkYTA1OTdiLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTA1MjYlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwNTI2VDE0MjE1NVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWU3ODE4ZDkzNmYyMjIyZjI1NmM2MDI3NmFmNTA3YjUyM2RiMGMxYzVmY2Q5OWRjYTU4ZGJlOGQwZDRiMGU2NTMmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.rIMa16F_WopWG0xAnl_9hrCmFllhWmcZ0SxB5Oviwvs",
+          "alt": "Espace client personnalisé",
+          "caption": "Dashboard utilisateur avec historique"
+        },
+        {
+          "url": "https://private-user-images.githubusercontent.com/73343957/447603447-b2cdc505-4e18-4fe0-b9ed-7a8b178c0b26.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDgyNjk3MjEsIm5iZiI6MTc0ODI2OTQyMSwicGF0aCI6Ii83MzM0Mzk1Ny80NDc2MDM0NDctYjJjZGM1MDUtNGUxOC00ZmUwLWI5ZWQtN2E4YjE3OGMwYjI2LnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTA1MjYlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwNTI2VDE0MjM0MVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTNlYjc4ZTYyMjQzZTJmZjkzYzBlNzhiOTc2YTc4ZWExYmIxMzk1YjQ4OWQyNWJjZDc2NzdhNGQ3ODI5YTY4NzUmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.1Bxuunq8aauuprOqrqnwwPs6bWw4c5AnXJxZHiru14I",
+          "alt": "Page d'accueil Vroom Prestige",
+          "caption": "Interface d'accueil avec catalogue de véhicules"
         }
       ],
       "size": "col-span-1",
@@ -792,7 +933,7 @@
     },
     {
       "id": "application-crossplatform-gestion-vehicules",
-      "title": "Application mobile et desktop de gestion VROOOM",
+      "title": "Application mobile et desktop de gestion de location de voiture",
       "period": "2025",
       "description": "Application cross-platform Flutter/Dart et Node.js offrant un tableau de bord administratif pour la gestion des véhicules, des réservations et des utilisateurs, accessible sur mobile et desktop.",
       "technologies": [
@@ -809,6 +950,49 @@
       ],
       "image": "https://cdn-icons-png.flaticon.com/512/3774/3774299.png",
       "projectImage": "https://cdn-icons-png.flaticon.com/512/3774/3774299.png",
+      "projectImages":[
+
+        {
+          "url": "https://private-user-images.githubusercontent.com/73343957/447604278-c0a0b9ee-fa7b-4a6a-bd91-0d8edf338cc5.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDgyNjk5NzcsIm5iZiI6MTc0ODI2OTY3NywicGF0aCI6Ii83MzM0Mzk1Ny80NDc2MDQyNzgtYzBhMGI5ZWUtZmE3Yi00YTZhLWJkOTEtMGQ4ZWRmMzM4Y2M1LnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTA1MjYlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwNTI2VDE0Mjc1N1omWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWU3ODcwNjYzZWYyNzMzYmFjMmNlZDRmOWM2OGZiZDgyN2MzOTIwNGY3ODU0OTVjMjFmNzk2M2NhOTdhYzRhNDEmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.jM0mtGUcTGoUGNHk1wVV6uZUkHxuhGo-i3kGTtbDQ6M",
+          "alt": "",
+          "caption": ""
+        },
+        {
+          "url": "https://private-user-images.githubusercontent.com/73343957/447604372-469315f5-848b-4c07-9e66-a61c81545282.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDgyNjk5NzcsIm5iZiI6MTc0ODI2OTY3NywicGF0aCI6Ii83MzM0Mzk1Ny80NDc2MDQzNzItNDY5MzE1ZjUtODQ4Yi00YzA3LTllNjYtYTYxYzgxNTQ1MjgyLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTA1MjYlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwNTI2VDE0Mjc1N1omWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPThkN2NhMWY2ODRkY2UyZDA3MDRiOGI4MmNiNGVmZDZhZDQ5M2RjODYxYWM4NWYyYTQyYjY2NTRlNjEzYzNlMDUmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.zlfCxs2eYYG3xH0Ti-mRtfu4zeCdM55LG_KMZ63_1yY",
+          "alt": "",
+          "caption": ""
+        },
+        {
+          "url": "https://private-user-images.githubusercontent.com/73343957/447604451-715bfca2-2aad-41dc-a9ae-f10a9e75ab5f.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDgyNjk5NzcsIm5iZiI6MTc0ODI2OTY3NywicGF0aCI6Ii83MzM0Mzk1Ny80NDc2MDQ0NTEtNzE1YmZjYTItMmFhZC00MWRjLWE5YWUtZjEwYTllNzVhYjVmLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTA1MjYlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwNTI2VDE0Mjc1N1omWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWMwYWNjNWZkZWY2ZTY4NmUwMGNmYjM4ZjExM2Q1YmEwN2M1ZTIzZTJhYjg4OWUxM2ZiYmZmMTczNzVjZDA5MTQmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.aMIJaVwEVJFmc-nTBVEIVq6e2wcx17MW1B7T9ZI-kK8",
+          "alt": "",
+          "caption": ""
+        },
+        {
+          "url": "https://private-user-images.githubusercontent.com/73343957/447604716-f2444a78-8a90-41ab-adf4-47154f82f1d6.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDgyNjk5NzcsIm5iZiI6MTc0ODI2OTY3NywicGF0aCI6Ii83MzM0Mzk1Ny80NDc2MDQ3MTYtZjI0NDRhNzgtOGE5MC00MWFiLWFkZjQtNDcxNTRmODJmMWQ2LnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTA1MjYlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwNTI2VDE0Mjc1N1omWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTkyOTM4YTY4YTc3NjBiMzQ5ODk0OTQ0MzkxMmFhYzc2NGQ2ZWVhNjFmNDQ5ZDVlNDYzZTFmNGQ1NGYzODZlYTkmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.Vf86TCQoyMoIl-bnI43FoVjCI0lERLE8g7lsQU82mbc",
+          "alt": "",
+          "caption": ""
+        },
+        {
+          "url": "https://private-user-images.githubusercontent.com/73343957/447604516-ca13e7f2-d1d4-4953-acc3-7b82e76d4d74.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDgyNjk5NzcsIm5iZiI6MTc0ODI2OTY3NywicGF0aCI6Ii83MzM0Mzk1Ny80NDc2MDQ1MTYtY2ExM2U3ZjItZDFkNC00OTUzLWFjYzMtN2I4MmU3NmQ0ZDc0LnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTA1MjYlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwNTI2VDE0Mjc1N1omWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTc3YTNhZmRmYzA3MGQ4ZTI1MzEwN2U5NTk1NDEyNTBmOGZhNTQ3ODg1OTNhZTRmM2JjNGViMjcxYTI1YTU3N2QmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.5JatuX7oxPoOiVS-l9gWG-g823BWJ9TLc4QMx-tXmyo",
+          "alt": "",
+          "caption": ""
+        },
+        {
+          "url": "https://private-user-images.githubusercontent.com/73343957/447604790-a895e064-36a9-4e65-a6d1-58066c88682e.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDgyNjk5NzcsIm5iZiI6MTc0ODI2OTY3NywicGF0aCI6Ii83MzM0Mzk1Ny80NDc2MDQ3OTAtYTg5NWUwNjQtMzZhOS00ZTY1LWE2ZDEtNTgwNjZjODg2ODJlLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTA1MjYlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwNTI2VDE0Mjc1N1omWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTBlOTc1MWI3ODk4YmNmZjIzMWI1YWI5NTE3MWE0OTZlNGY3MDEwN2Y5MzRmODBmNzVlOGE1NGE1YzdlNDIyNDAmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.wQ4wcYwcWoiY5GH5cSLYxptGfvawFmiAWVeWCWVemQg",
+          "alt": "",
+          "caption": ""
+        },
+        {
+          "url": "https://private-user-images.githubusercontent.com/73343957/447604569-4b51e36d-4b78-4e71-9945-8e9a52ec4ca4.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDgyNjk5NzcsIm5iZiI6MTc0ODI2OTY3NywicGF0aCI6Ii83MzM0Mzk1Ny80NDc2MDQ1NjktNGI1MWUzNmQtNGI3OC00ZTcxLTk5NDUtOGU5YTUyZWM0Y2E0LnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTA1MjYlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwNTI2VDE0Mjc1N1omWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTc0OTVmYTY4YzRiMjI4ZTc4NmFiMzE5OTgwZDM4NWJlYjk2MmQxNjliOGU1YzA2Y2VlMjZlMjViMTcwM2QwNjAmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.OKs0TCC025Vw2SerFjnVUdnaaGPay1QE68aaW3KNZSE",
+          "alt": "",
+          "caption": ""
+        },
+        {
+          "url": "https://private-user-images.githubusercontent.com/73343957/447604857-4effeee6-dae4-4dc9-b6b1-7872873263a0.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDgyNjk5NzcsIm5iZiI6MTc0ODI2OTY3NywicGF0aCI6Ii83MzM0Mzk1Ny80NDc2MDQ4NTctNGVmZmVlZTYtZGFlNC00ZGM5LWI2YjEtNzg3Mjg3MzI2M2EwLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTA1MjYlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwNTI2VDE0Mjc1N1omWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTE3MjBhZmY2YTIzNzJlYWYxZjNlNzlhZjkyYzFjNjEyMjlkOTJiOWI1MTFiNjNkOTc1YjM4YmUzYjFlNTc5ZDgmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.shG3mqkDDnFD8y3XWRiTbHbXi2P5jtOAi-kJ-fUY5j4",
+          "alt": "",
+          "caption": ""
+        }
+      ],
       "size": "col-span-1",
       "gradient": "from-purple-500/20 to-pink-500/20",
       "icon": "DeviceMobileIcon",
@@ -853,6 +1037,34 @@
       ],
       "image": "https://cdn-icons-png.flaticon.com/512/187/187291.png",
       "projectImage": "https://cdn-icons-png.flaticon.com/512/187/187291.png",
+      "projectImages": [
+        {
+          "url": "https://camo.githubusercontent.com/d045e54dbe5702e9d58965a75dd9f9d7e9156fbce625e075980b194919b05809/68747470733a2f2f64726976652e676f6f676c652e636f6d2f75633f6578706f72743d766965772669643d317849436f44514630494e71345f42796b5f562d79636858594b78682d33453965",
+          "alt": "",
+          "caption": ""
+        },
+        {
+          "url": "https://camo.githubusercontent.com/0b6dca6c606b75779bc343f363722bc94d063dc536d7b8236f06d28bd33225dc/68747470733a2f2f64726976652e676f6f676c652e636f6d2f75633f6578706f72743d766965772669643d31336449357666784d584b4d2d4234716f7a546d7175304764535147654f494732",
+          "alt": "",
+          "caption": ""
+        },
+        {
+          "url": "https://camo.githubusercontent.com/ba7401fd655db61c2aed3155f5b09cb68fa799f87ec3e13e80a0611b435423d8/68747470733a2f2f64726976652e676f6f676c652e636f6d2f75633f6578706f72743d766965772669643d3143376a4c79683465787744586b4d5966626f553067672d65306f703235654142",
+          "alt": "",
+          "caption": ""
+        },
+        {
+          "url": "https://camo.githubusercontent.com/08b65457d76c425edf299c697d6f70995c08c77a8458fbb3f86963e6d6ed8685/68747470733a2f2f64726976652e676f6f676c652e636f6d2f75633f6578706f72743d766965772669643d313033684b4e645436507444474e37486e4333495053644d6f736c47484b717048",
+          "alt": "",
+          "caption": ""
+        },
+        {
+          "url": "https://camo.githubusercontent.com/590c201404ddc10e4ab1708fc243728089b5053ca0362103dd5b6fbb753cb4d2/68747470733a2f2f64726976652e676f6f676c652e636f6d2f75633f6578706f72743d766965772669643d31686e7756454d4b325f4258694f32586e446b6b5572396c4733386c5563656665",
+          "alt": "",
+          "caption": ""
+        }
+        
+      ],
       "size": "col-span-1",
       "gradient": "from-green-500/20 to-teal-500/20",
       "icon": "DeviceMobileIcon",
@@ -896,6 +1108,28 @@
       ],
       "image": "https://cdn-icons-png.flaticon.com/512/188/188987.png",
       "projectImage": "https://cdn-icons-png.flaticon.com/512/188/188987.png",
+      "projectImages": [
+        {
+          "url": "https://private-user-images.githubusercontent.com/73343957/389284937-c407f78b-0484-4c8f-9d30-619293508a77.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDgyNTc3MzYsIm5iZiI6MTc0ODI1NzQzNiwicGF0aCI6Ii83MzM0Mzk1Ny8zODkyODQ5MzctYzQwN2Y3OGItMDQ4NC00YzhmLTlkMzAtNjE5MjkzNTA4YTc3LnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTA1MjYlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwNTI2VDExMDM1NlomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPThmZWFkMjdlNzk2NTE5MGUxM2E0ZjNlNTA1MjAzNjg1NGZmM2IzOTFlNmE5NDgyMWIzMjMxYzg1ZmYwNDE2ZmMmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.P8KPkZZEMpT8DFoqJExLoRbjpM__M0a6bSehxV4YyAU",
+          "alt": "Pokédex",
+          "caption": "Pokédex"
+        },
+        {
+          "url": "https://private-user-images.githubusercontent.com/73343957/389284929-a82cc9bc-09e9-4265-8ae6-76e3a98b27e3.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDgyNTc3MzYsIm5iZiI6MTc0ODI1NzQzNiwicGF0aCI6Ii83MzM0Mzk1Ny8zODkyODQ5MjktYTgyY2M5YmMtMDllOS00MjY1LThhZTYtNzZlM2E5OGIyN2UzLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTA1MjYlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwNTI2VDExMDM1NlomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTNlMTEwNWJjNjM3YjM5NTQxYmE4YTE1ODNjOTBkZTAyNGY4YzdiZjgyZTUyMWEzOGY4YTUzYmFkMzI4YjNhZjQmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.DLBnFxYA2JE3HMlng6ySM70pzZ9Gmc6ok8VIKRWsnno",
+          "alt": "Pokédex",
+          "caption": "Pokédex"
+        },
+        {
+          "url": "https://private-user-images.githubusercontent.com/73343957/389284965-7e30eab3-c323-46e3-b27a-571780b07ac6.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDgyNTc3MzYsIm5iZiI6MTc0ODI1NzQzNiwicGF0aCI6Ii83MzM0Mzk1Ny8zODkyODQ5NjUtN2UzMGVhYjMtYzMyMy00NmUzLWIyN2EtNTcxNzgwYjA3YWM2LnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTA1MjYlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwNTI2VDExMDM1NlomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTA1NmQ5MDk4MmI5OTI2ZWI5OTNlMjYwNGNmYjBjMTBiMmNlYTdlODdlYmFmNDkzNzUyYzgyNzczZTM2YTdiNTEmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.Y_X-dEiNm3aCPdPFyCq7UBQDn91ctr9eEuwYK7AOH-A",
+          "alt": "Pokédex",
+          "caption": "Pokédex"
+        },
+        {
+          "url": "https://private-user-images.githubusercontent.com/73343957/389284982-b067ad7f-96d8-4a80-a4fb-44ed81fc86e5.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDgyNTc3MzYsIm5iZiI6MTc0ODI1NzQzNiwicGF0aCI6Ii83MzM0Mzk1Ny8zODkyODQ5ODItYjA2N2FkN2YtOTZkOC00YTgwLWE0ZmItNDRlZDgxZmM4NmU1LnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTA1MjYlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwNTI2VDExMDM1NlomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTczOTM0Nzc3NTYzYTJkYTNjNjFmYjBmZjA0NjhjYTVmNmYzN2EzZTczYjBkMTE5MmY1MjY5Yzg5NmE5OGRmZjImWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.OqnZUE5oNlZ9LvkbDSY2svvWsDEJYqBjjRsGTEWd5OE",
+          "alt": "Pokédex",
+          "caption": "Pokédex"
+        }
+      ],
       "size": "col-span-1",
       "gradient": "from-yellow-500/20 to-orange-500/20",
       "icon": "PuzzlePieceIcon",
@@ -919,6 +1153,7 @@
           "description": "Apprentissage de Node.js, Express, utilisation de Three.js et Chart.js pour l’UI, et découverte de Docker pour l’orchestration et le déploiement."
         }
       ]
+
     },    
 
     {
@@ -969,6 +1204,9 @@
       "/internships/excelia-internship-mission-1.pdf": "https://drive.google.com/file/d/1tWrx3zPzTsvY-efnfTLda5iBxLkhV0pM/view?usp=sharing",
       "/internships/excelia-internship-agreement-2.pdf": "https://drive.google.com/file/d/13Arx-iazgzYZW5wcQXPDuTbir9TqtUJG/view?usp=sharing",
       "/internships/excelia-internship-mission-2.pdf": "https://drive.google.com/file/d/1-lBpSeTiDWpLNjFAL0qt1t0t6jL77xRh/view?usp=sharing"
+    },
+    "skillsMatrix": {
+      "/skills-matrix/competences-matrix.pdf": "https://drive.google.com/file/d/1BV6uk2qSMXFsVLjQbO5FVOUisDF5Bmi1/view?usp=sharing"
     }
   }
 } 
