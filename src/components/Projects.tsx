@@ -80,18 +80,17 @@ interface ProfessionalProjectDetails {
 }
 
 const Projects = () => {
-  const { projects, education, internships, certifications, getImageUrl, getPdfViewerUrl } = usePortfolioData();
+  const { projects, education, internships, getImageUrl, getPdfViewerUrl } = usePortfolioData();
   
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [selectedProfessionalProject, setSelectedProfessionalProject] = useState<Internship | null>(null);
   const [selectedDocument, setSelectedDocument] = useState<{ title: string; path: string } | null>(null);
   const [selectedInternshipProject, setSelectedInternshipProject] = useState<InternshipProject | null>(null);
-  const [selectedCertification, setSelectedCertification] = useState<Certification | null>(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   
   // Add effect to handle body scroll for all modals
   useEffect(() => {
-    if (selectedProject || selectedProfessionalProject || selectedDocument || selectedInternshipProject || selectedCertification) {
+    if (selectedProject || selectedProfessionalProject || selectedDocument || selectedInternshipProject) {
       document.body.classList.add('no-scroll');
     } else {
       document.body.classList.remove('no-scroll');
@@ -101,7 +100,7 @@ const Projects = () => {
     return () => {
       document.body.classList.remove('no-scroll');
     };
-  }, [selectedProject, selectedProfessionalProject, selectedDocument, selectedInternshipProject, selectedCertification]);
+  }, [selectedProject, selectedProfessionalProject, selectedDocument, selectedInternshipProject]);
 
   // Reset image index when project changes
   useEffect(() => {
@@ -385,58 +384,7 @@ const Projects = () => {
           </div>
         </div>
 
-        {/* Certifications Section */}
-        <div id="certifications" className="mb-20">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-8"
-          >
-            <h2 className="text-4xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-white via-secondary to-white">
-              Certifications
-            </h2>
-          </motion.div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {certifications.map((cert: Certification) => (
-              <motion.div
-                key={cert.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8 }}
-                viewport={{ once: true }}
-                className="glass p-6 rounded-lg border border-white/10 hover:border-white/20 transition-colors duration-300 cursor-pointer"
-                onClick={() => setSelectedCertification(cert)}
-              >
-                <div className="flex items-center gap-4 mb-4">
-                  <div className="relative w-12 h-12 bg-white/5 rounded-full p-2">
-                    <Image
-                      src={getImageUrl(cert.image)}
-                      alt={`${cert.issuer} Logo`}
-                      fill
-                      className="object-contain"
-                      sizes="(max-width: 48px) 100vw, 48px"
-                    />
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="text-lg font-semibold">{cert.title}</h3>
-                    <p className="text-gray-400 text-sm">{cert.issuer}</p>
-                  </div>
-                </div>
-                <p className="text-gray-300 text-sm mb-4">{cert.description}</p>
-                <div className="flex items-center justify-between">
-                  <span className="px-2 py-1 bg-secondary/20 text-secondary text-xs rounded-full">
-                    {cert.category}
-                  </span>
-                  <span className="text-secondary text-sm">
-                    Voir le certificat →
-                  </span>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
+
 
         {/* Project Skills Matrix Section */}
         <div id="competences" className="mt-20">
@@ -936,111 +884,6 @@ const Projects = () => {
                       Image du projet à venir
                     </div>
                   )}
-                </div>
-              </div>
-            </motion.div>
-          </motion.div>
-        )}
-
-        {/* Certification Viewer Modal */}
-        {selectedCertification && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-black/90 flex items-center justify-center p-4 z-[80]"
-            onClick={() => setSelectedCertification(null)}
-          >
-            <motion.div
-              initial={{ scale: 0.9, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.9, opacity: 0 }}
-              className="glass p-8 rounded-lg w-full max-w-7xl h-[90vh] flex flex-col"
-              onClick={e => e.stopPropagation()}
-            >
-              <div className="flex justify-between items-start mb-6">
-                <div className="flex items-center gap-4">
-                  <div className="relative w-12 h-12 bg-white/5 rounded-full p-2">
-                    <Image
-                      src={getImageUrl(selectedCertification.image)}
-                      alt={`${selectedCertification.issuer} Logo`}
-                      fill
-                      className="object-contain"
-                      sizes="(max-width: 48px) 100vw, 48px"
-                    />
-                  </div>
-                  <div>
-                    <h3 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white via-secondary to-white">
-                      {selectedCertification.title}
-                    </h3>
-                    <p className="text-gray-400">{selectedCertification.issuer}</p>
-                  </div>
-                </div>
-                <button
-                  onClick={() => setSelectedCertification(null)}
-                  className="text-gray-400 hover:text-white transition-colors"
-                >
-                  <XMarkIcon className="w-6 h-6" />
-                </button>
-              </div>
-              
-              <div className="flex-1 flex flex-col">
-                <div className="mb-4">
-                  <p className="text-gray-300 mb-2">{selectedCertification.description}</p>
-                  <span className="px-3 py-1 bg-secondary/20 text-secondary text-sm rounded-full">
-                    {selectedCertification.category}
-                  </span>
-                </div>
-                
-                <div className="flex-1 bg-white rounded-lg overflow-hidden mb-3 relative">
-                  <iframe
-                    src={getPdfViewerUrl(selectedCertification.documentImage)}
-                    className="w-full h-full"
-                    title={selectedCertification.title}
-                    allowFullScreen
-                    onError={(e) => {
-                      const iframe = e.target as HTMLIFrameElement;
-                      if (iframe.contentDocument?.body.innerHTML.includes('Une autorisation est nécessaire')) {
-                        iframe.style.display = 'none';
-                        const fallback = iframe.parentElement?.querySelector('.pdf-fallback');
-                        if (fallback) {
-                          fallback.classList.remove('hidden');
-                        }
-                      }
-                    }}
-                  />
-                  <div className="pdf-fallback hidden absolute inset-0 bg-gray-900/95 flex flex-col items-center justify-center text-center p-8">
-                    <div className="w-16 h-16 mb-4 text-secondary">
-                      <DocumentTextIcon className="w-full h-full" />
-                    </div>
-                    <h5 className="text-xl font-semibold mb-2">Accès au certificat restreint</h5>
-                    <p className="text-gray-400 mb-6">Le certificat nécessite une autorisation pour être visualisé dans l'aperçu intégré.</p>
-                    <a 
-                      href={selectedCertification.documentImage}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="px-6 py-3 bg-secondary/20 hover:bg-secondary/30 text-secondary rounded-lg border border-secondary/20 transition-colors flex items-center gap-2"
-                    >
-                      <span>Ouvrir dans Google Drive</span>
-                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                      </svg>
-                    </a>
-                  </div>
-                </div>
-                <div className="text-sm text-white/70 flex items-center justify-between">
-                  <span>Certificat servi via Google Drive</span>
-                  <a 
-                    href={selectedCertification.documentImage}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-secondary hover:text-secondary/80 flex items-center gap-1 transition-colors"
-                  >
-                    <span>Ouvrir dans un nouvel onglet</span>
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                    </svg>
-                  </a>
                 </div>
               </div>
             </motion.div>
