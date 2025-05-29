@@ -21,14 +21,14 @@
     },
     {
       "id": "incidents",
-      "title": "Répondre aux incidents et aux demandes d’assistance et d’évolution",
+      "title": "Répondre aux incidents et aux demandes d'assistance et d'évolution",
       "icon": "WrenchScrewdriverIcon",
       "description": "Support utilisateur, résolution de problèmes, et évolution des systèmes selon les besoins.",
       "color": "from-green-500 to-emerald-500"
     },
     {
       "id": "presence",
-      "title": "Développer la présence en ligne de l’organisation",
+      "title": "Développer la présence en ligne de l'organisation",
       "icon": "GlobeAltIcon",
       "description": "Création et maintenance de sites web, optimisation SEO, et gestion de la présence numérique.",
       "color": "from-purple-500 to-pink-500"
@@ -59,6 +59,26 @@
 
   
   "education": [
+    {
+      "title": "Cycle d'ingénieur en apprentissage",
+      "subtitle": "Ingénierie Logiciel",
+      "school": "IMT Atlantique",
+      "period": "Septembre 2025 — juin 2028",
+      "description": "Formation en ingénierie logiciel, avec une spécialisation en développement logiciel, intelligence artificielle, cybersécurité, cloud computing et devops.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/IMT_Atlantique_logo.png/1200px-IMT_Atlantique_logo.png",
+      "skills": [
+        { "name": "Développement Logiciel", "icon": "CodeBracketIcon" },
+        { "name": "Intelligence Artificielle", "icon": "ChipIcon" },
+        { "name": "Cybersécurité", "icon": "ShieldCheckIcon" },
+        { "name": "Cloud Computing", "icon": "CloudIcon" },
+        { "name": "DevOps", "icon": "CogIcon" }
+      ],
+      "keyPoints": [
+        "Formation en développement web et mobile",
+        "Projets pratiques en entreprise",
+        "Spécialisation en développement web et mobile"
+      ]
+    },
     {
       "title": "BTS Services informatiques aux organisations",
       "subtitle": "Option Solution logicielles et application métiers",
@@ -246,23 +266,6 @@
             "Navigation intuitive dans les plans"
           ],
           "image": "/projects/interactive-plans.png"
-        },
-        {
-          "title": "Chatbot Support Étudiant",
-          "description": "Développement d'un chatbot intelligent pour le support étudiant, utilisant l'IA pour fournir des réponses précises et personnalisées, réduisant le temps de recherche de 40%.",
-          "technologies": [
-            { "name": "Python/Flask", "icon": "CommandLineIcon" },
-            { "name": "OpenAI GPT-4", "icon": "CpuChipIcon" },
-            { "name": "Base de données vectorielle", "icon": "CircleStackIcon" },
-            { "name": "Architecture RAG", "icon": "ServerIcon" }
-          ],
-          "features": [
-            "Réponses en temps réel aux questions des étudiants",
-            "Base de connaissances vectorielle pour recherche rapide",
-            "Architecture RAG pour une meilleure précision",
-            "Réduction de 40% du temps de recherche",
-            "Interface web responsive"
-          ]
         }
       ]
     }
@@ -375,8 +378,8 @@
       "link": "#projets"
     },
     "description": [
-      "Je suis Clovis SFEIR, actuellement en fin de BTS SIO option SLAM à La Rochelle, et je m’apprête à intégrer, dès septembre 2025, un cycle d’ingénieur en apprentissage. Curieux et engagé, j’ai déjà mis en pratique mes connaissances lors de plusieurs stages et projets personnels : de la mise en place de chatbots intelligents à l’optimisation d’applications web et mobiles, en passant par l’automatisation de workflows 3D sous Blender.",
-      "Au-delà des technologies que j’affectionne (Node.js, Next.js, Flutter, C#…), j’aime avant tout résoudre des problématiques concrètes et concevoir des expériences utilisateur fluides et accessibles. Proactif, j’apprécie le travail en équipe et les méthodes agiles, tout en continuant à structurer mon apprentissage pour devenir un ingénieur capable d’accompagner durablement les organisations dans leur transformation digitale."
+      "Je suis Clovis SFEIR, actuellement en fin de BTS SIO option SLAM à La Rochelle, et je m'apprête à intégrer, dès septembre 2025, un cycle d'ingénieur en apprentissage. Curieux et engagé, j'ai déjà mis en pratique mes connaissances lors de plusieurs stages et projets personnels : de la mise en place de chatbots intelligents à l'optimisation d'applications web et mobiles, en passant par l'automatisation de workflows 3D sous Blender.",
+      "Au-delà des technologies que j'affectionne (Node.js, Next.js, Flutter, C#…), j'aime avant tout résoudre des problématiques concrètes et concevoir des expériences utilisateur fluides et accessibles. Proactif, j'apprécie le travail en équipe et les méthodes agiles, tout en continuant à structurer mon apprentissage pour devenir un ingénieur capable d'accompagner durablement les organisations dans leur transformation digitale."
     ]
   },
   
@@ -401,7 +404,7 @@
       "projectImage": "https://cdn-icons-png.flaticon.com/512/4712/4712027.png",
       "projectImages": [
         {
-          "url": "https://private-user-images.githubusercontent.com/73343957/447547553-6172780c-e271-48ee-8b83-c539b28beefb.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDgyNjAyNTIsIm5iZiI6MTc0ODI1OTk1MiwicGF0aCI6Ii83MzM0Mzk1Ny80NDc1NDc1NTMtNjE3Mjc4MGMtZTI3MS00OGVlLThiODMtYzUzOWIyOGJlZWZiLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTA1MjYlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwNTI2VDExNDU1MlomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTdjNGIxMmQ1YzczMWM4NDQ3NDk5NDAzNjk0ZGZlZmJhNDZlNWI5NWU5N2QyZmIzNzA4MDliNzFhZDhhNzllMDgmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.yknmRU6Bhg0ENcHp0bf3fOLtn2UWHmW7Od4dUtIqBuY",
+          "url": "https://lh3.googleusercontent.com/d/1xICoDQF0INq4_Byk_V-ychXYKxh-3E9e",
           "alt": "",
           "caption": ""
         },
@@ -418,12 +421,12 @@
       "isInternship": true,
       "skillDetails": [
         {
-          "name": "Répondre aux incidents et aux demandes d’assistance et d’évolution",
-          "description": "Analyse du besoin formulé par le tuteur et développement d’un plugin Python pour Blender, automatisant la création de propriétés personnalisées et répondant directement à une demande d’évolution du workflow."
+          "name": "Répondre aux incidents et aux demandes d'assistance et d'évolution",
+          "description": "Analyse du besoin formulé par le tuteur et développement d'un plugin Python pour Blender, automatisant la création de propriétés personnalisées et répondant directement à une demande d'évolution du workflow."
         },
         {
           "name": "Mettre à disposition des utilisateurs un service informatique",
-          "description": "Intégration du script sous forme d’add-on Blender avec interface utilisateur dans la vue 3D, facilitant son déploiement, son adoption et l’optimisation du processus de modélisation pour les utilisateurs finaux."
+          "description": "Intégration du script sous forme d'add-on Blender avec interface utilisateur dans la vue 3D, facilitant son déploiement, son adoption et l'optimisation du processus de modélisation pour les utilisateurs finaux."
         }
       ]
     },
@@ -447,17 +450,22 @@
       "projectImage": "https://cdn-icons-png.flaticon.com/512/4712/4712027.png",
       "projectImages": [
         {
-          "url": "https://private-user-images.githubusercontent.com/73343957/447549687-e0df7831-f700-4eac-ac18-b0877c1ee148.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDgyNjA0OTUsIm5iZiI6MTc0ODI2MDE5NSwicGF0aCI6Ii83MzM0Mzk1Ny80NDc1NDk2ODctZTBkZjc4MzEtZjcwMC00ZWFjLWFjMTgtYjA4NzdjMWVlMTQ4LnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTA1MjYlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwNTI2VDExNDk1NVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWU2NTU0YTM2ZjA4ZDAyZjFhNmIzZmI0N2VjZTQxOTJiMDcwMDhjY2JlYWQxZTMxOGQxZGFhOTNiYmJhMTFjYWMmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.5JNhvlsZbtoyqcRpsYgFkZY_YthhAZmbFAKMEBMD1OU",
+          "url": "https://lh3.googleusercontent.com/d/1xICoDQF0INq4_Byk_V-ychXYKxh-3E9e",
           "alt": "",
           "caption": ""
         },
         {
-          "url": "https://private-user-images.githubusercontent.com/73343957/447549791-ceba642a-9a86-45c3-b8d6-155da038c150.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDgyNjkyOTYsIm5iZiI6MTc0ODI2ODk5NiwicGF0aCI6Ii83MzM0Mzk1Ny80NDc1NDk3OTEtY2ViYTY0MmEtOWE4Ni00NWMzLWI4ZDYtMTU1ZGEwMzhjMTUwLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTA1MjYlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwNTI2VDE0MTYzNlomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWVhODViODYwMTgwZDk4Mjg1NmI2NWQxN2Y5ZGMzMmVmZjRmNDVhM2U1YzU5MGY2ZTEyZGU0NzFmMWIzMWQxYTMmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.ps-GwkI0UjgGxR7PZwhc80TEwafdJILT_GmT4Sg7mBQ",
+          "url": "https://private-user-images.githubusercontent.com/73343957/447549687-e0df7831-f700-4eac-ac18-b0877c1ee148.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDgyNjA0OTUsIm5iZiI6MTc0ODI2MDE5NSwicGF0aCI6Ii83MzM0Mzk1Ny80NDc1NDk2ODctZTBkZjc4MzEtZjcwMC00ZWFjLWFjMTgtYjA4NzdjMWVlMTQ4LnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTA1MjYlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwNTI2VDE0MTYzNlomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWU2NTU0YTM2ZjA4ZDAyZjFhNmIzZmI0N2VjZTQxOTJiMDcwMDhjY2JlYWQxZTMxOGQxZGFhOTNiYmJhMTFjYWMmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.5JNhvlsZbtoyqcRpsYgFkZY_YthhAZmbFAKMEBMD1OU",
           "alt": "",
           "caption": ""
         },
         {
-          "url" : "https://private-user-images.githubusercontent.com/73343957/447549873-323f5024-f297-4329-9d33-2a8f29ba18db.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDgyNjkyOTYsIm5iZiI6MTc0ODI2ODk5NiwicGF0aCI6Ii83MzM0Mzk1Ny80NDc1NDk4NzMtMzIzZjUwMjQtZjI5Ny00MzI5LTlkMzMtMmE4ZjI5YmExOGRiLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTA1MjYlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwNTI2VDE0MTYzNlomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTcwZWYzMzVkNTkyMTA4OWQxNTcxNDZhYzBlYmE1ZTU2MzE2YThmMGU2MTQxYzU0NDkxODcyNGNjZmI0ZTAyZjAmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.wVnC8ABiLJTUXc8FjJL9qBln7IGEt38o8OAg_uWsxY0",
+          "url": "https://private-user-images.githubusercontent.com/73343957/447549791-ceba642a-9a86-45c3-b8d6-155da038c150.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDgyNjkyOTYsIm5iZiI6MTc0ODI2ODk5NiwicGF0aCI6Ii83MzM0Mzk1Ny80NDc1NDk3OTEtY2ViYTY0MmEtOWE4Ni00NWMzLWI4ZDYtMTU1ZGEwMzhjMTUwLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTA1MjYlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwNTI2VDE0MTYzNlomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTM5NzFhNWJkMjY2ZjliMzU5Zjk3NDNjMzA2NDdlNjYyMjliNjgxOTE2MzM4ZjU2MGM2MzY5ZTE2M2FmYzliNmEmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.XTnBIMlV8kV0bxiAWlBESa9gvX7ccdNG5a7udVVaUg8",
+          "alt": "",
+          "caption": ""
+        },
+        {
+          "url" : "https://lh3.googleusercontent.com/d/1xICoDQF0INq4_Byk_V-ychXYKxh-3E9e",
           "alt": "",
           "caption": ""
         }
@@ -474,11 +482,11 @@
         },
         {
           "name": "Mettre à disposition des utilisateurs un service informatique",
-          "description": "Déploiement de l’application interactive sur le serveur interne d’Excelia et adaptation responsive pour garantir l’accès sur mobile et tablette."
+          "description": "Déploiement de l'application interactive sur le serveur interne d'Excelia et adaptation responsive pour garantir l'accès sur mobile et tablette."
         },
         {
           "name": "Travailler en mode projet",
-          "description": "Organisation du chantier de refactorisation et d’optimisation, coordination avec l’équipe et gestion des versions jusqu’à la livraison."
+          "description": "Organisation du chantier de refactorisation et d'optimisation, coordination avec l'équipe et gestion des versions jusqu'à la livraison."
         },
         {
           "name": "Organiser son développement professionnel",
@@ -486,68 +494,6 @@
         }
       ]
 
-
-    },
-    {
-      "id": "chatbot-intelligent-openai",
-      "title": "Chatbot intelligent avec OpenAI",
-      "period": "2024",
-      "description": "Conception d'un chatbot bilingue ",
-      "technologies": [
-        { "name": "Python/Flask", "icon": "CommandLineIcon" },
-        { "name": "JavaScript", "icon": "CodeBracketIcon" },
-        { "name": "OpenAI API", "icon": "CpuChipIcon" }
-      ],
-      "features": [
-        "Conception d'un chatbot bilingue avec outils administratifs",
-        "Amélioration de la précision grâce à un entraînement IA spécifique",
-        "Interface responsive pour le suivi des performances"
-      ],
-      "image": "https://cdn-icons-png.flaticon.com/512/4712/4712027.png",
-      "projectImage": "https://cdn-icons-png.flaticon.com/512/4712/4712027.png",
-      "projectImages":[
-        {
-          "url": "https://private-user-images.githubusercontent.com/73343957/447569444-fdc0bb1d-88a6-4202-9ed5-cc09d069390e.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDgyNjM1NTksIm5iZiI6MTc0ODI2MzI1OSwicGF0aCI6Ii83MzM0Mzk1Ny80NDc1Njk0NDQtZmRjMGJiMWQtODhhNi00MjAyLTllZDUtY2MwOWQwNjkzOTBlLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTA1MjYlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwNTI2VDEyNDA1OVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWYwODFkOTU2MjVlMzNlY2MwMGU0YmY3ZTM5MzkwNDU1YTE4YjAyZDUxODUwZGI4MDY1MzVlZDJjZDEwYjU2MDQmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.roKwTE9UEogch3syUSOtm48oaVt3nmeCEG2ZziMsZX8",
-          "alt" :"",
-          "caption":""
-        },
-        {
-          "url": "https://private-user-images.githubusercontent.com/73343957/447571122-320f4c1a-a371-4e54-8718-e052c521bffd.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDgyNjkzNDEsIm5iZiI6MTc0ODI2OTA0MSwicGF0aCI6Ii83MzM0Mzk1Ny80NDc1NzExMjItMzIwZjRjMWEtYTM3MS00ZTU0LTg3MTgtZTA1MmM1MjFiZmZkLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTA1MjYlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwNTI2VDE0MTcyMVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTM5NzFhNWJkMjY2ZjliMzU5Zjk3NDNjMzA2NDdlNjYyMjliNjgxOTE2MzM4ZjU2MGM2MzY5ZTE2M2FmYzliNmEmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.XTnBIMlV8kV0bxiAWlBESa9gvX7ccdNG5a7udVVaUg8",
-          "alt":"",
-          "caption" : ""
-        }
-      ],
-      "size": "col-span-1",
-      "gradient": "from-blue-500/20 to-purple-500/20",
-      "icon": "SparklesIcon",
-      "category": "Projets Pro",
-      "isInternship": true,
-      "skillDetails": [
-        {
-          "name": "Gérer le patrimoine informatique",
-          "description": "Mise en place du versionning Git, structuration du dépôt source et workflows CI/CD pour assurer la traçabilité et la qualité du code du chatbot."
-        },
-        {
-          "name": "Répondre aux incidents et aux demandes d’assistance et d’évolution",
-          "description": "Design et implémentation d’un chatbot support intégrant RAG via Pinecone et GPT-4o pour automatiser les réponses aux questions des étudiants et soulager le service support."
-        },
-        {
-          "name": "Mettre à disposition des utilisateurs un service informatique",
-          "description": "Déploiement de l’application Flask sur les serveurs internes d’Excelia, configuration de l’hébergement et gestion de la disponibilité pour un accès sécurisé au chatbot."
-        },
-        {
-          "name": "Travailler en mode projet",
-          "description": "Collaboration étroite avec le service support et les équipes pédagogiques, planification des livrables, gestion des versions et coordination des sprints via Git."
-        },
-        {
-          "name": "Organiser son développement professionnel",
-          "description": "Apprentissage et maîtrise de Python, Flask, OpenAI API et Pinecone, renforçant mes compétences en développement de chatbots."
-        },
-        {
-          "name": "Développer la présence en ligne de l’organisation",
-          "description": "Développement d'un chatbot pour excelia qui devrais être utilisé par les nouveaux étudiants et enseignants"
-        }
-      ]
 
     },
     {
@@ -571,12 +517,12 @@
       "projectImage": "https://cdn-icons-png.flaticon.com/512/4712/4712027.png",
       "projectImages":[
         {
-          "url": "https://private-user-images.githubusercontent.com/73343957/447575810-8da65396-d3cf-4460-bf65-806f25f589f0.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDgyNjUwNTUsIm5iZiI6MTc0ODI2NDc1NSwicGF0aCI6Ii83MzM0Mzk1Ny80NDc1NzU4MTAtOGRhNjUzOTYtZDNjZi00NDYwLWJmNjUtODA2ZjI1ZjU4OWYwLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTA1MjYlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwNTI2VDEzMDU1NVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWU5NDgwMjkxMTZhMmJjYmE3MTI1MmNjYzhlZjViOWYxNWUzZTJjZmU3ZGE4ODhjOTg4YjI0NzFjZDdlZmUzZmQmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.fN4_oUnh6Sgg_F6e9R2BajHEzFYMKU2vL2HOLX-vl1c",
+          "url": "https://lh3.googleusercontent.com/d/1xICoDQF0INq4_Byk_V-ychXYKxh-3E9e",
           "alt" :"",
           "caption":""
         },
         {
-          "url": "https://private-user-images.githubusercontent.com/73343957/447575902-c54ed041-fb2f-484e-bde1-4a821db28bfd.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDgyNjkwNDMsIm5iZiI6MTc0ODI2ODc0MywicGF0aCI6Ii83MzM0Mzk1Ny80NDc1NzU5MDItYzU0ZWQwNDEtZmIyZi00ODRlLWJkZTEtNGE4MjFkYjI4YmZkLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTA1MjYlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwNTI2VDE0MTIyM1omWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTM0YzFmMTQxYmI0YzI3M2U1MmQ2ZjNiMGU0MjJkY2Y0MGUxYjY3NGMzZDFkZmQyYzE1MjU0OThmNGRkOWFlNjgmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.pfwqwGdYOCbjlgBjndzOFtCTQbehmAPPWr19S9QZVcY",
+          "url": "https://private-user-images.githubusercontent.com/73343957/447575902-c54ed041-fb2f-484e-bde1-4a821db28bfd.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDgyNjkwNDMsIm5iZiI6MTc0ODI2ODc0MywicGF0aCI6Ii83MzM0Mzk1Ny80NDc1NzU5MDItYzU0ZWQwNDEtZmIyZi00ODRlLWJkZTEtNGE4MjFkYjI4YmZkLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTA1MjYlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwNTI2VDE0MTIyM1omWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWRiYTYwM2RiMWEyYmY5Mjk5ZTAyNWRiOWM1YTM3YTAzNjZhMGJkN2ZmNzZmYzY3Yzc3NzcxODE0MjI2MTBmYWMmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.pfwqwGdYOCbjlgBjndzOFtCTQbehmAPPWr19S9QZVcY",
           "alt":"",
           "caption" : ""
         },
@@ -591,9 +537,9 @@
           "caption" : ""
         },
         {
-          "url": "https://private-user-images.githubusercontent.com/73343957/447577514-a8148497-410e-4576-843d-080b45644e1e.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDgyNjkwNDMsIm5iZiI6MTc0ODI2ODc0MywicGF0aCI6Ii83MzM0Mzk1Ny80NDc1Nzc1MTQtYTgxNDg0OTctNDEwZS00NTc2LTg0M2QtMDgwYjQ1NjQ0ZTFlLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTA1MjYlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwNTI2VDE0MTIyM1omWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWMxNDQ3Zjg2MzMyNTFiNzZlZmFjZTViNWI5NGI5YWJhZWY2NzExMmRkZjRmN2Y2NGMyNDlkYzRmNmE1ODI3ZTEmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.W-ygrSErN3pE0fbRSqRMdhGHSFMG5dzIDqTG_hCZpcA",
-          "alt":"",
-          "caption" : ""
+          "url": "https://private-user-images.githubusercontent.com/73343957/447577514-a8148497-410e-4576-843d-080b45644e1e.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDgyNjkwNDMsIm5iZiI6MTc0ODI2ODc0MywicGF0aCI6Ii83MzM0Mzk1Ny80NDc1Nzc1MTQtYTgxNDg0OTctNDEwZS00NTc2LTg0M2QtMDgwYjQ1NjQ0ZTFlLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTA1MjYlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwNTI2VDE0MTYzNlomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTcwZWYzMzVkNTkyMTA4OWQxNTcxNDZhYzBlYmE1ZTU2MzE2YThmMGU2MTQxYzU0NDkxODcyNGNjZmI0ZTAyZjAmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.wVnC8ABiLJTUXc8FjJL9qBln7IGEt38o8OAg_uWsxY0",
+          "alt": "",
+          "caption": ""
         }
       ],
       "size": "col-span-1",
@@ -604,15 +550,15 @@
       "skillDetails": [
         {
           "name": "Gérer le patrimoine informatique",
-          "description": "Mise en place d’un système de sauvegarde automatique et de versionning des modèles fine-tunés via Google Cloud Storage."
+          "description": "Mise en place d'un système de sauvegarde automatique et de versionning des modèles fine-tunés via Google Cloud Storage."
         },
         {
-          "name": "Répondre aux incidents et aux demandes d’assistance et d’évolution",
-          "description": "Conception et implémentation d’un pipeline de fine-tuning et de détection d’erreurs, réduisant le taux de réponses incorrectes de 85 % et améliorant la fiabilité du chatbot."
+          "name": "Répondre aux incidents et aux demandes d'assistance et d'évolution",
+          "description": "Conception et implémentation d'un pipeline de fine-tuning et de détection d'erreurs, réduisant le taux de réponses incorrectes de 85 % et améliorant la fiabilité du chatbot."
         },
         {
           "name": "Mettre à disposition des utilisateurs un service informatique",
-          "description": "Déploiement de l’application Flask et du panneau d’administration multilingue (FR/EN) sur les serveurs internes d’Excelia, garantissant un accès fluide et performant pour les utilisateurs finaux."
+          "description": "Déploiement de l'application Flask et du panneau d'administration multilingue (FR/EN) sur les serveurs internes d'Excelia, garantissant un accès fluide et performant pour les utilisateurs finaux."
         },
         {
           "name": "Travailler en mode projet",
@@ -623,7 +569,64 @@
           "description": "Apprentissage et maitrise de l'api Google cloud storage et du fine tuning de l'api OpenAI."
         },
         {
-          "name": "Développer la présence en ligne de l’organisation",
+          "name": "Développer la présence en ligne de l'organisation",
+          "description": "Développement d'un chatbot pour excelia qui devrais être utilisé par les nouveaux étudiants et enseignants"
+        }
+      ]
+
+    },
+    {
+      "id": "chatbot-intelligent-openai",
+      "title": "Chatbot intelligent avec OpenAI",
+      "period": "2024",
+      "description": "Conception d'un chatbot bilingue ",
+      "technologies": [
+        { "name": "Python/Flask", "icon": "CommandLineIcon" },
+        { "name": "JavaScript", "icon": "CodeBracketIcon" },
+        { "name": "OpenAI API", "icon": "CpuChipIcon" }
+      ],
+      "features": [
+        "Conception d'un chatbot bilingue avec outils administratifs",
+        "Amélioration de la précision grâce à un entraînement IA spécifique",
+        "Interface responsive pour le suivi des performances"
+      ],
+      "image": "https://cdn-icons-png.flaticon.com/512/4712/4712027.png",
+      "projectImage": "https://cdn-icons-png.flaticon.com/512/4712/4712027.png",
+      "projectImages":[
+        {
+          "url": "https://lh3.googleusercontent.com/d/1xICoDQF0INq4_Byk_V-ychXYKxh-3E9e",
+          "alt" :"",
+          "caption":""
+        }
+      ],
+      "size": "col-span-1",
+      "gradient": "from-blue-500/20 to-purple-500/20",
+      "icon": "SparklesIcon",
+      "category": "Projets Pro",
+      "isInternship": true,
+      "skillDetails": [
+        {
+          "name": "Gérer le patrimoine informatique",
+          "description": "Mise en place du versionning Git, structuration du dépôt source et workflows CI/CD pour assurer la traçabilité et la qualité du code du chatbot."
+        },
+        {
+          "name": "Répondre aux incidents et aux demandes d'assistance et d'évolution",
+          "description": "Design et implémentation d'un chatbot support intégrant RAG via Pinecone et GPT-4o pour automatiser les réponses aux questions des étudiants et soulager le service support."
+        },
+        {
+          "name": "Mettre à disposition des utilisateurs un service informatique",
+          "description": "Déploiement de l'application Flask sur les serveurs internes d'Excelia, configuration de l'hébergement et gestion de la disponibilité pour un accès sécurisé au chatbot."
+        },
+        {
+          "name": "Travailler en mode projet",
+          "description": "Collaboration étroite avec le service support et les équipes pédagogiques, planification des livrables, gestion des versions et coordination des sprints via Git."
+        },
+        {
+          "name": "Organiser son développement professionnel",
+          "description": "Apprentissage et maîtrise de Python, Flask, OpenAI API et Pinecone, renforçant mes compétences en développement de chatbots."
+        },
+        {
+          "name": "Développer la présence en ligne de l'organisation",
           "description": "Développement d'un chatbot pour excelia qui devrais être utilisé par les nouveaux étudiants et enseignants"
         }
       ]
@@ -650,7 +653,7 @@
       "projectImage": "https://cdn-icons-png.flaticon.com/512/1995/1995574.png",
       "projectImages":[
         {
-          "url": "https://private-user-images.githubusercontent.com/73343957/447597769-d6ff21c4-b59b-406b-8f7a-c0388dd6f379.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDgyNjg3NjYsIm5iZiI6MTc0ODI2ODQ2NiwicGF0aCI6Ii83MzM0Mzk1Ny80NDc1OTc3NjktZDZmZjIxYzQtYjU5Yi00MDZiLThmN2EtYzAzODhkZDZmMzc5LnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTA1MjYlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwNTI2VDE0MDc0NlomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWY2ZTJhY2FjYzM5MzM0NTQ0MzA4MWYyNjhkNmRkZDcwMTY4NjI4MmU5MmFlMzc2MDY0OWE3MTY0YTc1MjA2OGQmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.waF7mD_H0YiQLTijAjKAkZU2NNw8RB1mECCPJFzEwb8",
+          "url": "https://lh3.googleusercontent.com/d/1xICoDQF0INq4_Byk_V-ychXYKxh-3E9e",
           "alt": "",
           "caption": ""
         },
@@ -693,15 +696,15 @@
       "skillDetails": [
         {
           "name": "Gérer le patrimoine informatique",
-          "description": "Mise en place d’un système de versioning Git pour le projet, assurant la traçabilité des modifications et la collaboration entre les contributeurs."
+          "description": "Mise en place d'un système de versioning Git pour le projet, assurant la traçabilité des modifications et la collaboration entre les contributeurs."
         },        
         {
-          "name": "Développer la présence en ligne de l’organisation",
-          "description": "Promotion du simulateur via un post LinkedIn du DSI, valorisant Excelia et augmentant la visibilité de l’outil auprès des étudiants et partenaires."
+          "name": "Développer la présence en ligne de l'organisation",
+          "description": "Promotion du simulateur via un post LinkedIn du DSI, valorisant Excelia et augmentant la visibilité de l'outil auprès des étudiants et partenaires."
         },
         {
           "name": "Mettre à disposition des utilisateurs un service informatique",
-          "description": "Déploiement du simulateur d’entretien en temps réel sur une plateforme web responsive, garantissant un accès fiable et interactif pour les alternance dans leurs entretiens d'embauche."
+          "description": "Déploiement du simulateur d'entretien en temps réel sur une plateforme web responsive, garantissant un accès fiable et interactif pour les alternance dans leurs entretiens d'embauche."
         },
         {
           "name": "Travailler en mode projet",
@@ -709,10 +712,10 @@
         },
         {
           "name": "Organiser son développement professionnel",
-          "description": "Maîtrise de Next.js, TypeScript et de l’API ElevenLabs pour la synthèse vocale, et approfondissement des techniques d’IA conversationnelle."
+          "description": "Maîtrise de Next.js, TypeScript et de l'API ElevenLabs pour la synthèse vocale, et approfondissement des techniques d'IA conversationnelle."
         },
         {
-          "name": "Développer la présence en ligne de l’organisation",
+          "name": "Développer la présence en ligne de l'organisation",
           "description": "Développement d'une interface web responsive qui a attiré plus de 1000 utilisateurs en 3 mois"
         }
       ]
@@ -738,12 +741,12 @@
       "image": "https://cdn-icons-png.flaticon.com/512/414/414927.png",
       "projectImages": [
         {
-          "url": "https://private-user-images.githubusercontent.com/73343957/447545633-5a19116a-f737-411a-b2b1-645ad00b1c88.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDgyNzAyOTEsIm5iZiI6MTc0ODI2OTk5MSwicGF0aCI6Ii83MzM0Mzk1Ny80NDc1NDU2MzMtNWExOTExNmEtZjczNy00MTFhLWIyYjEtNjQ1YWQwMGIxYzg4LnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTA1MjYlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwNTI2VDE0MzMxMVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTY0YThiYmFkOWNkNTYzMzM5MDA4NzM1ZWQ4NmY5ZDk3M2ViNGU5OWU3M2Y4OTA5ZDU0YjI5MjdhZjliNjU5ZTgmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.npPRgfrzJEPMEZv7cPtcOLB8epmyjzGZcqDzZjUObjM",
+          "url": "https://lh3.googleusercontent.com/d/1xICoDQF0INq4_Byk_V-ychXYKxh-3E9e",
           "alt": "",
           "caption": ""
         },
         {
-          "url": "https://private-user-images.githubusercontent.com/73343957/447545719-434a1fa3-3d5a-4a3b-b916-879529194791.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDgyNzAyOTEsIm5iZiI6MTc0ODI2OTk5MSwicGF0aCI6Ii83MzM0Mzk1Ny80NDc1NDU3MTktNDM0YTFmYTMtM2Q1YS00YTNiLWI5MTYtODc5NTI5MTk0NzkxLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTA1MjYlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwNTI2VDE0MzMxMVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTRmM2UwMTNkNzVmZWJmYjhjMDQ4ZDI3ZWUwNDUzMzdmNjRiMDJkYmNjZjQ5NjBjZjcwNWViZDIxMzUxYzI3NzMmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.ko0VnwkWiwfQHpAKIApilUK1KshuG3k4XgkhOUqxZhM",
+          "url": "https://private-user-images.githubusercontent.com/73343957/447545719-434a1fa3-3d5a-4a3b-b916-879529194791.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDgyNzAyOTEsIm5iZiI6MTc0ODI2OTk5MSwicGF0aCI6Ii83MzM0Mzk1Ny80NDc1NDU3MTktNDM0YTFmYTMtM2Q1YS00YTNiLWI5MTYtODc5NTI5MTk0NzkxLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTA1MjYlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwNTI2VDE0MzMxMVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTY0YThiYmFkOWNkNTYzMzM5MDA4NzM1ZWQ4NmY5ZDk3M2ViNGU5OWU3M2Y4OTA5ZDU0YjI5MjdhZjliNjU5ZTgmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.npPRgfrzJEPMEZv7cPtcOLB8epmyjzGZcqDzZjUObjM",
           "alt": "",
           "caption": ""
         }
@@ -757,10 +760,10 @@
       "skillDetails": [
         {
           "name": "Gérer le patrimoine informatique",
-          "description": "Mise en place d'un système de cache intelligent réduisant les appels API de 65 % et optimisant l’utilisation des ressources serveurs."
+          "description": "Mise en place d'un système de cache intelligent réduisant les appels API de 65 % et optimisant l'utilisation des ressources serveurs."
         },
         {
-          "name": "Développer la présence en ligne de l’organisation",
+          "name": "Développer la présence en ligne de l'organisation",
           "description": "Conception d'une interface météo innovante et accessible, valorisant le projet lors de la Nuit de l'Info."
         },
         {
@@ -794,19 +797,19 @@
       "skillDetails": [
         {
           "name": "Gérer le patrimoine informatique",
-          "description": "Mise en place d’un dépôt Git pour la gestion du code source et modélisation des objets SQL Server (procédures stockées, transactions, déclencheurs) afin d’assurer la cohérence et la traçabilité du projet."
+          "description": "Mise en place d'un dépôt Git pour la gestion du code source et modélisation des objets SQL Server (procédures stockées, transactions, déclencheurs) afin d'assurer la cohérence et la traçabilité du projet."
         },
         {
           "name": "Travailler en mode projet",
-          "description": "Découpage fonctionnel du logiciel (suivi des étudiants, gestion des stages, rapports automatisés), planification du développement et suivi de l’avancement jusqu’à la mise à disposition du prototype."
+          "description": "Découpage fonctionnel du logiciel (suivi des étudiants, gestion des stages, rapports automatisés), planification du développement et suivi de l'avancement jusqu'à la mise à disposition du prototype."
         },
         {
           "name": "Mettre à disposition des utilisateurs un service informatique",
-          "description": "Développement d’une application Windows Forms ergonomique pour le suivi des étudiants en stage."
+          "description": "Développement d'une application Windows Forms ergonomique pour le suivi des étudiants en stage."
         },
         {
           "name": "Organiser son développement professionnel",
-          "description": "Découverte et appropriation du langage C# WinForms et de Transact-SQL, consolidation des bonnes pratiques en conception d’applications et gestion de bases de données."
+          "description": "Découverte et appropriation du langage C# WinForms et de Transact-SQL, consolidation des bonnes pratiques en conception d'applications et gestion de bases de données."
         }
       ]
 
@@ -835,19 +838,19 @@
       "skillDetails": [
         {
           "name": "Gérer le patrimoine informatique",
-          "description": "Modélisation des entités Doctrine et configuration de la base MariaDB pour stocker et transférer les données des films depuis l’API TMDB."
+          "description": "Modélisation des entités Doctrine et configuration de la base MariaDB pour stocker et transférer les données des films depuis l'API TMDB."
         },
         {
           "name": "Travailler en mode projet",
-          "description": "Mise en place de l’architecture MVC Symfony, définition des routes, controllers et vues pour structurer le projet et faciliter le développement collaboratif."
+          "description": "Mise en place de l'architecture MVC Symfony, définition des routes, controllers et vues pour structurer le projet et faciliter le développement collaboratif."
         },
         {
           "name": "Mettre à disposition des utilisateurs un service informatique",
-          "description": "Développement d’une interface web intuitive en PHP/Symfony et Twig, offrant recherche de films, affichage des détails et suggestions de contenus similaires."
+          "description": "Développement d'une interface web intuitive en PHP/Symfony et Twig, offrant recherche de films, affichage des détails et suggestions de contenus similaires."
         },
         {
           "name": "Organiser son développement professionnel",
-          "description": "Apprentissage et maîtrise de Symfony, Doctrine et Twig, renforçant mes compétences en conception d’applications web basées sur un framework MVC."
+          "description": "Apprentissage et maîtrise de Symfony, Doctrine et Twig, renforçant mes compétences en conception d'applications web basées sur un framework MVC."
         }
       ]
 
@@ -872,7 +875,7 @@
       "image": "https://cdn-icons-png.flaticon.com/512/3774/3774299.png",
       "projectImages": [
         {
-          "url": "https://private-user-images.githubusercontent.com/73343957/447601783-bcb9dcfb-2992-49fd-bb20-2321c8a96383.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDgyNjk1MzMsIm5iZiI6MTc0ODI2OTIzMywicGF0aCI6Ii83MzM0Mzk1Ny80NDc2MDE3ODMtYmNiOWRjZmItMjk5Mi00OWZkLWJiMjAtMjMyMWM4YTk2MzgzLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTA1MjYlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwNTI2VDE0MjAzM1omWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTZjM2VjNDI3ZjQ3YzZiMTg0NGE4MTg4ODZhYjc5NDdmY2JkYmY2YmRhN2I4ZTBlZTJhZjEwZjU5ZTQyMjQ4YjEmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.iqS8fbD81Sr_OP6u4HC7oxYYFez5ZJmNkiJkGDjRcMA",
+          "url": "https://lh3.googleusercontent.com/d/1xICoDQF0INq4_Byk_V-ychXYKxh-3E9e",
           "alt": "Page d'accueil Vroom Prestige",
           "caption": "Interface d'accueil avec catalogue de véhicules"
         },
@@ -915,15 +918,15 @@
       "skillDetails": [
         {
           "name": "Gérer le patrimoine informatique",
-          "description": "Mise en place d’un dépôt Git pour le suivi du code source et structuration de la base MySQL (tables, procédures stockées) assurant la traçabilité des données des utilisateurs, des véhicules et des réservations."
+          "description": "Mise en place d'un dépôt Git pour le suivi du code source et structuration de la base MySQL (tables, procédures stockées) assurant la traçabilité des données des utilisateurs, des véhicules et des réservations."
         },
         {
           "name": "Travailler en mode projet",
-          "description": "Analyse du besoin et découpage fonctionnel en modules (authentification, catalogue, réservation, espace client), planification et suivi jusqu’à la mise en ligne de la solution web."
+          "description": "Analyse du besoin et découpage fonctionnel en modules (authentification, catalogue, réservation, espace client), planification et suivi jusqu'à la mise en ligne de la solution web."
         },
         {
           "name": "Mettre à disposition des utilisateurs un service informatique",
-          "description": "Déploiement de l’application PHP sur serveur interne, configuration de l’URL et du fichier hosts, et mise en place de l’authentification OAuth Google pour un service sécurisé et accessible."
+          "description": "Déploiement de l'application PHP sur serveur interne, configuration de l'URL et du fichier hosts, et mise en place de l'authentification OAuth Google pour un service sécurisé et accessible."
         },
         {
           "name": "Organiser son développement professionnel",
@@ -953,7 +956,7 @@
       "projectImages":[
 
         {
-          "url": "https://private-user-images.githubusercontent.com/73343957/447604278-c0a0b9ee-fa7b-4a6a-bd91-0d8edf338cc5.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDgyNjk5NzcsIm5iZiI6MTc0ODI2OTY3NywicGF0aCI6Ii83MzM0Mzk1Ny80NDc2MDQyNzgtYzBhMGI5ZWUtZmE3Yi00YTZhLWJkOTEtMGQ4ZWRmMzM4Y2M1LnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTA1MjYlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwNTI2VDE0Mjc1N1omWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWU3ODcwNjYzZWYyNzMzYmFjMmNlZDRmOWM2OGZiZDgyN2MzOTIwNGY3ODU0OTVjMjFmNzk2M2NhOTdhYzRhNDEmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.jM0mtGUcTGoUGNHk1wVV6uZUkHxuhGo-i3kGTtbDQ6M",
+          "url": "https://lh3.googleusercontent.com/d/1xICoDQF0INq4_Byk_V-ychXYKxh-3E9e",
           "alt": "",
           "caption": ""
         },
@@ -1001,7 +1004,7 @@
       "skillDetails": [
         {
           "name": "Gérer le patrimoine informatique",
-          "description": "Mise en place d’un dépôt Git et modélisation des objets Flutter/Dart et des schémas MySQL pour assurer la cohérence et la traçabilité du code et des données administratives."
+          "description": "Mise en place d'un dépôt Git et modélisation des objets Flutter/Dart et des schémas MySQL pour assurer la cohérence et la traçabilité du code et des données administratives."
         },
         {
           "name": "Travailler en mode projet",
@@ -1009,7 +1012,7 @@
         },
         {
           "name": "Mettre à disposition des utilisateurs un service informatique",
-          "description": "Déploiement de l’application mobile et desktop sur postes de travail (build Flutter) et configuration du backend Node.js sur serveur interne, garantissant un service opérationnel et performant."
+          "description": "Déploiement de l'application mobile et desktop sur postes de travail (build Flutter) et configuration du backend Node.js sur serveur interne, garantissant un service opérationnel et performant."
         },
         {
           "name": "Organiser son développement professionnel",
@@ -1039,31 +1042,30 @@
       "projectImage": "https://cdn-icons-png.flaticon.com/512/187/187291.png",
       "projectImages": [
         {
-          "url": "https://camo.githubusercontent.com/d045e54dbe5702e9d58965a75dd9f9d7e9156fbce625e075980b194919b05809/68747470733a2f2f64726976652e676f6f676c652e636f6d2f75633f6578706f72743d766965772669643d317849436f44514630494e71345f42796b5f562d79636858594b78682d33453965",
-          "alt": "",
-          "caption": ""
+          "url": "https://raw.githubusercontent.com/sfeirc/PORTEFOLIO/main/public/images/projects/flutter-francofolies/screenshot-1.png",
+          "alt": "Interface principale de l'application",
+          "caption": "Écran principal avec liste des concerts"
         },
         {
-          "url": "https://camo.githubusercontent.com/0b6dca6c606b75779bc343f363722bc94d063dc536d7b8236f06d28bd33225dc/68747470733a2f2f64726976652e676f6f676c652e636f6d2f75633f6578706f72743d766965772669643d31336449357666784d584b4d2d4234716f7a546d7175304764535147654f494732",
-          "alt": "",
-          "caption": ""
+          "url": "https://raw.githubusercontent.com/sfeirc/PORTEFOLIO/main/public/images/projects/flutter-francofolies/screenshot-2.png",
+          "alt": "Page de détails d'un concert",
+          "caption": "Vue détaillée d'un concert avec informations complètes"
         },
         {
-          "url": "https://camo.githubusercontent.com/ba7401fd655db61c2aed3155f5b09cb68fa799f87ec3e13e80a0611b435423d8/68747470733a2f2f64726976652e676f6f676c652e636f6d2f75633f6578706f72743d766965772669643d3143376a4c79683465787744586b4d5966626f553067672d65306f703235654142",
-          "alt": "",
-          "caption": ""
+          "url": "https://raw.githubusercontent.com/sfeirc/PORTEFOLIO/main/public/images/projects/flutter-francofolies/screenshot-3.png",
+          "alt": "Système de filtres",
+          "caption": "Interface de filtrage par scène et date"
         },
         {
-          "url": "https://camo.githubusercontent.com/08b65457d76c425edf299c697d6f70995c08c77a8458fbb3f86963e6d6ed8685/68747470733a2f2f64726976652e676f6f676c652e636f6d2f75633f6578706f72743d766965772669643d313033684b4e645436507444474e37486e4333495053644d6f736c47484b717048",
-          "alt": "",
-          "caption": ""
+          "url": "https://raw.githubusercontent.com/sfeirc/PORTEFOLIO/main/public/images/projects/flutter-francofolies/screenshot-4.png",
+          "alt": "Mode sombre de l'application",
+          "caption": "Interface en mode sombre"
         },
         {
-          "url": "https://camo.githubusercontent.com/590c201404ddc10e4ab1708fc243728089b5053ca0362103dd5b6fbb753cb4d2/68747470733a2f2f64726976652e676f6f676c652e636f6d2f75633f6578706f72743d766965772669643d31686e7756454d4b325f4258694f32586e446b6b5572396c4733386c5563656665",
-          "alt": "",
-          "caption": ""
+          "url": "https://raw.githubusercontent.com/sfeirc/PORTEFOLIO/main/public/images/projects/flutter-francofolies/screenshot-5.png",
+          "alt": "Liste des favoris",
+          "caption": "Gestion des concerts favoris"
         }
-        
       ],
       "size": "col-span-1",
       "gradient": "from-green-500/20 to-teal-500/20",
@@ -1073,7 +1075,7 @@
       "skillDetails": [
         {
           "name": "Gérer le patrimoine informatique",
-          "description": "Mise en place d’un dépôt Git et gestion des migrations MySQL (création de tables, scripts d’insertion), assurant la traçabilité et la cohérence des données."
+          "description": "Mise en place d'un dépôt Git et gestion des migrations MySQL (création de tables, scripts d'insertion), assurant la traçabilité et la cohérence des données."
         },
         {
           "name": "Travailler en mode projet",
@@ -1081,7 +1083,7 @@
         },
         {
           "name": "Mettre à disposition des utilisateurs un service informatique",
-          "description": "Déploiement de l’API Node.js sur serveur local et configuration de l’application Flutter pour une installation simple et un accès performant sur mobiles et tablettes."
+          "description": "Déploiement de l'API Node.js sur serveur local et configuration de l'application Flutter pour une installation simple et un accès performant sur mobiles et tablettes."
         },
         {
           "name": "Organiser son développement professionnel",
@@ -1138,11 +1140,11 @@
       "skillDetails": [
         {
           "name": "Gérer le patrimoine informatique",
-          "description": "Mise en place d’un dépôt Git et Dockerisation de l’API Express pour assurer la traçabilité du code et la portabilité du service."
+          "description": "Mise en place d'un dépôt Git et Dockerisation de l'API Express pour assurer la traçabilité du code et la portabilité du service."
         },
         {
           "name": "Mettre à disposition des utilisateurs un service informatique",
-          "description": "Création d’un conteneur Docker prêt à l’emploi permettant le déploiement rapide de l’API sur tout poste de travail."
+          "description": "Création d'un conteneur Docker prêt à l'emploi permettant le déploiement rapide de l'API sur tout poste de travail."
         },
         {
           "name": "Travailler en mode projet",
@@ -1150,7 +1152,7 @@
         },
         {
           "name": "Organiser son développement professionnel",
-          "description": "Apprentissage de Node.js, Express, utilisation de Three.js et Chart.js pour l’UI, et découverte de Docker pour l’orchestration et le déploiement."
+          "description": "Apprentissage de Node.js, Express, utilisation de Three.js et Chart.js pour l'UI, et découverte de Docker pour l'orchestration et le déploiement."
         }
       ]
 

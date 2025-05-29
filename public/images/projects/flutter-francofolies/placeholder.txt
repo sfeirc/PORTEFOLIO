@@ -1,0 +1,2 @@
+This directory will contain Flutter Francofolies project images.
+Add your images here and they will be accessible via GitHub Pages. 
