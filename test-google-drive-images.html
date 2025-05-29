@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Drive Images Test</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .test-image { 
+            max-width: 400px; 
+            border: 2px solid #ccc; 
+            margin: 10px; 
+            display: block;
+        }
+        .test-container { margin-bottom: 30px; }
+        .status { font-weight: bold; }
+        .success { color: green; }
+        .error { color: red; }
+    </style>
+</head>
+<body>
+    <h1>🖼️ Google Drive Images Test</h1>
+    
+    <div class="test-container">
+        <h2>Method 1: Direct Download (Current Method)</h2>
+        <p><strong>URL:</strong> https://drive.google.com/uc?export=download&id=FILE_ID</p>
+        
+        <h3>Screenshot 1:</h3>
+        <img src="https://drive.google.com/uc?export=download&id=1xICoDQF0INq4_Byk_V-ychXYKxh-3E9e" 
+             alt="Flutter Screenshot 1" class="test-image" 
+             onload="this.nextElementSibling.innerHTML='✅ SUCCESS: Image loaded!'; this.nextElementSibling.className='status success';"
+             onerror="this.nextElementSibling.innerHTML='❌ ERROR: Failed to load'; this.nextElementSibling.className='status error';">
+        <div class="status">⏳ Loading...</div>
+        
+        <h3>Screenshot 2:</h3>
+        <img src="https://drive.google.com/uc?export=download&id=13dI5vfxMXKM-B4qozTmqu0GdSQGeOIG2" 
+             alt="Flutter Screenshot 2" class="test-image"
+             onload="this.nextElementSibling.innerHTML='✅ SUCCESS: Image loaded!'; this.nextElementSibling.className='status success';"
+             onerror="this.nextElementSibling.innerHTML='❌ ERROR: Failed to load'; this.nextElementSibling.className='status error';">
+        <div class="status">⏳ Loading...</div>
+    </div>
+
+    <div class="test-container">
+        <h2>Method 2: Preview Embed (Like PDFs)</h2>
+        <p><strong>URL:</strong> https://drive.google.com/file/d/FILE_ID/preview</p>
+        
+        <h3>Screenshot 1 (Embedded):</h3>
+        <iframe src="https://drive.google.com/file/d/1xICoDQF0INq4_Byk_V-ychXYKxh-3E9e/preview" 
+                width="400" height="300" style="border: 2px solid #ccc;">
+        </iframe>
+        <div class="status">Preview method (like your PDFs)</div>
+    </div>
+
+    <div class="test-container">
+        <h2>Method 3: Google Thumbnail Service</h2>
+        <p><strong>URL:</strong> https://lh3.googleusercontent.com/d/FILE_ID</p>
+        
+        <h3>Screenshot 1 (Thumbnail):</h3>
+        <img src="https://lh3.googleusercontent.com/d/1xICoDQF0INq4_Byk_V-ychXYKxh-3E9e" 
+             alt="Flutter Screenshot 1" class="test-image"
+             onload="this.nextElementSibling.innerHTML='✅ SUCCESS: Thumbnail loaded!'; this.nextElementSibling.className='status success';"
+             onerror="this.nextElementSibling.innerHTML='❌ ERROR: Thumbnail failed'; this.nextElementSibling.className='status error';">
+        <div class="status">⏳ Loading...</div>
+    </div>
+
+    <h2>📝 Instructions:</h2>
+    <ol>
+        <li><strong>Open this file</strong> in your browser</li>
+        <li><strong>Check which method works</strong> (shows ✅ SUCCESS)</li>
+        <li><strong>If none work:</strong> Go to Google Drive and make sure your images are shared publicly</li>
+        <li><strong>Tell me which method works</strong> and I'll update your portfolio code!</li>
+    </ol>
+
+    <h2>🔧 To Make Images Public in Google Drive:</h2>
+    <ol>
+        <li>Right-click each image in Google Drive</li>
+        <li>Select "Share"</li>
+        <li>Click "Change to anyone with the link"</li>
+        <li>Set permission to "Viewer"</li>
+        <li>Click "Done"</li>
+    </ol>
+</body>
+</html> 

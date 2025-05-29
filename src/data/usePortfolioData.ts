@@ -91,7 +91,7 @@ export const getImageUrl = (path: string): string => {
       const fileIdMatch = mappedUrl.match(/\/d\/(.*?)(\/|$)/);
       if (fileIdMatch) {
         const fileId = fileIdMatch[1];
-        // Use Google's thumbnail service for direct image access
+        // Method 3: Use Google's thumbnail service (confirmed working)
         return `https://lh3.googleusercontent.com/d/${fileId}`;
       }
     }
@@ -104,7 +104,7 @@ export const getImageUrl = (path: string): string => {
     const fileIdMatch = path.match(/\/d\/(.*?)(\/|$)/);
     if (fileIdMatch) {
       const fileId = fileIdMatch[1];
-      // Use Google's thumbnail service for better compatibility
+      // Method 3: Use Google's thumbnail service (confirmed working)
       return `https://lh3.googleusercontent.com/d/${fileId}`;
     }
   }
