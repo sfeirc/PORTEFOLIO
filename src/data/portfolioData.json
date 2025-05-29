@@ -409,7 +409,7 @@
           "caption": ""
         },
         {
-          "url": "https://private-user-images.githubusercontent.com/73343957/447548719-a5dfe37a-2f60-476a-81d3-26a24918ce77.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDgyNjAyNTIsIm5iZiI6MTc0ODI1OTk1MiwicGF0aCI6Ii83MzM0Mzk1Ny80NDc1NDg3MTktYTVkZmUzN2EtMmY2MC00NzZhLTgxZDMtMjZhMjQ5MThjZTc3LnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTA1MjYlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwNTI2VDExNDU1MlomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWRiYTYwM2RiMWEyYmY5Mjk5ZTAyNWRiOWM1YTM3YTAzNjZhMGJkN2ZmNzZmYzY3Yzc3NzcxODE0MjI2MTBmYWMmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.tY-5baRqfQ6GYZqpEJxuLfJpoX42Ukeggv_ZYLC5Zbk",
+          "url": "https://private-user-images.githubusercontent.com/73343957/447548719-a5dfe37a-2f60-476a-81d3-26a24918ce77.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDgyNjAyNTIsIm5iZiI6MTc0ODI1OTk1MiwicGF0aCI6Ii83MzM0Mzk1Ny80NDc1NDg3MTktYTVkZmUzN2EtMmY2MC00NzZhLTgxZDMtMjZhMjQ5MThjZTc3LnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTA1MjYlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwNTI2VDE0MTYzNlomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWRiYTYwM2RiMWEyYmY5Mjk5ZTAyNWRiOWM1YTM3YTAzNjZhMGJkN2ZmNzZmYzY3Yzc3NzcxODE0MjI2MTBmYWMmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.tY-5baRqfQ6GYZqpEJxuLfJpoX42Ukeggv_ZYLC5Zbk",
           "alt": "",
           "caption": ""
         }
@@ -1042,27 +1042,27 @@
       "projectImage": "https://cdn-icons-png.flaticon.com/512/187/187291.png",
       "projectImages": [
         {
-          "url": "https://raw.githubusercontent.com/sfeirc/PORTEFOLIO/main/public/images/projects/flutter-francofolies/screenshot-1.png",
+          "url": "/images/projects/flutter-francofolies/screenshot-1.png",
           "alt": "Interface principale de l'application",
           "caption": "Écran principal avec liste des concerts"
         },
         {
-          "url": "https://raw.githubusercontent.com/sfeirc/PORTEFOLIO/main/public/images/projects/flutter-francofolies/screenshot-2.png",
+          "url": "/images/projects/flutter-francofolies/screenshot-2.png",
           "alt": "Page de détails d'un concert",
           "caption": "Vue détaillée d'un concert avec informations complètes"
         },
         {
-          "url": "https://raw.githubusercontent.com/sfeirc/PORTEFOLIO/main/public/images/projects/flutter-francofolies/screenshot-3.png",
+          "url": "/images/projects/flutter-francofolies/screenshot-3.png",
           "alt": "Système de filtres",
           "caption": "Interface de filtrage par scène et date"
         },
         {
-          "url": "https://raw.githubusercontent.com/sfeirc/PORTEFOLIO/main/public/images/projects/flutter-francofolies/screenshot-4.png",
+          "url": "/images/projects/flutter-francofolies/screenshot-4.png",
           "alt": "Mode sombre de l'application",
           "caption": "Interface en mode sombre"
         },
         {
-          "url": "https://raw.githubusercontent.com/sfeirc/PORTEFOLIO/main/public/images/projects/flutter-francofolies/screenshot-5.png",
+          "url": "/images/projects/flutter-francofolies/screenshot-5.png",
           "alt": "Liste des favoris",
           "caption": "Gestion des concerts favoris"
         }
@@ -1209,6 +1209,15 @@
     },
     "skillsMatrix": {
       "/skills-matrix/competences-matrix.pdf": "https://drive.google.com/file/d/1BV6uk2qSMXFsVLjQbO5FVOUisDF5Bmi1/view?usp=sharing"
+    }
+  },
+  "imageMappings": {
+    "projects": {
+      "/images/projects/flutter-francofolies/screenshot-1.png": "https://drive.google.com/file/d/1xICoDQF0INq4_Byk_V-ychXYKxh-3E9e/view?usp=sharing",
+      "/images/projects/flutter-francofolies/screenshot-2.png": "https://drive.google.com/file/d/13dI5vfxMXKM-B4qozTmqu0GdSQGeOIG2/view?usp=sharing",
+      "/images/projects/flutter-francofolies/screenshot-3.png": "https://drive.google.com/file/d/1C7jLyh4exwDXkMYfboU0gg-e0op25eAB/view?usp=sharing",
+      "/images/projects/flutter-francofolies/screenshot-4.png": "https://drive.google.com/file/d/103hKNdT6PtDGN7HnC3IPSdMoslGHKqpH/view?usp=sharing",
+      "/images/projects/flutter-francofolies/screenshot-5.png": "https://drive.google.com/file/d/1hnwVEMK2_BXiO2XnDkkUr9lG38lUcefe/view?usp=sharing"
     }
   }
 } 

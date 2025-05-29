@@ -82,14 +82,30 @@ const iconMap: Record<string, React.ComponentType<React.SVGProps<SVGSVGElement>>
  * @returns - Resolved image URL
  */
 export const getImageUrl = (path: string): string => {
+  // First check if this path is mapped to a Google Drive URL
+  const imageMappings = (portfolioData as any).imageMappings;
+  if (imageMappings && imageMappings.projects && imageMappings.projects[path]) {
+    const mappedUrl = imageMappings.projects[path];
+    // Convert Google Drive share links to direct image URLs
+    if (mappedUrl.includes('drive.google.com')) {
+      const fileIdMatch = mappedUrl.match(/\/d\/(.*?)(\/|$)/);
+      if (fileIdMatch) {
+        const fileId = fileIdMatch[1];
+        // Use Google's thumbnail service for direct image access
+        return `https://lh3.googleusercontent.com/d/${fileId}`;
+      }
+    }
+    return mappedUrl;
+  }
+
   // If the path is a Google Drive link, convert it to a direct image URL
   if (path.includes('drive.google.com')) {
     // Extract the file ID from the URL
     const fileIdMatch = path.match(/\/d\/(.*?)(\/|$)/);
     if (fileIdMatch) {
       const fileId = fileIdMatch[1];
-      // Convert to direct image URL
-      return `https://drive.google.com/uc?export=view&id=${fileId}`;
+      // Use Google's thumbnail service for better compatibility
+      return `https://lh3.googleusercontent.com/d/${fileId}`;
     }
   }
   
