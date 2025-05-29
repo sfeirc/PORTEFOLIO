@@ -1042,31 +1042,32 @@
       "projectImage": "https://cdn-icons-png.flaticon.com/512/187/187291.png",
       "projectImages": [
         {
-          "url": "/images/projects/flutter-francofolies/screenshot-1.png",
-          "alt": "Interface principale de l'application",
-          "caption": "Écran principal avec liste des concerts"
+          "url": "https://lh3.googleusercontent.com/d/1xICoDQF0INq4_Byk_V-ychXYKxh-3E9e",
+          "alt": "",
+          "caption": ""
         },
         {
-          "url": "/images/projects/flutter-francofolies/screenshot-2.png",
-          "alt": "Page de détails d'un concert",
-          "caption": "Vue détaillée d'un concert avec informations complètes"
+          "url": "https://lh3.googleusercontent.com/d/13dI5vfxMXKM-B4qozTmqu0GdSQGeOIG2",
+          "alt": "",
+          "caption": ""
         },
         {
-          "url": "/images/projects/flutter-francofolies/screenshot-3.png",
-          "alt": "Système de filtres",
-          "caption": "Interface de filtrage par scène et date"
+          "url": "https://lh3.googleusercontent.com/d/1C7jLyh4exwDXkMYfboU0gg-e0op25eAB",
+          "alt": "",
+          "caption": ""
         },
         {
-          "url": "/images/projects/flutter-francofolies/screenshot-4.png",
-          "alt": "Mode sombre de l'application",
-          "caption": "Interface en mode sombre"
+          "url": "https://lh3.googleusercontent.com/d/103hKNdT6PtDGN7HnC3IPSdMoslGHKqpH",
+          "alt": "",
+          "caption": ""
         },
         {
-          "url": "/images/projects/flutter-francofolies/screenshot-5.png",
-          "alt": "Liste des favoris",
-          "caption": "Gestion des concerts favoris"
+          "url": "https://lh3.googleusercontent.com/d/1hnwVEMK2_BXiO2XnDkkUr9lG38lUcefe",
+          "alt": "",
+          "caption": ""
         }
       ],
+
       "size": "col-span-1",
       "gradient": "from-green-500/20 to-teal-500/20",
       "icon": "DeviceMobileIcon",
