@@ -87,10 +87,11 @@ const Projects = () => {
   const [selectedDocument, setSelectedDocument] = useState<{ title: string; path: string } | null>(null);
   const [selectedInternshipProject, setSelectedInternshipProject] = useState<InternshipProject | null>(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [fullscreenImage, setFullscreenImage] = useState<{ url: string; alt: string; caption: string } | null>(null);
   
   // Add effect to handle body scroll for all modals
   useEffect(() => {
-    if (selectedProject || selectedProfessionalProject || selectedDocument || selectedInternshipProject) {
+    if (selectedProject || selectedProfessionalProject || selectedDocument || selectedInternshipProject || fullscreenImage) {
       document.body.classList.add('no-scroll');
     } else {
       document.body.classList.remove('no-scroll');
@@ -100,16 +101,25 @@ const Projects = () => {
     return () => {
       document.body.classList.remove('no-scroll');
     };
-  }, [selectedProject, selectedProfessionalProject, selectedDocument, selectedInternshipProject]);
+  }, [selectedProject, selectedProfessionalProject, selectedDocument, selectedInternshipProject, fullscreenImage]);
 
   // Reset image index when project changes
   useEffect(() => {
     setCurrentImageIndex(0);
   }, [selectedProject]);
 
-  // Keyboard navigation for carousel
+  // Keyboard navigation for carousel and fullscreen
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
+      // Handle fullscreen image navigation
+      if (fullscreenImage) {
+        if (event.key === 'Escape') {
+          setFullscreenImage(null);
+        }
+        return;
+      }
+
+      // Handle carousel navigation
       if (selectedProject?.projectImages && selectedProject.projectImages.length > 1) {
         if (event.key === 'ArrowLeft') {
           handlePrevImage();
@@ -117,16 +127,26 @@ const Projects = () => {
           handleNextImage();
         }
       }
+
+      // Handle escape key for all modals
+      if (event.key === 'Escape') {
+        if (selectedInternshipProject) {
+          setSelectedInternshipProject(null);
+        } else if (selectedDocument) {
+          setSelectedDocument(null);
+        } else if (selectedProfessionalProject) {
+          setSelectedProfessionalProject(null);
+        } else if (selectedProject) {
+          setSelectedProject(null);
+        }
+      }
     };
 
-    if (selectedProject) {
-      document.addEventListener('keydown', handleKeyDown);
-    }
-
+    document.addEventListener('keydown', handleKeyDown);
     return () => {
       document.removeEventListener('keydown', handleKeyDown);
     };
-  }, [selectedProject, currentImageIndex]);
+  }, [selectedProject, selectedProfessionalProject, selectedDocument, selectedInternshipProject, fullscreenImage, currentImageIndex]);
 
   // Carousel navigation functions
   const handlePrevImage = () => {
@@ -143,6 +163,11 @@ const Projects = () => {
         prev === selectedProject.projectImages!.length - 1 ? 0 : prev + 1
       );
     }
+  };
+
+  // Function to open image in fullscreen
+  const openFullscreenImage = (imageData: { url: string; alt: string; caption: string }) => {
+    setFullscreenImage(imageData);
   };
 
   // Include all projects (both personal and internship projects)
@@ -514,27 +539,46 @@ const Projects = () => {
                   {selectedProject.projectImages && selectedProject.projectImages.length > 0 ? (
                     <div className="relative flex-1 rounded-xl overflow-hidden border-2 border-secondary/30">
                       {/* Main image */}
-                      <div className="relative w-full h-full">
+                      <div 
+                        className="relative w-full h-full cursor-pointer group"
+                        onClick={() => openFullscreenImage({
+                          url: selectedProject.projectImages![currentImageIndex].url,
+                          alt: selectedProject.projectImages![currentImageIndex].alt,
+                          caption: selectedProject.projectImages![currentImageIndex].caption
+                        })}
+                      >
                         <Image
                           src={getImageUrl(selectedProject.projectImages[currentImageIndex].url)}
                           alt={selectedProject.projectImages[currentImageIndex].alt}
                           fill
-                          className="object-contain !p-4"
+                          className="object-contain !p-4 group-hover:scale-105 transition-transform duration-300"
                           sizes="(max-width: 768px) 100vw, 66vw"
                         />
+                        {/* Click to expand hint */}
+                        <div className="absolute top-4 right-4 bg-black/50 rounded-full p-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                          <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
+                          </svg>
+                        </div>
                       </div>
                       
                       {/* Navigation arrows */}
                       {selectedProject.projectImages.length > 1 && (
                         <>
                           <button
-                            onClick={handlePrevImage}
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              handlePrevImage();
+                            }}
                             className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-colors z-10"
                           >
                             <ChevronLeftIcon className="w-6 h-6" />
                           </button>
                           <button
-                            onClick={handleNextImage}
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              handleNextImage();
+                            }}
                             className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-colors z-10"
                           >
                             <ChevronRightIcon className="w-6 h-6" />
@@ -548,7 +592,10 @@ const Projects = () => {
                           {selectedProject.projectImages.map((_, index) => (
                             <button
                               key={index}
-                              onClick={() => setCurrentImageIndex(index)}
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                setCurrentImageIndex(index);
+                              }}
                               className={`w-3 h-3 rounded-full transition-colors ${
                                 index === currentImageIndex 
                                   ? 'bg-secondary' 
@@ -568,14 +615,27 @@ const Projects = () => {
                     </div>
                   ) : selectedProject.projectImage ? (
                     <div className="relative flex-1 rounded-xl overflow-hidden border-2 border-secondary/30">
-                      <div className="absolute inset-0">
+                      <div 
+                        className="absolute inset-0 cursor-pointer group"
+                        onClick={() => openFullscreenImage({
+                          url: selectedProject.projectImage!,
+                          alt: `${selectedProject.title} Preview`,
+                          caption: `${selectedProject.title} - Aperçu du projet`
+                        })}
+                      >
                         <Image
                           src={getImageUrl(selectedProject.projectImage)}
                           alt={`${selectedProject.title} Preview`}
                           fill
-                          className="object-contain !p-4"
+                          className="object-contain !p-4 group-hover:scale-105 transition-transform duration-300"
                           sizes="(max-width: 768px) 100vw, 66vw"
                         />
+                        {/* Click to expand hint */}
+                        <div className="absolute top-4 right-4 bg-black/50 rounded-full p-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                          <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
+                          </svg>
+                        </div>
                       </div>
                     </div>
                   ) : (
@@ -870,14 +930,27 @@ const Projects = () => {
                 <div className="flex flex-col">
                   <h4 className="text-lg font-semibold mb-4">Aperçu du Projet</h4>
                   {selectedInternshipProject.image ? (
-                    <div className="relative flex-1 rounded-xl overflow-hidden border-2 border-secondary/30">
+                    <div 
+                      className="relative flex-1 rounded-xl overflow-hidden border-2 border-secondary/30 cursor-pointer group"
+                      onClick={() => openFullscreenImage({
+                        url: selectedInternshipProject.image!,
+                        alt: `${selectedInternshipProject.title} Preview`,
+                        caption: `${selectedInternshipProject.title} - Aperçu du projet`
+                      })}
+                    >
                       <Image
                         src={getImageUrl(selectedInternshipProject.image)}
                         alt={`${selectedInternshipProject.title} Preview`}
                         fill
-                        className="object-contain"
+                        className="object-contain group-hover:scale-105 transition-transform duration-300"
                         sizes="(max-width: 768px) 100vw, 50vw"
                       />
+                      {/* Click to expand hint */}
+                      <div className="absolute top-4 right-4 bg-black/50 rounded-full p-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
+                        </svg>
+                      </div>
                     </div>
                   ) : (
                     <div className="flex-1 rounded-xl border-2 border-secondary/30 flex items-center justify-center text-gray-400">
@@ -885,6 +958,64 @@ const Projects = () => {
                     </div>
                   )}
                 </div>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+
+        {/* Fullscreen Image Modal */}
+        {fullscreenImage && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 bg-black/95 flex items-center justify-center p-4 z-[80]"
+            onClick={() => setFullscreenImage(null)}
+          >
+            <motion.div
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.8, opacity: 0 }}
+              className="relative w-full h-full max-w-[95vw] max-h-[95vh] flex flex-col"
+              onClick={e => e.stopPropagation()}
+            >
+              {/* Header with close button */}
+              <div className="flex justify-between items-center mb-4 px-6 py-4 bg-black/50 rounded-t-lg">
+                <div className="flex-1">
+                  <h3 className="text-xl font-semibold text-white">
+                    {fullscreenImage.alt || 'Image du projet'}
+                  </h3>
+                  {fullscreenImage.caption && (
+                    <p className="text-gray-300 text-sm mt-1">{fullscreenImage.caption}</p>
+                  )}
+                </div>
+                <button
+                  onClick={() => setFullscreenImage(null)}
+                  className="text-gray-400 hover:text-white transition-colors ml-4 p-2 hover:bg-white/10 rounded-full"
+                >
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
+              </div>
+
+              {/* Main image container */}
+              <div className="relative flex-1 bg-black/30 rounded-lg overflow-hidden">
+                <Image
+                  src={getImageUrl(fullscreenImage.url)}
+                  alt={fullscreenImage.alt}
+                  fill
+                  className="object-contain"
+                  sizes="95vw"
+                  priority
+                />
+              </div>
+
+              {/* Footer with image info */}
+              <div className="mt-4 px-6 py-3 bg-black/50 rounded-b-lg text-center">
+                <p className="text-gray-300 text-sm">
+                  Cliquez en dehors de l'image ou appuyez sur <kbd className="px-2 py-1 bg-white/10 rounded text-xs">Échap</kbd> pour fermer
+                </p>
               </div>
             </motion.div>
           </motion.div>

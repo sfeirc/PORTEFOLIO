@@ -81,49 +81,24 @@ const iconMap: Record<string, React.ComponentType<React.SVGProps<SVGSVGElement>>
  * @param path - Image path from the JSON
  * @returns - Resolved image URL
  */
-export const getImageUrl = (path: string): string => {
-  // First check if this path is mapped to a Google Drive URL
-  const imageMappings = (portfolioData as any).imageMappings;
-  if (imageMappings && imageMappings.projects && imageMappings.projects[path]) {
-    const mappedUrl = imageMappings.projects[path];
-    // Convert Google Drive share links to direct image URLs
-    if (mappedUrl.includes('drive.google.com')) {
-      const fileIdMatch = mappedUrl.match(/\/d\/(.*?)(\/|$)/);
-      if (fileIdMatch) {
-        const fileId = fileIdMatch[1];
-        // Method 3: Use Google's thumbnail service (confirmed working)
-        return `https://lh3.googleusercontent.com/d/${fileId}`;
-      }
-    }
-    return mappedUrl;
+export const getImageUrl = (imagePath: string): string => {
+  // Handle external URLs (keep as-is) - including Imgur
+  if (imagePath.startsWith('http://') || imagePath.startsWith('https://')) {
+    return imagePath;
   }
 
-  // If the path is a Google Drive link, convert it to a direct image URL
-  if (path.includes('drive.google.com')) {
-    // Extract the file ID from the URL
-    const fileIdMatch = path.match(/\/d\/(.*?)(\/|$)/);
-    if (fileIdMatch) {
-      const fileId = fileIdMatch[1];
-      // Method 3: Use Google's thumbnail service (confirmed working)
-      return `https://lh3.googleusercontent.com/d/${fileId}`;
+  // Check if there's a mapping for this path
+  if (portfolioData.imageMappings) {
+    for (const category in portfolioData.imageMappings) {
+      const mappings = (portfolioData.imageMappings as any)[category];
+      if (mappings && (mappings as any)[imagePath]) {
+        return (mappings as any)[imagePath];
+      }
     }
   }
-  
-  // If the path is already a URL (starts with http or https), return it as is
-  if (path.startsWith('http://') || path.startsWith('https://')) {
-    return path;
-  }
-  
-  // Get the base path for GitHub Pages
-  const basePath = process.env.NODE_ENV === 'production' ? '/PORTEFOLIO' : '';
-  
-  // If the path starts with a slash, it's a public path
-  if (path.startsWith('/')) {
-    return `${basePath}${path}`;
-  }
-  
-  // Otherwise, assume it's a relative path to the images folder
-  return `${basePath}/images/${path}`;
+
+  // Fallback to local path if no mapping found
+  return imagePath;
 };
 
 /**
