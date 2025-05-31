@@ -152,6 +152,11 @@ export const getPdfViewerUrl = (path: string): string => {
     return getPdfViewerUrl(pdfMappings.skillsMatrix[path]); // Recursively process the mapped URL
   }
   
+  // Check in documentation
+  if (path.startsWith('/documentation/') && pdfMappings.documentation && pdfMappings.documentation[path]) {
+    return getPdfViewerUrl(pdfMappings.documentation[path]); // Recursively process the mapped URL
+  }
+  
   return "https://via.placeholder.com/800x600?text=PDF+Not+Available";
 };
 
@@ -198,6 +203,10 @@ export interface Project {
   category: string;
   isInternship: boolean;
   skillDetails: SkillDetail[];
+  documentation?: {
+    title: string;
+    path: string;
+  }[];
 }
 
 export interface Skill {
@@ -291,8 +300,6 @@ interface RawSkill {
   color: string;
 }
 
-
-
 interface RawEducation {
   title: string;
   subtitle: string;
@@ -336,6 +343,10 @@ interface RawProject {
   category: string;
   isInternship: boolean;
   skillDetails: SkillDetail[];
+  documentation?: {
+    title: string;
+    path: string;
+  }[];
 }
 
 // Helper functions for data manipulation
@@ -344,7 +355,6 @@ export const usePortfolioData = () => {
   const {
     navbar,
     skills: rawSkills,
-
     education: rawEducation,
     certifications: rawCertifications,
     projects: rawProjects,
@@ -358,8 +368,6 @@ export const usePortfolioData = () => {
     ...skill,
     icon: iconMap[skill.icon] || DocumentTextIcon
   }));
-
-
 
   // Process education with icon components
   const processedEducation = (rawEducation as RawEducation[]).map((education) => ({

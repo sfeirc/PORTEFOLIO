@@ -48,9 +48,11 @@ interface Project {
     name: string;
     description: string;
   }[];
+  documentation?: {
+    title: string;
+    path: string;
+  }[];
 }
-
-
 
 interface ProfessionalProject {
   title: string;
@@ -409,8 +411,6 @@ const Projects = () => {
           </div>
         </div>
 
-
-
         {/* Project Skills Matrix Section */}
         <div id="competences" className="mt-20">
           <motion.div
@@ -531,6 +531,36 @@ const Projects = () => {
                       ))}
                     </div>
                   </div>
+
+                  {/* Documentation Buttons */}
+                  {selectedProject.documentation && selectedProject.documentation.length > 0 && (
+                    <div className="mt-6">
+                      {selectedProject.documentation.map((doc, index) => (
+                        <div key={index} className="mb-4">
+                          <button
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              setSelectedDocument({
+                                title: doc.title,
+                                path: doc.path
+                              });
+                            }}
+                            className="flex items-center gap-3 w-full px-4 py-3 bg-gradient-to-r from-secondary/20 to-blue-500/20 rounded-lg hover:from-secondary/30 hover:to-blue-500/30 transition-all duration-300 border border-secondary/30 hover:border-secondary/50 group"
+                          >
+                            <DocumentTextIcon className="w-6 h-6 text-secondary group-hover:scale-110 transition-transform duration-300" />
+                            <div className="text-left">
+                              <div className="text-white font-medium text-sm">
+                                {doc.title}
+                              </div>
+                              <div className="text-gray-400 text-xs">
+                                Cliquez pour consulter la documentation
+                              </div>
+                            </div>
+                          </button>
+                        </div>
+                      ))}
+                    </div>
+                  )}
                 </div>
                 
                 {/* Right column: Project image/carousel */}
