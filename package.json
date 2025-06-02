@@ -1,8 +1,8 @@
 {
-  "name": "portefolio",
+  "name": "portfolio",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://sfeirc.github.io/PORTEFOLIO",
+  "homepage": "https://sfeirc.github.io/PORTFOLIO",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

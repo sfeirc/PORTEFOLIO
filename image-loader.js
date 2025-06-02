@@ -1,3 +1,3 @@
-export default function customImageLoader({ src }) {
-  return src.startsWith('/') ? `/PORTEFOLIO${src}` : src;
+export default function imageLoader({ src }) {
+  return src.startsWith('/') ? `/PORTFOLIO${src}` : src;
 } 

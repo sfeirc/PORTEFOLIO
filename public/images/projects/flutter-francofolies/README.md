@@ -22,16 +22,16 @@ This directory will contain the screenshot images for the Flutter Francofolies p
    git push
    ```
 5. **Deploy** your site and the images will be accessible via:
-   `https://raw.githubusercontent.com/sfeirc/PORTEFOLIO/main/public/images/projects/flutter-francofolies/screenshot-X.png`
+   `https://raw.githubusercontent.com/sfeirc/PORTFOLIO/main/public/images/projects/flutter-francofolies/screenshot-X.png`
 
 ## Image URLs are already configured:
 
 The portfolio is already configured to use these GitHub Raw URLs:
-- https://raw.githubusercontent.com/sfeirc/PORTEFOLIO/main/public/images/projects/flutter-francofolies/screenshot-1.png
-- https://raw.githubusercontent.com/sfeirc/PORTEFOLIO/main/public/images/projects/flutter-francofolies/screenshot-2.png
-- https://raw.githubusercontent.com/sfeirc/PORTEFOLIO/main/public/images/projects/flutter-francofolies/screenshot-3.png
-- https://raw.githubusercontent.com/sfeirc/PORTEFOLIO/main/public/images/projects/flutter-francofolies/screenshot-4.png
-- https://raw.githubusercontent.com/sfeirc/PORTEFOLIO/main/public/images/projects/flutter-francofolies/screenshot-5.png
+- https://raw.githubusercontent.com/sfeirc/PORTFOLIO/main/public/images/projects/flutter-francofolies/screenshot-1.png
+- https://raw.githubusercontent.com/sfeirc/PORTFOLIO/main/public/images/projects/flutter-francofolies/screenshot-2.png
+- https://raw.githubusercontent.com/sfeirc/PORTFOLIO/main/public/images/projects/flutter-francofolies/screenshot-3.png
+- https://raw.githubusercontent.com/sfeirc/PORTFOLIO/main/public/images/projects/flutter-francofolies/screenshot-4.png
+- https://raw.githubusercontent.com/sfeirc/PORTFOLIO/main/public/images/projects/flutter-francofolies/screenshot-5.png
 
 ## Recommended Image Settings:
 
@@ -54,7 +54,7 @@ If you need a quick solution before setting up the proper image files:
 1. Go to your GitHub repository Issues
 2. Create a new issue (you can delete it later)
 3. Drag and drop your images into the issue text box
-4. GitHub will generate permanent URLs like: `https://github.com/sfeirc/PORTEFOLIO/assets/USER_ID/IMAGE_ID`
+4. GitHub will generate permanent URLs like: `https://github.com/sfeirc/PORTFOLIO/assets/USER_ID/IMAGE_ID`
 5. Copy these URLs and replace the ones in `portfolioData.json`
 
 This is a quick workaround, but the proper solution above is recommended for a professional portfolio. 

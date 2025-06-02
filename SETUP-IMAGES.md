@@ -12,10 +12,10 @@ Your portfolio is now configured to use **GitHub Raw URLs** for reliable image h
 
 ### Option A: GitHub Issues Upload (Fastest)
 
-1. Go to: https://github.com/sfeirc/PORTEFOLIO/issues
+1. Go to: https://github.com/sfeirc/PORTFOLIO/issues
 2. Click **"New Issue"**
 3. **Drag and drop** your 5 Flutter screenshots into the text box
-4. GitHub will auto-generate URLs like: `https://github.com/sfeirc/PORTEFOLIO/assets/123456/abcd1234...`
+4. GitHub will auto-generate URLs like: `https://github.com/sfeirc/PORTFOLIO/assets/123456/abcd1234...`
 5. **Copy these URLs** and replace them in `src/data/portfolioData.json`
 6. **Delete the issue** (the image URLs remain valid)
 
@@ -39,8 +39,8 @@ Your portfolio is now configured to use **GitHub Raw URLs** for reliable image h
 ## 🎯 Expected Result:
 
 Once you add the images, they'll be accessible at:
-- https://raw.githubusercontent.com/sfeirc/PORTEFOLIO/main/public/images/projects/flutter-francofolies/screenshot-1.png
-- https://raw.githubusercontent.com/sfeirc/PORTEFOLIO/main/public/images/projects/flutter-francofolies/screenshot-2.png
+- https://raw.githubusercontent.com/sfeirc/PORTFOLIO/main/public/images/projects/flutter-francofolies/screenshot-1.png
+- https://raw.githubusercontent.com/sfeirc/PORTFOLIO/main/public/images/projects/flutter-francofolies/screenshot-2.png
 - etc...
 
 ## 🚀 Deploy to GitHub Pages:
