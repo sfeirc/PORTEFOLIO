@@ -976,30 +976,36 @@
       "projectImage": "https://cdn-icons-png.flaticon.com/512/187/187291.png",
       "projectImages": [
         {
-          "url": "https://i.imgur.com/EXAMPLE1.png",
+          "url": "https://i.imgur.com/o4SY4II.png",
           "alt": "",
           "caption": ""
         },
         {
-          "url": "https://i.imgur.com/EXAMPLE2.png",
+          "url": "https://i.imgur.com/eoDVv3L.png",
           "alt": "",
           "caption": ""
         },
         {
-          "url": "https://i.imgur.com/EXAMPLE3.png",
+          "url": "https://i.imgur.com/3bBj2nL.png",
           "alt": "",
           "caption": ""
         },
         {
-          "url": "https://i.imgur.com/EXAMPLE4.png",
+          "url": "https://i.imgur.com/7ZwC5TF.png",
           "alt": "",
           "caption": ""
         },
         {
-          "url": "https://i.imgur.com/EXAMPLE5.png",
+          "url": "https://i.imgur.com/9SreOR7.png",
+          "alt": "",
+          "caption": ""
+        },
+        {
+          "url": "https://i.imgur.com/hsCN0wU.png",
           "alt": "",
           "caption": ""
         }
+        
       ],
 
       "size": "col-span-1",
