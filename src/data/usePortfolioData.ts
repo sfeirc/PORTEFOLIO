@@ -271,14 +271,6 @@ export interface InternshipDocument {
   type: 'agreement' | 'mission';
 }
 
-export interface InternshipProject {
-  title: string;
-  description: string;
-  technologies: Technology[];
-  features: string[];
-  image?: string;
-}
-
 export interface Internship {
   id: string;
   title: string;
@@ -288,7 +280,6 @@ export interface Internship {
   description: string;
   technologies: Technology[];
   documents: InternshipDocument[];
-  projects: InternshipProject[];
 }
 
 // Type for raw data from JSON
@@ -411,13 +402,6 @@ export const usePortfolioData = () => {
     technologies: internship.technologies.map((tech: RawTechnology) => ({
       ...tech,
       icon: iconMap[tech.icon]
-    })),
-    projects: internship.projects.map((project: any) => ({
-      ...project,
-      technologies: project.technologies.map((tech: RawTechnology) => ({
-        ...tech,
-        icon: iconMap[tech.icon]
-      }))
     }))
   }));
 

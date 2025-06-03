@@ -166,44 +166,6 @@
           "path": "/internships/excelia-internship-mission-1.pdf",
           "type": "mission"
         }
-      ],
-      "projects": [
-        {
-          "title": "Simulateur d'entretien d'embauche",
-          "description": "Développement d'un simulateur d'entretien utilisant un système prédictictionnel pour aider les étudiants à préparer leurs entretiens professionnels.",
-          "technologies": [
-            { "name": "Next.js", "icon": "CodeBracketIcon" },
-            { "name": "React.js", "icon": "CodeBracketIcon" },
-            { "name": "Elevenlabs API", "icon": "CpuChipIcon" },
-            { "name": "OpenAI API", "icon": "CpuChipIcon" },
-            { "name": "TypeScript", "icon": "CodeBracketIcon" },
-            { "name": "Tailwind CSS", "icon": "SwatchIcon" }
-          ],
-          "features": [
-            "Interface conversationnelle en temps réel",
-            "Analyse du langage et des réponses",
-            "Feedback personnalisé",
-            "Voix synthétisée réaliste française",
-            "Système prédictictionnel"
-          ],
-          "image": "/projects/simulator-entretien.png",
-          "documentation": "/documentation/simulation-entretien-voix-documentation.pdf"
-        },
-        {
-          "title": "Chatbot fine tuner avec OpenAI et Google Cloud API",
-          "description": "Développement d'un chatbot intelligent pour le support étudiant, utilisant la technologie de fine tuning d'OpenAI pour améliorer la qualité des réponses et la rapidité de réponse, et Google Cloud API pour la gestion des données. (stockage des documents, et récupération des informations)",
-          "technologies": [
-            { "name": "Python/Flask", "icon": "CommandLineIcon" },
-            { "name": "OpenAI GPT-4", "icon": "CpuChipIcon" },
-            { "name": "Google Cloud API", "icon": "CloudIcon" }
-          ],
-          "features": [
-            "Réponses précises et personnalisées",
-            "Récupération des informations",
-            "Stockage des documents"
-          ],
-          "image": "/projects/chatbot-fine-tuner.png"
-        }
       ]
     },
     {
@@ -233,40 +195,6 @@
           "title": "Fiche de mission",
           "path": "/internships/excelia-internship-mission-2.pdf",
           "type": "mission"
-        }
-      ],
-      "projects": [
-        {
-          "title": "Automatisation Blender 3D",
-          "description": "Développement de scripts Python pour automatiser des tâches répétitives qui crée des propriétés personnalisées à chaque objet qu'on crée, améliorant significativement le workflow de création 3D.",
-          "technologies": [
-            { "name": "Python", "icon": "CommandLineIcon" },
-            { "name": "Blender API", "icon": "CodeBracketIcon" }
-          ],
-          "features": [
-            "Automatisation des tâches répétitives",
-            "Optimisation du workflow de modélisation",
-            "Scripts personnalisables selon les besoins",
-            "Interface utilisateur intégrée à Blender"
-          ],
-          "image": "/projects/blender-automation.png"
-        },
-        {
-          "title": "Optimisation Plans Interactifs",
-          "description": "Optimisation des performances et refactorisation du code d'une application web utilisant Babylon.js pour l'affichage de plans interactifs en 3D de la XL Factory d'Excelia.",
-          "technologies": [
-            { "name": "Babylon.js", "icon": "CubeIcon" },
-            { "name": "JavaScript", "icon": "CodeBracketIcon" },
-            { "name": "HTML5", "icon": "CodeBracketIcon" },
-            { "name": "CSS3", "icon": "SwatchIcon" }
-          ],
-          "features": [
-            "Amélioration des performances de rendu 3D",
-            "Optimisation du chargement des ressources",
-            "Interface interactive fluide",
-            "Navigation intuitive dans les plans"
-          ],
-          "image": "/projects/interactive-plans.png"
         }
       ]
     }
@@ -387,7 +315,7 @@
   "projects": [
     {
       "id": "chatbot-fine-tuning",
-      "title": "Chatbot intelligent avec Fine Tuning OpenAIs",
+      "title": "XL IA V2 - Chatbot de support pour les étudiants d'Excelia avec Fine-Tuning",
       "period": "2025",
       "description": "Chatbot bilingue avec fine-tuning et gestion avancée des documents via Google Cloud.",
       "technologies": [
@@ -503,7 +431,7 @@
         },
         {
           "name": "Mettre à disposition des utilisateurs un service informatique",
-          "description": "Déploiement de l'application Flask et du panneau d'administration multilingue (FR/EN) sur les serveurs internes d'Excelia, garantissant un accès fluide et performant pour les utilisateurs finaux."
+          "description": "Déploiement de l'application Flask en WSGI et du panneau d'administration multilingue (FR/EN) sur les serveurs internes d'Excelia, garantissant un accès fluide et performant pour les utilisateurs finaux."
         },
         {
           "name": "Travailler en mode projet",
@@ -515,23 +443,13 @@
         },
         {
           "name": "Développer la présence en ligne de l'organisation",
-          "description": "Développement d'un chatbot pour excelia qui devrais être utilisé par les nouveaux étudiants et enseignants"
-        }
-      ],
-      "documentation": [
-        {
-          "title": "Documentation utilisateur",
-          "path": "/documentation/simulation-entretien-voix-documentation.pdf"
-        },
-        {
-          "title": "Documentation infrastructure",
-          "path": "/documentation/simulation-entretien-voix-infrastructure.pdf"
+          "description": "Développement d'un chatbot pour excelia qui devrais être utilisé par les nouveaux étudiants et enseignants et utilisation de l'interface du chatbot pour la promotion de la formation Excelia Prime AI4VALUE"
         }
       ]
     },
     {
       "id": "chatbot-intelligent-openai",
-      "title": "Chatbot intelligent avec OpenAI",
+      "title": "XL IA - Chatbot de support pour les étudiants d'Excelia",
       "period": "2024",
       "description": "Conception d'un chatbot bilingue ",
       "technologies": [
@@ -580,7 +498,7 @@
         },
         {
           "name": "Travailler en mode projet",
-          "description": "Collaboration étroite avec le service support et les équipes pédagogiques, planification des livrables, gestion des versions et coordination des sprints via Git."
+          "description": "Collaboration étroite avec le service support et les équipes pédagogiques pour la mise en place d'un document de référence pour le contact de chaque programme scolaire à Excelia, gestion des versions et coordination des sprints via Git."
         },
         {
           "name": "Organiser son développement professionnel",
@@ -713,7 +631,7 @@
       "skillDetails": [
         {
           "name": "Gérer le patrimoine informatique",
-          "description": "Mise en place d'un système de versioning Git pour le projet, assurant la traçabilité des modifications et la collaboration entre les contributeurs."
+          "description": "Mise en place d'un système de dockerisation pour le projet pour faciliter le déploiement pour la phase de test du projet sur les postes de travail des personne du talent center."
         },        
         {
           "name": "Développer la présence en ligne de l'organisation",
@@ -730,10 +648,6 @@
         {
           "name": "Organiser son développement professionnel",
           "description": "Maîtrise de Next.js, TypeScript et de l'API ElevenLabs pour la synthèse vocale, et approfondissement des techniques d'IA conversationnelle."
-        },
-        {
-          "name": "Développer la présence en ligne de l'organisation",
-          "description": "Développement d'une interface web responsive qui a attiré plus de 1000 utilisateurs en 3 mois"
         }
       ],
       "documentation": [
@@ -786,11 +700,11 @@
       "skillDetails": [
         {
           "name": "Gérer le patrimoine informatique",
-          "description": "Mise en place d'un système de cache intelligent réduisant les appels API de 65 % et optimisant l'utilisation des ressources serveurs."
+          "description": "Mise en place d'un système de cache intelligent réduisant les appels API de 65 % et optimisant l'utilisation des ressources serveurs. et éviter les cout supplémentaire relatif à l'utilisation de l'API"
         },
         {
           "name": "Développer la présence en ligne de l'organisation",
-          "description": "Conception d'une interface météo innovante et accessible, valorisant le projet lors de la Nuit de l'Info."
+          "description": "Conception d'une interface météo innovante et accessible, valorisant le projet lors de la Nuit de l'Info. et publié sur la newsletter de l'école"
         },
         {
           "name": "Travailler en mode projet",
@@ -865,7 +779,7 @@
         },
         {
           "name": "Travailler en mode projet",
-          "description": "Analyse du besoin et découpage fonctionnel en modules (authentification, catalogue, réservation, espace client), planification et suivi jusqu'à la mise en ligne de la solution web."
+          "description": "Analyse du besoin et découpage fonctionnel en modules (authentification, catalogue, réservation, espace client), mise en place d'une TODO liste sur notion pour le suivi des fonctionnalités encore à faire. Puis la mise en place de la solution web sur la VM du lycée."
         },
         {
           "name": "Mettre à disposition des utilisateurs un service informatique",
@@ -938,25 +852,21 @@
       "skillDetails": [
         {
           "name": "Gérer le patrimoine informatique",
-          "description": "Mise en place d'un dépôt Git et modélisation des objets Flutter/Dart et des schémas MySQL pour assurer la cohérence et la traçabilité du code et des données administratives."
+          "description": "Mise en place d'un dépôt Git pour le suivi du code source en dart et en javascript (pour la partie backend) et des schémas MySQL pour assurer la cohérence et la traçabilité du code et des données."
         },
         {
           "name": "Travailler en mode projet",
-          "description": "Conception cross-platform selon le cahier des charges, découpage en modules et coordination du développement mobile et desktop avec Flutter, Dart, Node.js et Express."
+          "description": "Conception cross-platform l'application mobile en se basant sur l'application web de location de voitures et découpage des fonctionnalités à mettre en place via une TO-DO liste sur Notion"
         },
         {
           "name": "Mettre à disposition des utilisateurs un service informatique",
-          "description": "Déploiement de l'application mobile et desktop sur postes de travail (build Flutter) et configuration du backend Node.js sur serveur interne, garantissant un service opérationnel et performant."
-        },
-        {
-          "name": "Organiser son développement professionnel",
-          "description": "Apprentissage de Flutter, Dart, Node.js et Express.js, utilisation de Flutter DevTools pour le debugging et adoption de bonnes pratiques cross-platform."
+          "description": "Déploiement de l'application mobile et desktop sur postes de travail (build Flutter) et configuration du backend Node.js sur serveur interne dy lcée (VM), garantissant un service opérationnel et permanent."
         }
       ]
     },        
     {
       "id": "flutter-francofolies",
-      "title": "Application mobile Francofolies",
+      "title": "TP Application mobile Francofolies",
       "period": "2025",
       "description": "Application mobile Flutter et API Node.js/Express pour consulter, filtrer et gérer les concerts du festival des Francofolies avec interface moderne, animations et mode clair/sombre.",
       "technologies": [
@@ -1016,25 +926,21 @@
       "skillDetails": [
         {
           "name": "Gérer le patrimoine informatique",
-          "description": "Mise en place d'un dépôt Git et gestion des migrations MySQL (création de tables, scripts d'insertion), assurant la traçabilité et la cohérence des données."
+          "description": "Mise en place d'un dépôt Git et gestion des version des fichiers dart et javascript et des migrations MySQL (création de tables, scripts d'insertion) entre mon binôme et moi-même, assurant la traçabilité et la cohérence des données à travers les différentes versions du projet."
         },
         {
           "name": "Travailler en mode projet",
-          "description": "Travail en binôme avec découpage fonctionnel (MVC), utilisation de design patterns et revues de code pour structurer le développement itératif."
+          "description": "Travail en binôme avec découpage des fonctionnalités à mettre en place via une TO-DO liste un Notion Partagé, et revu du developpement à travers des cours hebdomadaires de DEV.MOBILE."
         },
         {
           "name": "Mettre à disposition des utilisateurs un service informatique",
           "description": "Déploiement de l'API Node.js sur serveur local et configuration de l'application Flutter pour une installation simple et un accès performant sur mobiles et tablettes."
-        },
-        {
-          "name": "Organiser son développement professionnel",
-          "description": "Appropriation de Flutter, Dart, Node.js/Express, MySQL et des bonnes pratiques (MVC, animations, internationalisation) renforçant mes compétences full-stack mobile/web."
         }
       ]
     },
     {
       "id": "pokemon-api",
-      "title": "API Pokémon (Pokédex)",
+      "title": "TP API Pokemon (Pokedex)",
       "period": "2024",
       "description": "Application de recherche de Pokémon avec représentations visuelles dynamiques et animations 3D.",
       "technologies": [
@@ -1089,11 +995,11 @@
         },
         {
           "name": "Travailler en mode projet",
-          "description": "Conception et implémentation des routes Express selon le cahier des charges du TP, gestion itérative des versions et tests manuels des endpoints."
+          "description": "Conception et implémentation des routes Express selon le cahier des charges du TP, gestion  des versions."
         },
         {
           "name": "Organiser son développement professionnel",
-          "description": "Apprentissage de Node.js, Express, utilisation de Three.js et Chart.js pour l'UI, et découverte de Docker pour l'orchestration et le déploiement."
+          "description": "Introduction au Routes, Apprentissage de Node.js, Express, utilisation de Three.js et Chart.js pour l'UI, et découverte de Docker pour la dockérisation de cette dernière. et la découverte de PostMan pour tester les routes de l'API."
         }
       ]
 

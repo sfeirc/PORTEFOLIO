@@ -18,7 +18,7 @@ import {
 import ProjectSkillsMatrix from './ProjectSkillsMatrix';
 import { useState, useEffect } from 'react';
 import usePortfolioData from '@/data/usePortfolioData';
-import type { Internship, InternshipProject, Technology, InternshipDocument, Certification } from '@/data/usePortfolioData';
+import type { Internship, Technology, InternshipDocument, Certification } from '@/data/usePortfolioData';
 
 interface ProjectImage {
   url: string;
@@ -87,7 +87,7 @@ const Projects = () => {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [selectedProfessionalProject, setSelectedProfessionalProject] = useState<Internship | null>(null);
   const [selectedDocument, setSelectedDocument] = useState<{ title: string; path: string } | null>(null);
-  const [selectedInternshipProject, setSelectedInternshipProject] = useState<InternshipProject | null>(null);
+  const [selectedInternshipProject, setSelectedInternshipProject] = useState<Project | null>(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [fullscreenImage, setFullscreenImage] = useState<{ url: string; alt: string; caption: string } | null>(null);
   
@@ -170,6 +170,21 @@ const Projects = () => {
   // Function to open image in fullscreen
   const openFullscreenImage = (imageData: { url: string; alt: string; caption: string }) => {
     setFullscreenImage(imageData);
+  };
+
+  // Get internship projects for the selected internship
+  const getInternshipProjects = (internshipId: string) => {
+    // Map specific projects to their corresponding internships
+    const internshipProjectMapping: Record<string, string[]> = {
+      "excelia-1": ["chatbot-fine-tuning", "simulation-entretien-voix"], // 2025 internship projects
+      "excelia-2": ["chatbot-intelligent-openai"] // 2024 internship projects
+    };
+    
+    const projectIdsForInternship = internshipProjectMapping[internshipId] || [];
+    
+    return projects.filter(project => 
+      project.isInternship && projectIdsForInternship.includes(project.id)
+    );
   };
 
   // Include all projects (both personal and internship projects)
@@ -357,8 +372,16 @@ const Projects = () => {
                 onClick={() => setSelectedProject(project as Project)}
               >
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="w-10 h-10 bg-white/5 p-2 rounded-full flex items-center justify-center">
-                    <project.icon className="w-5 h-5 text-secondary" />
+                  <div className="w-10 h-10 bg-white/5 p-2 rounded-full flex items-center justify-center overflow-hidden">
+                    <div className="relative w-full h-full">
+                      <Image
+                        src={getImageUrl(project.image)}
+                        alt={project.title}
+                        fill
+                        className="object-contain"
+                        sizes="40px"
+                      />
+                    </div>
                   </div>
                   <div className="flex-1">
                     <h3 className="text-lg font-semibold">{project.title}</h3>
@@ -763,7 +786,7 @@ const Projects = () => {
                 <div className="lg:col-span-2 flex flex-col overflow-y-auto">
                   <h4 className="text-lg font-semibold mb-4">Projets réalisés</h4>
                   <div className="flex flex-col gap-6">
-                    {selectedProfessionalProject.projects.map((project: InternshipProject, index: number) => (
+                    {getInternshipProjects(selectedProfessionalProject.id).map((project: Project, index: number) => (
                       <div
                         key={index}
                         className="mb-6 last:mb-0 glass p-4 rounded-lg border border-white/10 hover:border-white/20 transition-colors cursor-pointer"
@@ -772,8 +795,26 @@ const Projects = () => {
                           setSelectedInternshipProject(project);
                         }}
                       >
-                        <h5 className="text-md font-semibold mb-2">{project.title}</h5>
-                        <p className="text-gray-300 text-sm mb-3">{project.description}</p>
+                        <div className="flex gap-4 mb-3">
+                          {/* Project Image */}
+                          <div className="w-20 h-20 flex-shrink-0 bg-white/5 rounded-lg p-2 border border-white/10">
+                            <div className="relative w-full h-full">
+                              <Image
+                                src={getImageUrl(project.image)}
+                                alt={project.title}
+                                fill
+                                className="object-contain"
+                                sizes="80px"
+                              />
+                            </div>
+                          </div>
+                          
+                          {/* Project Info */}
+                          <div className="flex-1">
+                            <h5 className="text-md font-semibold mb-2">{project.title}</h5>
+                            <p className="text-gray-300 text-sm mb-3">{project.description}</p>
+                          </div>
+                        </div>
                         
                         <div className="mb-3">
                           <h6 className="text-sm font-medium text-gray-400 mb-2">Technologies :</h6>
